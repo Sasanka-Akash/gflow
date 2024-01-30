@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Oswald:wght@200;300;400;500;700&family=Poppins:wght@100;200&display=swap');
+
+
+*{
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;  
+}
+
+.logo{
+    background-image: url("img/Screenshot\ 2023-12-17\ 202109.png");
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*------------ Login container ------------*/
+
+.box-area{
+    width: 930px;
+}
+
+
+/*------------ Right box ------------*/
+
+.right-box{
+    padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder{
+    font-size: 16px;
+}
+
+.rounded-4{
+    border-radius: 20px;
+}
+.rounded-5{
+    border-radius: 30px;
+}
+.c-item{
+    height: 850px;
+}
+
+.c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.cart-icon{
+    background-image: url("img/cart.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.cart-icon:hover{
+    width: 35px;
+    height: 33px;
+   transform: scale(1.1);
+}
+
+.poster-img-1{
+    height: 500px;
+    background-repeat: no-repeat;
+}
+
+.poster-caption{
+    margin-bottom: 200px;
+}
+
+.poster-caption-1{
+    margin-bottom: 70px;
+    margin-right: 280px;
+}
+
+.poster-title{
+    color:  rgb(238, 238, 238);
+    font-size: 75px;
+    font-weight: bold;
+}
+
+.poster-txt{
+    font-size: 40px;
+    color: rgb(238, 238, 238);
+}
+
+.signout:hover{
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.list-inline a:hover{
+    color: rgb(255, 145, 0);
+}
+.list-inline i:hover{
+    color: rgb(255, 145, 0);
+}
+
+
+.payment-img{
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.bg{
+    background-image: url(img/bgpc.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.pm0{
+    background-image: url("img/payment_method/american_express_img.png");
+}
+
+.pm1{
+    background-image: url("img/payment_method/mastercard_img.png");
+}
+
+.pm2{
+    background-image: url("img/payment_method/paypal_img.png");
+}
+
+.pm3{
+    background-image: url("img/payment_method/visa_img.png");
+}
+
+.newarrival{
+    background: green;
+    width: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+.purchase-info{
+    margin: 1.9rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    height: 50px;
+    width: 200px;
+}
+.purchase-info input{
+    width: 80px;
+    height: 50px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:first-of-type{
+    background: #256eff;
+}
+.purchase-info .btn:last-of-type{
+    background: #f6bf47;
+    
+}
+.purchase-info .btn:hover{
+    opacity: 0.9;
+    color: black;
+    font-style: bold;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.emptyView{
+    height: 400px;
+    background-image: url("img/addproductimg.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.emptyCart{
+    height: 400px;
+    background-image: url("img/emptycart.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.invoiceHeaderImage{
+    height: 80px;
+    background-image: url("img/logo.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+.text{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    
+}

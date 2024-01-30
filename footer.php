@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
+
+</head>
+
+<body>
+
+    <div class="container-fulid">
+        <footer class="bg-body-tertiary bg-dark text-light p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-3 mx-auto mt-3">
+                        <h5>About Us</h5>
+                        <p>Here we are the Gflow.lk™ to support you for accomplish your dessire by selling high quality
+                            products.</p>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 mx-auto mt-3">
+                        <h5>Help & Support</h5>
+                        <ul class="list-inline" style="list-style: none;">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Shipping & Delivery</a></li>
+                            <li><a href="#">Returns & Refunds</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 mx-auto mt-3">
+                        <h5>Contact Information</h5>
+                        <ul class="list-inline" style="list-style: none;">
+                            <li class="a1">Address: 1234 Main Street, City, State</li>
+                            <li class="a2">Phone: (123) 456-7890</li>
+                            <li class="a3">Email: info@example.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4">Follow Us</h5>
+
+                        <ul class="list-unstyled list-inline">
+
+                            <li class="list-inline-item">
+                                <a href="#" class="form-floating text-white">
+                                    <i class="bi bi-facebook" style="font-size: 22px; padding: 7px;"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" class="form-floating text-white">
+                                    <i class="bi bi-twitter" style="font-size: 22px; padding: 7px;"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" class="form-floating text-white">
+                                    <i class="bi bi-whatsapp" style="font-size: 22px; padding: 7px;"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" class="form-floating text-white">
+                                    <i class="bi bi-linkedin" style="font-size: 22px; padding: 7px;"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" class="form-floating text-white">
+                                    <i class="bi bi-youtube" style="font-size: 22px; padding: 7px; "></i>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-12 col-md-3 col-lg-2 mx-auto" style="width: 350px;">
+                        <img src="img/payment.jpg" alt="payment method" class="payment-img">
+                        <p class="text-center">© 2023 Gflow Computers. All rights reserved.</p>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
