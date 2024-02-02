@@ -90,6 +90,9 @@ include "connection.php";
                     <div class="row" onclick="changeView();">
                         <small>Don't have account? <a href="#">Sign Up</a></small>
                     </div>
+                    <div class="row" onclick="changeView();">
+                        <small>Go to Admin Login <a href="adminSignin.php">Log In</a></small>
+                    </div>
                 </div>
             </div>
 

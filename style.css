@@ -39,6 +39,8 @@
 .rounded-5{
     border-radius: 30px;
 }
+
+
 .c-item{
     height: 850px;
 }
@@ -222,3 +224,4 @@
     display: flex;
     
 }
+

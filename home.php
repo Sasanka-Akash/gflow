@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
 
+
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
 
 </head>
@@ -160,7 +161,7 @@
                                                     <span class="card-text text-success fw-bold"><?php echo $product_data["qty"]; ?> Items Available</span><br /><br />
                                                     <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
 
-                                                    <button class="col-12 btn btn-dark mt-2"  onclick="addToCart(<?php echo $product_data['id'] ?>);">
+                                                    <button class="col-12 btn btn-dark mt-2" onclick="addToCart(<?php echo $product_data['id'] ?>);">
                                                         <i class="bi bi-cart-plus-fill text-white fs-5"></i>
                                                     </button>
                                                 <?php
@@ -233,7 +234,13 @@
             </div>
 
         </div>
+
+
+
     </div>
+
+
+
     <?php include "footer.php"; ?>
 
     <script src="bootstrap.bundle.js"></script>
