@@ -20,11 +20,9 @@ if (isset($_GET["id"])) {
 
 ?>
         <!DOCTYPE html>
-        <html lang="en">
+        <html>
 
         <head>
-
-            <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
             <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
@@ -36,90 +34,80 @@ if (isset($_GET["id"])) {
             <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
             <link rel="stylesheet" href="style.css">
 
+        <body class="bg">
 
-        </head>
-
-        <body class="p-3 mb-2 bg-dark text-white">
-
-
-            <div class="container" style="margin-top: 100px; padding: 50px; ">
+            <div class="container ">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <?php
-                                $image_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $pid . "'");
-                                $image_num = $image_rs->num_rows;
-                                $img = array();
-                                
-                                if ($image_num != 0) {
-                                    for ($x = 0; $x < $image_num; $x++) {
-                                        $img_data = $image_rs->fetch_assoc();
-                                        $img[$x] = $img_data["img_path"];
 
-                                ?>
-                                        <div class="carousel-item active">
-                                            <img src="<?php echo $img[$x]; ?>" class="d-block w-100" alt="..." onclick="loadMainImg(<?php echo $x; ?>);">
-                                        </div>
-                                <?php
-                                    }
-                                } 
-                                ?>
-
-
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                    <?php
-                    $price = $product_data["price"];
-                    $adding_price = ($price / 100) * 10;
-                    $new_price = $price + $adding_price;
-                    $difference = $new_price - $price;
-                    ?>
-                    <div class="col-md-6">
-                        <div class="row ">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Single Product View</li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <p class="newarrival text-center">NEW</p>
-                        <h2><?php echo $product_data["title"]; ?></h2>
-                        <p class="price fs-2">Rs. <?php echo $price; ?> .00</p>
-                        <div class="product-detail">
-                            <p class="fs-2">About this item:</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
-                            <ul>
-                                <li>Available: <span>In stock : <?php echo $product_data["qty"]; ?></span></li>
-                                <li>Sold: <span>100 Items</span></li>
-                                <li>Shipping Area: <span>Only Sri Lanka</span></li>
-                                <li>Shipping Fee: <span>Free</span></li>
-                            </ul>
-                        </div>
+                    <div class="col-12 mt-0 bg-white singleProduct p-4 mt-5">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12" style="padding: 10px;">
                                 <div class="row">
-                                    <div class="col-12 my-2">
-                                        <div class="row g-2">
-                                            <div class="col-4 d-grid">
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button style="color: white;" type="button" class="btn btn"><i class="bi bi-dash-lg"  onclick="qty_dec();"></i></button>
-                                                    <button type="button" class="btn btn"><input onkeyup='check_value(<?php echo $product_data["qty"]; ?>);' type="text" class="input-group-text" style="outline: none;" pattern="[0-9]" value="1" id="qty_input" /></button>
-                                                    <button style="color: white;" type="button" class="btn btn"><i class="bi bi-plus-lg" onclick='qty_inc(<?php echo $product_data["qty"]; ?>);'></i></button>
+
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-12 align-items-center">
+                                            <div id="lens"></div>
+                                                <div class="col-6 product-imgs" >
+                                                    <?php
+                                                    $image_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $pid . "'");
+                                                    $image_num = $image_rs->num_rows;
+
+                                                    $image_data = $image_rs->fetch_assoc();
+
+                                                    ?>
+                                                    <img  style="width: 500px;" src="<?php echo $image_data["img_path"]; ?>" alt="">
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row border-bottom border-dark">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Single Product View</li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                        <h3 class="mt-4 "><?php echo $product_data["title"]; ?> <br><br>
+                                            <?php
 
+                                            $price = $product_data["price"];
+                                            $adding_price = ($price / 100) * 10;
+                                            $new_price = $price + $adding_price;
+                                            $difference = $new_price - $price;
+
+                                            ?>
+                                            <div class="row border-bottom border-dark">
+                                                <div class="col-12 my-2">
+                                                    <span class="fs-4 text-dark fw-bold">Rs. <?php echo $price; ?> .00</span>
+                                                    &nbsp;&nbsp; | &nbsp;&nbsp;
+                                                    <span class="fs-4 text-danger fw-bold text-decoration-line-through">Rs. <?php echo $new_price; ?> .00</span>
+                                                </div>
+                                            </div>
+                                            <div class="row border-bottom border-dark">
+                                                <div class="col-12 my-2">
+                                                    <span class="fs-5 text-primary"><b>Warrenty : </b>6 Months Warrenty</span><br />
+                                                    <span class="fs-5 text-primary"><b>Return Policy : </b>1 Months Return Policy</span><br />
+                                                    <span class="fs-5 text-primary"><b>In Stock : </b><?php echo $product_data["qty"]; ?> Items Available</span>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <ul>
+                                                Intel Core i3 – 1215U Processor <br>
+                                                256GB M.2 NVMe SSD <br>
+                                                8GB Soldered DDR4 RAM <br>
+                                                15.6″ FHD Display <br>
+                                                Integrated Intel UHD Graphics <br>
+                                                Dos <br>
+                                                No Backpack
+                                            </ul>
+                                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                <button type="button" class="btn " onclick="qty_dec();"><i class='bx bx-minus'></i></button>
+                                                <input onkeyup='check_value(<?php echo $product_data["qty"]; ?>);' class="text-center border-rounded-bottom-circle " type="text" pattern="[0-9]" value="1" id="qty_input">
+                                                <button type="button" class="btn" onclick='qty_inc(<?php echo $product_data["qty"]; ?>);'><i class='bx bx-plus'></i></button>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-12 mt-5">
                                                     <div class="row">
@@ -130,67 +118,262 @@ if (isset($_GET["id"])) {
                                                             <button class="btn btn-primary">Add To Cart</button>
                                                         </div>
                                                         <div class="col-4 d-grid">
-                                                            <button class="btn btn-secondary"><i class="bi bi-suit-heart-fill text-danger"></i> Add To Watchlist</button>
+                                                            <button class="btn btn-secondary">
+                                                                <i class="bi bi-heart-fill fs-4 text-danger"></i>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                    </div>
+
+                                    <nav>
+                                        <div class="nav nav-tabs mt-5 " id="nav-tab" role="tablist">
+                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">DESCRIPTION</button>
+                                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ADDITIONAL INFORMATION</button>
+                                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">FEEDBACKS</button>
+                                            <button class="nav-link" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">SHIPPING & DELIVERY</button>
 
                                         </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">Lenovo IdeaPad 1 15IAU7 Laptop Specification –
+                                            Model
+                                            Lenovo IdeaPad 3 15IAU7
+                                            <br>
+                                            Processor
+                                            Intel Core i3-1215U, 6C (2P + 4E) / 8T, P-core 1.2 / 4.4GHz, E-core 0.9 / 3.3GHz, 10MB
+                                            <br>
+                                            Chipset
+                                            Intel SoC Platform
+                                            <br>
+                                            Memory
+                                            8GB Soldered DDR4-3200
+                                            <br>
+                                            Storage
+                                            256GB M.2 2242 PCIe 3.0×4 NVMe SSD
+                                            <br>
+                                            Storage Support
+                                            Models with 45Wh battery: one drive, 1x M.2 SSD
+                                            • M.2 2242 SSD up to 1TB
+                                            • M.2 2280 SSD up to 1TB
+                                            <br>
+                                            Display
+                                            15.6″ FHD 1920 x 1080 TN 250nits Anti-glare
+                                            <br>
+                                            Graphics Card
+                                            Integrated Intel UHD Graphics
+                                            <br>
+                                            Video Memory
+                                            Shared memory
+                                            <br>
+                                            Card Reader
+                                            4-in-1 Card Reader
+                                            <br>
+                                            Optical
+                                            None
+                                            <br>
+                                            Audio Chip
+                                            High Definition (HD) Audio
+                                            <br>
+                                            Speakers
+                                            Stereo speakers, 1.5W x2, Dolby Audio
+                                            <br>
+                                            Camera
+                                            HD 720p with Privacy Shutter
+                                            <br>
+                                            Microphone
+                                            2x, Array
+                                            <br>
+                                            Battery
+                                            Integrated 45Wh
+                                            <br>
+                                            Max Battery Life
+                                            Models with 45Wh battery:
+                                            MobileMark 2018: 5.7 hr
+                                            Local video (1080p) playback@150nits: 10 hr
+                                            <br>
+                                            Power Adapter
+                                            65W Round Tip (3-pin)
+                                            <br>
+                                            Ethernet
+                                            No Onboard Ethernet
+                                            <br>
+                                            WLAN + Bluetooth
+                                            11ac 2×2 + BT5.0
+                                            <br>
+                                            Standard Ports
+                                            <br>
+                                            1x USB 2.0
+                                            1x USB 3.2 Gen 1
+                                            1x USB-C® 3.2 Gen 1 (support data transfer, Power Delivery 3.0 and DisplayPort™ 1.2)
+                                            1x HDMI® 1.4b
+                                            1x Card reader
+                                            1x Headphone / microphone combo jack (3.5mm)
+                                            1x Power connector
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Brand
+                                            Lenovo
+                                            <br><br>
+                                            Processor -
+                                            Intel Core I3
+                                            <hr>
+                                            G Chipset -
+                                            Onboard Graphics
+                                            <hr>
+                                            Memory Size -
+                                            4GB
+                                            <hr>
+                                            Warranty -
+                                            01 Year
+
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+
+                                            <?php
+
+                                            $feedback_rs = Database::search("SELECT * FROM `feedback` INNER JOIN `user` ON
+                                            feedback.user_email=user.email WHERE `product_id`='" . $pid . "'");
+
+                                            $feedback_num = $feedback_rs->num_rows;
+
+                                            if ($feedback_num == 0) {
+                                            ?>
+                                                <div class="col-12">
+                                                    <div class="row">
+
+                                                        <div class="col-12 text-center mb-2">
+                                                            <label class="form-label fs-1 fw-bold">
+                                                                REVIEWS
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-12 text-center mb-2">
+                                                            <label class="form-label fs-1 fw-bold">
+                                                                There are no reviews yet.
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <div class="col-12 ">
+                                                    <div class="row border border-1 border-dark rounded overflow-scroll me-0" style="height: 300px;">
+
+                                                        <?php
+
+
+
+                                                        for ($y = 0; $y < $feedback_num; $y++) {
+                                                            $feedback_data = $feedback_rs->fetch_assoc();
+
+                                                        ?>
+
+                                                            <div class="col-12 mt-1 mb-1 mx-1">
+                                                                <div class="row border border-1 border-dark rounded me-0">
+
+                                                                    <div class="col-10 mt-1 mb-1 ms-0"><?php echo $feedback_data["fname"] . " " . $feedback_data["lname"]; ?></div>
+                                                                    <div class="col-2 mt-1 mb-1 me-0">
+
+                                                                        <?php
+
+                                                                        if ($feedback_data["type"] == 1) {
+                                                                        ?><span class="badge bg-success">Positive</span> <?php
+                                                                                                                        } else if ($feedback_data["type"] == 2) {
+                                                                                                                            ?><span class="badge bg-warning">Neutral</span> <?php
+                                                                                                                                                                        } else if ($feedback_data["type"] == 3) {
+                                                                                                                                                                            ?><span class="badge bg-danger">Negative</span> <?php
+                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                            ?>
+
+
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <b>
+                                                                            <?php echo  $feedback_data["feed"]; ?>
+                                                                        </b>
+                                                                    </div>
+                                                                    <div class="offset-6 col-6 text-end">
+                                                                        <label class="form-label fs-6 text-black-50"><?php echo $feedback_data["date"]; ?></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        <?php
+
+                                                        }
+
+                                                        ?>
+
+
+                                                    </div>
+                                                </div>
+                                            <?php
+                                            }
+
+                                            ?>
+
+
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviewss-tab" tabindex="0">...</div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
 
-            <hr>
-            <div class="container  ">
-                <div class="col-12 bg-dark text-white ">
-                    <div class="row justify-content-center gap-5">
-                        <?php
+                                    <hr>
 
-                        $related_rs = Database::search("SELECT * FROM `product` WHERE 
+                                    <div class="col-12 mt-5">
+                                        <div class="row g-4 align-items-center justify-content-center" style="gap: 30px;">
+                                            <?php
+
+                                            $related_rs = Database::search("SELECT * FROM `product` WHERE 
                                     `model_has_brand_id`='" . $product_data["model_has_brand_id"] . "' LIMIT 5");
 
 
-                        $related_num = $related_rs->num_rows;
-                        for ($y = 0; $y < $related_num; $y++) {
-                            $related_data = $related_rs->fetch_assoc();
-                        ?>
+                                            $related_num = $related_rs->num_rows;
+                                            for ($y = 0; $y < $related_num; $y++) {
+                                                $related_data = $related_rs->fetch_assoc();
 
-                            <div class="card " style="width: 18rem; ">
+                                            ?>
+                                                <div class="card" style="width: 18rem;">
+                                                    <?php
+                                                    $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $related_data["id"] . "'");
+                                                    $img_data = $img_rs->fetch_assoc();
+                                                    ?>
 
-                                <?php
-                                $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $related_data["id"] . "'");
-                                $img_data = $img_rs->fetch_assoc();
-                                ?>
+                                                    <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"><?php echo $related_data["title"]; ?></h5>
+                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                        <a href='<?php echo "singleProductView.php?id=" . ($related_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            <?php
+                                            }
+                                            ?>
 
-                                <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top" />
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $related_data["title"]; ?></h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+
+                                        </div>
+
+                                        <hr>
+                                    </div>
+
                                 </div>
                             </div>
-
-                        <?php
-                        }
-
-                        ?>
+                        </div>
 
                     </div>
                 </div>
             </div>
 
-            <hr>
-
-            <?php include "footer.php"; ?>
+            
             <script src="bootstrap.bundle.js"></script>
             <script src="script.js"></script>
             <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+            <?php include "footer.php"; ?>
         </body>
 
         </html>

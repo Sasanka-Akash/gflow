@@ -55,3 +55,20 @@ window.addEventListener("resize", () => {
 if (window.innerWidth < 768) {
   sideBar.classList.add("hide");
 }
+
+
+function logoutadmin(){
+  var request = new XMLHttpRequest();
+    
+  request.onreadystatechange = function(){
+      if(request.status == 200 & request.readyState == 4){
+          var response = request.responseText;
+          if(response == "success"){
+              window.location.reload();
+          }
+      }
+  }
+
+  request.open("GET","logOutProcess.php",true);
+  request.send();
+}

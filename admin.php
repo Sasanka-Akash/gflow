@@ -46,12 +46,12 @@ if (isset($_SESSION["au"])) {
         </li>
         <li>
           <a href="#" class="nav-link">
-            <i class="fas fa-chart-simple"></i>
-            <span class="text">Analytics</span>
+            <i class="fas fa-archive"></i>
+            <span class="text">Manage Product</span>
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link">
+          <a href="https://wa.me/0710519381" class="nav-link">
             <i class="fas fa-message"></i>
             <span class="text">Message</span>
           </a>
@@ -72,11 +72,25 @@ if (isset($_SESSION["au"])) {
           </a>
         </li>
         <li>
-          <a href="#" class="logout">
-            <i class="fas fa-right-from-bracket"></i>
-            <span class="text">Logout</span>
-          </a>
+
+          <?php
+          if (isset($_SESSION["au"])) {
+          ?>
+            <a href="#" class="logout">
+              <i class="fas fa-right-from-bracket"></i>
+              <span class="text" onclick="logoutadmin();">Logout</span>
+            </a>
+          <?php
+          } else {
+          ?>
+        <li class="nav-item me-3 mb-3 mt-2">
+          <a href="adminSignin.php" class="text-decoration-none fw-bold text-warning"> Sign In or Register</a> |
         </li>
+      <?php
+          }
+      ?>
+
+      </li>
       </ul>
     </section>
 
@@ -267,43 +281,43 @@ if (isset($_SESSION["au"])) {
                 <?php
                 $freq_rs = Database::search("SELECT `product_id`,COUNT(`product_id`) AS`value_occurence` FROM `invoice`
                 WHERE `date` LIKE '%" . $today . "%' GROUP BY `product_id` ORDER BY `value_occurence` DESC "); //ad dws thul wadiyen sell una product eka arn denv
-  
+
                 $freq_num = $freq_rs->num_rows;
-  
+
                 for ($x = 0; $x < $freq_num; $x++) {
-  
+
                   $freq_data = $freq_rs->fetch_assoc();
-  
+
                   $product_rs = Database::search("SELECT * FROM `product` INNER JOIN `product_img` ON 
                   product.id=product_img.product_id INNER JOIN `user` ON product.user_email=user.email
                   INNER JOIN `profile_img` ON user.email=profile_img.user_email WHERE `id`='" . $freq_data["product_id"] . "'");
-  
+
                   $qty_rs = Database::search("SELECT SUM(`qty`) AS `qty_total` FROM `invoice` WHERE `product_id`='" . $freq_data["product_id"] . "'
                   AND `date` LIKE '%" . $today . "%'");
                   $qty_data = $qty_rs->fetch_assoc();
-  
+
                   $produc_data = $product_rs->fetch_assoc();
-                  ?>
+                ?>
                   <tr>
-                  <td>
+                    <td>
 
-                  <?php 
-                  $seller_rs = Database::search("SELECT * FROM `invoice` INNER JOIN `user` ON
+                      <?php
+                      $seller_rs = Database::search("SELECT * FROM `invoice` INNER JOIN `user` ON
                   invoice.user_email=user.email WHERE `product_id`='" . $freq_data["product_id"] . "'");
-                  $seller_data = $seller_rs->fetch_assoc();
+                      $seller_data = $seller_rs->fetch_assoc();
 
-                  $seller_img = Database::search("SELECT * FROM `user` INNER JOIN `profile_img` ON 
-                  user.email=profile_img.user_email WHERE `user_email`='".$seller_data["email"]."'");
-                  $seller_img_data = $seller_img->fetch_assoc();
-                  ?>
+                      $seller_img = Database::search("SELECT * FROM `user` INNER JOIN `profile_img` ON 
+                  user.email=profile_img.user_email WHERE `user_email`='" . $seller_data["email"] . "'");
+                      $seller_img_data = $seller_img->fetch_assoc();
+                      ?>
 
-                    <img src="<?php echo $seller_img_data["path"]; ?>" alt="" />
-                    <p><?php echo $seller_data["fname"]." ".$seller_data["lname"]; ?></p>
-                  </td>
-                  <td><?php echo $seller_data["date"]; ?></td>
-                  <td><span class="status pending"><?php echo $seller_data["email"]; ?></span></td>
-                </tr>
-                  <?php
+                      <img src="<?php echo $seller_img_data["path"]; ?>" alt="" />
+                      <p><?php echo $seller_data["fname"] . " " . $seller_data["lname"]; ?></p>
+                    </td>
+                    <td><?php echo $seller_data["date"]; ?></td>
+                    <td><span class="status pending"><?php echo $seller_data["email"]; ?></span></td>
+                  </tr>
+                <?php
                 }
                 ?>
 

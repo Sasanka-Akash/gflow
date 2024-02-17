@@ -19,6 +19,13 @@ include "connection.php";
 
 <body style="background-image: url(img/bgpc.webp); background-size: cover;">
 
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+
     <!----------------------- Main Container -------------------------->
 
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
@@ -79,6 +86,7 @@ include "connection.php";
                         </div>
                         <div class="forgot">
                             <small><a href="#" onclick="fgpassword();">Forgot Password?</a></small>
+
                         </div>
                     </div>
                     <div class="input-group mb-3">
@@ -90,9 +98,9 @@ include "connection.php";
                     <div class="row" onclick="changeView();">
                         <small>Don't have account? <a href="#">Sign Up</a></small>
                     </div>
-                    <div class="row" onclick="changeView();">
+                    <!-- <div class="row" onclick="changeView();">
                         <small>Go to Admin Login <a href="adminSignin.php">Log In</a></small>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -106,7 +114,6 @@ include "connection.php";
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
-                        
 
                         <div class="modal-body">
 
@@ -214,7 +221,7 @@ include "connection.php";
         </div>
         <!-- footer -->
         <div class="col-12 fixed-bottom d-none d-lg-block">
-            <p class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>
+            <p style="color: white;" class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>
         </div>
         <!-- footer -->
     </div>

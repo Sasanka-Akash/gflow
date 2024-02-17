@@ -14,10 +14,15 @@ include "connection.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
-    <title>Gflow</title>
+    <title> Admin Panel | Gflow</title>
 </head>
 
 <body style="background-image: url(img/bgpc.webp); background-size: cover;">
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 
     <!----------------------- Main Container -------------------------->
 
@@ -77,17 +82,17 @@ include "connection.php";
                     <div class="input-group mb-3">
                         <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" id="e" value="">
                     </div>
-                    
+
                     <div class="input-group  mb-3">
                         <button class="btn btn-lg btn-warning w-100 fs-6" onclick="adminVerification();">Send Verification Code</button>
                     </div>
-                    <div class="input-group mb-3">
+                    <!-- <div class="input-group mb-3">
                         <button class="btn btn-lg btn-dark w-100 fs-6" onclick="bCustomer();">Back To Customer Login</button>
-                    </div>
+                    </div> -->
                     <div class="input-group mb-3">
                         <button class="btn btn-lg btn-light w-100 fs-6"><img src="images/google.png" style="width:20px" class="me-2"><small>Sign In with Google</small></button>
                     </div>
-                    
+
                 </div>
             </div>
 

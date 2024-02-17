@@ -43,6 +43,11 @@
 
 .c-item{
     height: 850px;
+   
+}
+
+.carousel{
+    max-width: 100%;
 }
 
 .c-img{
@@ -50,6 +55,7 @@
     object-fit: cover;
     filter: brightness(0.6);
 }
+
 
 .cart-icon{
     background-image: url("img/cart.png");
@@ -127,6 +133,15 @@
 
 .pm3{
     background-image: url("img/payment_method/visa_img.png");
+}
+
+
+.mainImg{
+    height: 600px;
+    width: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .newarrival{
@@ -224,4 +239,66 @@
     display: flex;
     
 }
+.spinner-wrapper{
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+.spinner-border{
+    height: 60px;
+    width: 60px;
+}
+.singleProduct{
+    padding-top: 65px;
+    padding-bottom: 145px;
+    padding: 20px;
+}
 
+img{
+    max-width: 200%;
+    
+
+}
+
+
+
+
+.whatsapp_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+  }
+  .whatsapp-icon {
+    margin-top: 16px;
+  }
+
+  /* for mobile */
+  @media screen and (max-width: 767px){
+    .whatsapp-icon {
+      margin-top: 10px;
+    }
+    .whatsapp_float {
+      width: 40px;
+      height: 40px;
+      bottom: 20px;
+      right: 10px;
+      font-size: 22px;
+    }
+  }

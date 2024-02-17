@@ -15,56 +15,64 @@
     <link rel="stylesheet" href="style.css">
 
 
+
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
 
 </head>
 
 <body class="bg">
 
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <?php include "header.php"; ?>
 
     <div class="container-fulid">
 
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active c-item">
+                        <img src="img/pc4.jpg" class="d-block w-100 c-img" alt="...">
+                        <div class="carousel-caption  d-md-block poster-caption">
+                            <p class="poster-title" style="font-size: 60px;">Welcome to Gflow Computers</p>
+                            <p class="poster-txt fs-2">The World's Best Online Store By One Click.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item c-item">
+                        <img src="img/pc2.png" class="d-block w-100 c-img" alt="...">
+                        <div class="carousel-caption  d-md-block poster-caption">
+                            <p class="poster-title" style="font-size: 60px;">Best Gaming Laptops.</p>
+                            <p class="poster-txt fs-2">Gflow Computers Only.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item c-item">
+                        <img src="img/pc1.jpg" class="d-block w-100 c-img" alt="...">
+                        <div class="carousel-caption  d-md-block poster-caption">
+                            <p class="poster-title" style="font-size: 60px;">Best Prices Computer Parts.</p>
+                            <p class="poster-txt fs-2">Experience the Lowest Delivery Costs With Us.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active c-item">
-                    <img src="img/pc4.jpg" class="d-block w-100 c-img" alt="...">
-                    <div class="carousel-caption d-none d-md-block poster-caption">
-                        <h5 class="poster-title">Welcome to Gflow Computers</h5>
-                        <p class="poster-txt">The World's Best Online Store By One Click.</p>
-                    </div>
-                </div>
-                <div class="carousel-item c-item">
-                    <img src="img/pc2.png" class="d-block w-100 c-img" alt="...">
-                    <div class="carousel-caption d-none d-md-block poster-caption">
-                        <h5 class="poster-title">Best Gaming Laptops.</h5>
-                        <p class="poster-txt">Gflow Computers Only.</p>
-                    </div>
-                </div>
-                <div class="carousel-item c-item">
-                    <img src="img/pc1.jpg" class="d-block w-100 c-img" alt="...">
-                    <div class="carousel-caption d-none d-md-block poster-caption">
-                        <h5 class="poster-title">Best Prices Computer Parts.</h5>
-                        <p class="poster-txt">Experience the Lowest Delivery Costs With Us.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
-
 
 
     <div class="container">
@@ -98,7 +106,7 @@
                         </select>
                         <input type="text" class="form-control " aria-label="Text input with dropdown button" id="basic_search_txt" placeholder="Search">
                         <button class="btn btn-warning" type="button" id="button-addon2" onclick="basicSearch(0);">Search</button>
-                        <button class="btn btn-outline-warning" type="button" id="button-addon1"><a href="advancedSearch.php" class="btn btn-outline-warning">Advanced</a></button>
+                        <!-- <button class="btn btn-outline-warning" type="button" id="button-addon1"><a href="advancedSearch.php" class="btn btn-outline-warning">Advanced</a></button> -->
                     </div>
                 </div>
 

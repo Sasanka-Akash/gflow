@@ -15,6 +15,7 @@
     <!-- or -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
+  
 
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
 
@@ -43,9 +44,9 @@
                     <div class="col-12 col-md-4 col-lg-3 mx-auto mt-3">
                         <h5>Contact Information</h5>
                         <ul class="list-inline" style="list-style: none;">
-                            <li class="a1">Address: 1234 Main Street, City, State</li>
+                            <li class="a1">Address: 1234 Main Street, Unity Plaza, Colombo 03</li>
                             <li class="a2">Phone: (123) 456-7890</li>
-                            <li class="a3">Email: info@example.com</li>
+                            <li class="a3">Email: gflow@computers.com</li>
                         </ul>
                     </div>
                     <div class="col-12 col-md-4 col-lg-3 mx-auto mt-3">

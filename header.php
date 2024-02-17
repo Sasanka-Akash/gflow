@@ -57,7 +57,7 @@ include "connection.php";
                         } else {
                         ?>
                             <li class="nav-item me-3 mb-3 mt-2">
-                                <a href="index.php" class="text-decoration-none fw-bold text-warning"> Sign In or Register</a> |
+                                <a href="index.php" class="text-decoration-none fw-bold text-warning"> Sign In or Register</a>  |
                             </li>
                         <?php
                         }
@@ -65,18 +65,20 @@ include "connection.php";
 
                         ?>
 
-                        
-                        
-
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php"><i class='bx bxs-cart' style="font-size: 30px; color: white;"></i></a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="userProfile.php"><i class='bx bxs-user' style="font-size: 30px; color: white;"></i></a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bxs-user' style="font-size: 30px; color: white;"></i>
+                                <i class='bx bx-menu' style="font-size: 30px; color: white;"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="userProfile.php"><i class='bx bx-user'></i> My Profile</a></li>
+                               
                                 <li><a class="dropdown-item" href="#"><i class='bx bx-shopping-bag'></i> My Sellings</a>
                                 </li>
                                 <li><a class="dropdown-item" href="myProducts.php"><i class='bx bx-box'></i> My Produts</a></li>

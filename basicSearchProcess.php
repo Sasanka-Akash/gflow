@@ -73,7 +73,7 @@ if (!empty($txt) && $select == 0) {
                                 ?>
                                     <span class="card-text text-warning fw-bold">In Stock</span><br />
                                     <span class="card-text text-success fw-bold"><?php echo $selected_data["qty"]; ?> Items Available</span><br /><br />
-                                    <a href='#' class="col-12 btn btn-warning">Buy Now</a>
+                                    <a href='<?php echo "singleProductView.php?id=" . ($selected_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
 
                                     <button class="col-12 btn btn-dark mt-2">
                                         <i class="bi bi-cart-plus-fill text-white fs-5"></i>
