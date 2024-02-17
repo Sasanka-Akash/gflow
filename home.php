@@ -33,6 +33,7 @@
     <div class="container-fulid">
 
         <div class="carousel">
+        
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -45,6 +46,7 @@
                         <div class="carousel-caption  d-md-block poster-caption">
                             <p class="poster-title" style="font-size: 60px;">Welcome to Gflow Computers</p>
                             <p class="poster-txt fs-2">The World's Best Online Store By One Click.</p>
+                            <a href="#chome"><button type="button" class="btn btn-warning fw-bold" style="font-size: 20px;"><i class='bx bx-down-arrow-alt fw-bold' style="font-size: 20px;"></i> Shop Now</button></a>
                         </div>
                     </div>
                     <div class="carousel-item c-item">
@@ -61,7 +63,9 @@
                             <p class="poster-txt fs-2">Experience the Lowest Delivery Costs With Us.</p>
                         </div>
                     </div>
+                    
                 </div>
+                
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -75,12 +79,12 @@
     </div>
 
 
-    <div class="container">
+    <div class="container" >
         <div class="col-12" id="basicSearchResult">
             <div class="row">
                 <hr style="color: white;">
 
-                <div class="container">
+                <div class="container " id="chome">
                     <div class="input-group mt-3 mb-3">
 
 
