@@ -127,7 +127,7 @@ if (!empty($txt) && $select == 0) {
                                                         echo ("#");
                                                     } else {
                                                     ?> onclick="basicSearch(<?php echo ($pageno - 1); ?>);" ; <?php
-                                                                                                                } ?> aria-label="Previous">
+                                                                                                            } ?> aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -154,7 +154,7 @@ if (!empty($txt) && $select == 0) {
                                                         echo ("#");
                                                     } else {
                                                     ?> onclick="basicSearch(<?php echo ($pageno + 1); ?>);" ; <?php
-                                                                                                                } ?> aria-label="Next">
+                                                                                                            } ?> aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
