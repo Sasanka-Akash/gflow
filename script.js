@@ -1,4 +1,3 @@
-
 function changeView(){
     
     var signUpBox = document.getElementById("signUpBox");
@@ -488,11 +487,11 @@ function updateProduct(){
 
 function basicSearch(x){
 
-    var txt = document.getElementById("basic_search_txt");
+    var text = document.getElementById("basic_txt");
     var select = document.getElementById("basic_search_select");
 
     var form = new FormData();
-    form.append("t",txt.value);
+    form.append("t",text.value);
     form.append("s",select.value);
     form.append("page",x);
 
@@ -510,43 +509,43 @@ function basicSearch(x){
 
 }
 
-function advancedSearch(x){
+// function advancedSearch(x){
     
-    var txt = document.getElementById("t");
-    var category = document.getElementById("c1");
-    var brand = document.getElementById("b1");
-    var model = document.getElementById("m");
-    var condition = document.getElementById("c2");
-    var color = document.getElementById("c3");
-    var from = document.getElementById("pf");
-    var to = document.getElementById("pt");
-    var sort = document.getElementById("s");
+//     var txt = document.getElementById("t");
+//     var category = document.getElementById("c1");
+//     var brand = document.getElementById("b1");
+//     var model = document.getElementById("m");
+//     var condition = document.getElementById("c2");
+//     var color = document.getElementById("c3");
+//     var from = document.getElementById("pf");
+//     var to = document.getElementById("pt");
+//     var sort = document.getElementById("s");
     
-    var form = new FormData();
-    form.append("t",txt.value);
-    form.append("cat",category.value);
-    form.append("b",brand.value);
-    form.append("m",model.value);
-    form.append("con",condition.value);
-    form.append("col",color.value);
-    form.append("pf",from.value);
-    form.append("pt",to.value);
-    form.append("s",sort.value);
-    form.append("page",x);
+//     var form = new FormData();
+//     form.append("t",txt.value);
+//     form.append("cat",category.value);
+//     form.append("b",brand.value);
+//     form.append("m",model.value);
+//     form.append("con",condition.value);
+//     form.append("col",color.value);
+//     form.append("pf",from.value);
+//     form.append("pt",to.value);
+//     form.append("s",sort.value);
+//     form.append("page",x);
 
-    var request = new XMLHttpRequest();
+//     var request = new XMLHttpRequest();
 
-    request.onreadystatechange = function(){
-        if(request.status == 200 && request.readyState == 4){
-            var response = request.responseText;
-            document.getElementById("view_area").innerHTML = response;
-        }
-    }
+//     request.onreadystatechange = function(){
+//         if(request.status == 200 && request.readyState == 4){
+//             var response = request.responseText;
+//             document.getElementById("view_area").innerHTML = response;
+//         }
+//     }
 
-    request.open("POST","advancedSearchProcess.php",true);
-    request.send(form);
+//     request.open("POST","advancedSearchProcess.php",true);
+//     request.send(form);
 
-}
+// }
 
 function loadMainImg(id){
     var sample_img = document.getElementById("productImg"+id).src;
@@ -1099,7 +1098,7 @@ function saveCategory(){
 
 }
 
-//sprinner
+// //sprinner
 
 const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
 

@@ -74,7 +74,7 @@
                                         </label>
                                     </div>
                                     <div class="offset-lg-4 col-12 col-lg-4 mb-4 d-grid">
-                                        <a href="home.php" class="btn btn-outline-info fs-3 fw-bold">
+                                        <a href="home.php" class="btn btn-outline-warning fs-3 fw-bold">
                                             Start Shopping
                                         </a>
                                     </div>

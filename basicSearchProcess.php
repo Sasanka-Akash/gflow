@@ -21,8 +21,6 @@ if (!empty($txt) && $select == 0) {
     <div class="offset-lg-1 col-12 col-lg-10 text-center">
         <div class="row">
 
-
-
             <?php
 
             $pageno;

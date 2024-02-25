@@ -108,8 +108,8 @@
 
                             ?>
                         </select>
-                        <input type="text" class="form-control " aria-label="Text input with dropdown button" id="basic_search_txt" placeholder="Search">
-                        <button class="btn btn-warning" type="button" id="button-addon2" onclick="basicSearch(0);">Search</button>
+                        <input type="text" class="form-control " aria-label="Text input with dropdown button" id="basic_txt" placeholder="Search">
+                        <button class="btn btn-warning"  onclick="basicSearch(0);">Search</button>
                         <!-- <button class="btn btn-outline-warning" type="button" id="button-addon1"><a href="advancedSearch.php" class="btn btn-outline-warning">Advanced</a></button> -->
                     </div>
                 </div>
