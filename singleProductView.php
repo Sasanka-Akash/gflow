@@ -137,80 +137,8 @@ if (isset($_GET["id"])) {
                                         </div>
                                     </nav>
                                     <div class="tab-content" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">Lenovo IdeaPad 1 15IAU7 Laptop Specification –
-                                            Model
-                                            Lenovo IdeaPad 3 15IAU7
-                                            <br>
-                                            Processor
-                                            Intel Core i3-1215U, 6C (2P + 4E) / 8T, P-core 1.2 / 4.4GHz, E-core 0.9 / 3.3GHz, 10MB
-                                            <br>
-                                            Chipset
-                                            Intel SoC Platform
-                                            <br>
-                                            Memory
-                                            8GB Soldered DDR4-3200
-                                            <br>
-                                            Storage
-                                            256GB M.2 2242 PCIe 3.0×4 NVMe SSD
-                                            <br>
-                                            Storage Support
-                                            Models with 45Wh battery: one drive, 1x M.2 SSD
-                                            • M.2 2242 SSD up to 1TB
-                                            • M.2 2280 SSD up to 1TB
-                                            <br>
-                                            Display
-                                            15.6″ FHD 1920 x 1080 TN 250nits Anti-glare
-                                            <br>
-                                            Graphics Card
-                                            Integrated Intel UHD Graphics
-                                            <br>
-                                            Video Memory
-                                            Shared memory
-                                            <br>
-                                            Card Reader
-                                            4-in-1 Card Reader
-                                            <br>
-                                            Optical
-                                            None
-                                            <br>
-                                            Audio Chip
-                                            High Definition (HD) Audio
-                                            <br>
-                                            Speakers
-                                            Stereo speakers, 1.5W x2, Dolby Audio
-                                            <br>
-                                            Camera
-                                            HD 720p with Privacy Shutter
-                                            <br>
-                                            Microphone
-                                            2x, Array
-                                            <br>
-                                            Battery
-                                            Integrated 45Wh
-                                            <br>
-                                            Max Battery Life
-                                            Models with 45Wh battery:
-                                            MobileMark 2018: 5.7 hr
-                                            Local video (1080p) playback@150nits: 10 hr
-                                            <br>
-                                            Power Adapter
-                                            65W Round Tip (3-pin)
-                                            <br>
-                                            Ethernet
-                                            No Onboard Ethernet
-                                            <br>
-                                            WLAN + Bluetooth
-                                            11ac 2×2 + BT5.0
-                                            <br>
-                                            Standard Ports
-                                            <br>
-                                            1x USB 2.0
-                                            1x USB 3.2 Gen 1
-                                            1x USB-C® 3.2 Gen 1 (support data transfer, Power Delivery 3.0 and DisplayPort™ 1.2)
-                                            1x HDMI® 1.4b
-                                            1x Card reader
-                                            1x Headphone / microphone combo jack (3.5mm)
-                                            1x Power connector
+                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"> <?php echo $product_data["title"]; ?>
+                                           <?php echo $product_data["description"]; ?>
                                         </div>
                                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Brand
                                             Lenovo
