@@ -19,7 +19,7 @@ if (isset($_SESSION["au"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!--css file-->
     <link rel="stylesheet" href="styles1.css" />
   </head>
@@ -39,19 +39,19 @@ if (isset($_SESSION["au"])) {
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link">
+          <a href="manageUsers.php" class="nav-link">
             <i class='bx bxs-user'></i>
             <span class="text">Manage Users</span>
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link">
+          <a href="manageProducts.php" class="nav-link">
             <i class="fas fa-archive"></i>
             <span class="text">Manage Product</span>
           </a>
         </li>
         <li>
-          <a href="https://wa.me/0710519381" class="nav-link">
+          <a href="#" class="nav-link">
             <i class="fas fa-message"></i>
             <span class="text">Message</span>
           </a>
@@ -78,7 +78,7 @@ if (isset($_SESSION["au"])) {
           ?>
             <a href="#" class="logout">
               <i class="fas fa-right-from-bracket"></i>
-              <span class="text" onclick="logoutadmin();">Logout</span>
+              <span class="text">Logout</span>
             </a>
           <?php
           } else {
@@ -136,9 +136,9 @@ if (isset($_SESSION["au"])) {
           <div class="col-12">
             <div class="row">
               <div class="col-12 col-lg-2 text-center my-3">
-                <label class="form-label fs-4 fw-bold ">Total Active Time</label>
+                <label style="color: #F1C40F; font-weight: bold; font-size: 20px; justify-content: center;" class="form-label fs-4 fw-bold ">Total Active Time</label>
               </div>
-              <div class="col-12 col-lg-10 text-center my-3">
+              <div style="color: #F1C40F; font-weight: bold; font-size: 20px;" class="col-12 col-lg-10 text-center my-3 ">
 
                 <?php
                 $start_date = new DateTime("2023-12-15 19:00:00"); //date time object
@@ -381,7 +381,6 @@ if (isset($_SESSION["au"])) {
         </div>
       </main>
     </section>
-
     <script src="app.js"></script>
   </body>
 
