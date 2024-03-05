@@ -86,7 +86,7 @@ include "connection.php";
                                 <li><a class="dropdown-item" href="purchasingHistory.php"><i class='bx bx-history'></i> Purchase History</a>
                                 </li>
 
-                                <li><a class="dropdown-item" href="message.php"><i class='bx bx-message'></i> Messages</a></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bx-message'></i> Messages</a></li>
                                 
                                 <li>
                                     <hr class="dropdown-divider">
