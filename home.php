@@ -129,7 +129,7 @@
                 for ($y = 0; $y < $category_num2; $y++) {
                     $category_data2 = $category_rs2->fetch_assoc();
                 ?>
-                    <div class="col-12 mt-3 mb-3">
+                    <div class="col-12 mt-3 mb-3" data-aos="fade-right">
                         <a href="#" class="text-decoration-none text-light fs-3 fw-bold">
                             <?php echo $category_data2["cat_name"] ?></a> &nbsp;&nbsp;
                         <a href="#" class="text-decoration-none text-light fs-6">See All &nbsp;&rarr;</a>
