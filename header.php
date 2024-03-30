@@ -22,6 +22,8 @@ include "connection.php";
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/scrollreveal"></script>
 
 </head>
 
@@ -32,15 +34,15 @@ include "connection.php";
 
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top ">
             <div class="container">
-                <a class="navbar-brand fw-bold" style="font-size: 30px; color: white;" href="home.php">Gflow Computers</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand fw-bold" style="font-size: 30px; color: white;" href="home.php" data-aos="fade-right">Gflow Computers</a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
 
 
-                    <ul class="navbar-nav me-4 mb-2 mb-lg-0 ms-auto">
+                    <ul class="navbar-nav me-4 mb-2 mb-lg-0 ms-auto" data-aos="fade-left">
 
                         <?php
                         session_start();
@@ -104,6 +106,12 @@ include "connection.php";
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 2500,
+        });
+    </script>
 </body>
 
 </html>

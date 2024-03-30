@@ -13,6 +13,8 @@
     <!-- or -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/scrollreveal"></script>
 
 
 
@@ -32,40 +34,40 @@
 
     <div class="container-fulid">
 
-        <div class="carousel">
-        
+        <div class="carousel" data-aos="fade-down">
+
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner" >
                     <div class="carousel-item active c-item">
                         <img src="img/pc4.jpg" class="d-block w-100 c-img" alt="...">
-                        <div class="carousel-caption  d-md-block poster-caption">
-                            <p class="poster-title" style="font-size: 60px;">Welcome to Gflow Computers</p>
+                        <div class="carousel-caption  d-md-block poster-caption" data-aos="fade-up">
+                            <p class="poster-title" style="font-size: 60px;" >Welcome to Gflow Computers</p>
                             <p class="poster-txt fs-2">The World's Best Online Store By One Click.</p>
                             <a href="#chome"><button type="button" class="btn btn-warning fw-bold" style="font-size: 20px;"><i class='bx bx-down-arrow-alt fw-bold' style="font-size: 20px;"></i> Shop Now</button></a>
                         </div>
                     </div>
                     <div class="carousel-item c-item">
                         <img src="img/pc2.png" class="d-block w-100 c-img" alt="...">
-                        <div class="carousel-caption  d-md-block poster-caption">
+                        <div class="carousel-caption  d-md-block poster-caption" data-aos="fade-up">
                             <p class="poster-title" style="font-size: 60px;">Best Gaming Laptops.</p>
                             <p class="poster-txt fs-2">Gflow Computers Only.</p>
                         </div>
                     </div>
                     <div class="carousel-item c-item">
                         <img src="img/pc1.jpg" class="d-block w-100 c-img" alt="...">
-                        <div class="carousel-caption  d-md-block poster-caption">
+                        <div class="carousel-caption  d-md-block poster-caption" data-aos="fade-up">
                             <p class="poster-title" style="font-size: 60px;">Best Prices Computer Parts.</p>
                             <p class="poster-txt fs-2">Experience the Lowest Delivery Costs With Us.</p>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -79,12 +81,12 @@
     </div>
 
 
-    <div class="container" >
+    <div class="container">
         <div class="col-12" id="basicSearchResult">
             <div class="row">
                 <hr style="color: white;">
 
-                <div class="container " id="chome">
+                <div class="container " id="chome" data-aos="fade-up">
                     <div class="input-group mt-3 mb-3">
 
 
@@ -109,7 +111,7 @@
                             ?>
                         </select>
                         <input type="text" class="form-control " aria-label="Text input with dropdown button" id="basic_txt" placeholder="Search">
-                        <button class="btn btn-warning"  onclick="basicSearch(0);">Search</button>
+                        <button class="btn btn-warning" onclick="basicSearch(0);">Search</button>
                         <!-- <button class="btn btn-outline-warning" type="button" id="button-addon1"><a href="advancedSearch.php" class="btn btn-outline-warning">Advanced</a></button> -->
                     </div>
                 </div>
@@ -139,7 +141,7 @@
                         <div class="row border ">
 
                             <div class="col-12">
-                                <div class="row justify-content-center gap-5">
+                                <div class="row justify-content-center gap-5" data-aos="zoom-in">
 
                                     <?php
 
@@ -257,6 +259,12 @@
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 2500,
+        });
+    </script>
 
 </body>
 
