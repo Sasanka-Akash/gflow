@@ -1,5 +1,5 @@
 <?php
-session_start();  
+session_start();
 include "connection.php";
 
 ?>
@@ -30,9 +30,9 @@ include "connection.php";
 <body>
 
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold text-light fs-1" href="#">
+                <a class="navbar-brand fw-bold text-light fs-3" href="#">
                     Gflow Computers</a>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -47,48 +47,48 @@ include "connection.php";
                     <div class="offcanvas-body pe-3 fw-bold fs-6">
                         <ul class="navbar-nav me-auto  justify-content-end  pe-3 text-center">
                             <li class="nav-item ">
-                                <a class="nav-link active text-warning me-4 fs-5" aria-current="page" href="userProfile.php">Profile</a>
+                                <a class="nav-link active text-warning " aria-current="page" href="userProfile.php">Profile</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link text-warning me-4 fs-5" href="cart.php">Cart</a>
+                                <a class="nav-link text-warning " href="cart.php">Cart</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-warning me-4 fs-5" href="#">Services</a>
+                                <a class="nav-link text-warning " href="#">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-warning me-4 fs-5" href="#">Contact</a>
+                                <a class="nav-link text-warning " href="#">Contact</a>
                             </li>
                         </ul>
                         <form class="d-flex offcanvas-body pe-3 text-center" role="search">
                             <div class="col-lg-12 me-5">
                                 <div class="input-group me-5">
-                                    <input type="text" class="form-control fs-5" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-warning me-3" type="button" id="button-addon2">Search</button>
                                 </div>
                             </div>
                         </form>
-                        
+
                         <div class=" offcanvas-body pe-3 text-center">
 
-                        <?php
-                        
+                            <?php
 
-                        if (isset($_SESSION["u"])) {
-                            $data = $_SESSION["u"];
+
+                            if (isset($_SESSION["u"])) {
+                                $data = $_SESSION["u"];
 
                             ?>
-                            <button class="btn btn-outline-warning me-3"><b>Hi <?php echo $data["fname"]; ?></b></button>
-                            <span class="justify-content-end text-light  me-3 fs-4" style="max-height: 50px;">|</span>
-                            <button class="btn btn-outline-warning me-2" type="submit"  onclick="signout();">Sign Out</button>
-                            
+                                <button class="btn btn-outline-warning me-3"><b>Hi <?php echo $data["fname"]; ?></b></button>
+                                <span class="justify-content-end text-light  me-3 fs-4" style="max-height: 50px;">|</span>
+                                <button class="btn btn-outline-warning me-2" type="submit" onclick="signout();">Sign Out</button>
+
                             <?php
-                        }else{
+                            } else {
                             ?>
-                            <a href="index.php"><button class="btn btn-outline-warning" type="submit">Register or Sign In</button></a>
-                            
+                                <a href="index.php"><button class="btn btn-outline-warning" type="submit">Register or Sign In</button></a>
+
                             <?php
-                        }
-                        ?>
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -98,6 +98,16 @@ include "connection.php";
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script>
+        var nav = document.querySelector('nav');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 100) {
+                nav.classList.add('bg-dark', 'text-light');
+            } else {
+                nav.classList.remove('bg-dark', 'text-light');
+            }
+        });
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

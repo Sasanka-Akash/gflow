@@ -37,45 +37,19 @@
         <div class="carousel" data-aos="fade-down">
 
             <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner" >
+                
+                <div class="carousel-inner">
                     <div class="carousel-item active c-item">
-                        <img src="img/pc4.jpg" class="d-block w-100 c-img" alt="...">
+                        <video class="c-img w-100" autoplay loop muted plays-inline class="back-video">
+                            <source src="img/y2mate.com - 2023 ROG Strix G1618  RAISE YOUR GAME CARRY YOUR SQUAD   ROG_1080p.mp4" />
+                        </video>
                         <div class="carousel-caption  d-md-block poster-caption" data-aos="fade-up">
-                            <p class="poster-title" style="font-size: 60px;" >Welcome to Gflow Computers</p>
+                            <p class="poster-title" style="font-size: 60px;">Welcome to Gflow Computers</p>
                             <p class="poster-txt fs-2">The World's Best Online Store By One Click.</p>
                             <a href="#chome"><button type="button" class="btn btn-warning fw-bold" style="font-size: 20px;"><i class='bx bx-down-arrow-alt fw-bold' style="font-size: 20px;"></i> Shop Now</button></a>
                         </div>
                     </div>
-                    <div class="carousel-item c-item">
-                        <img src="img/pc2.png" class="d-block w-100 c-img" alt="...">
-                        <div class="carousel-caption  d-md-block poster-caption" data-aos="fade-up">
-                            <p class="poster-title" style="font-size: 60px;">Best Gaming Laptops.</p>
-                            <p class="poster-txt fs-2">Gflow Computers Only.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item c-item">
-                        <img src="img/pc1.jpg" class="d-block w-100 c-img" alt="...">
-                        <div class="carousel-caption  d-md-block poster-caption" data-aos="fade-up">
-                            <p class="poster-title" style="font-size: 60px;">Best Prices Computer Parts.</p>
-                            <p class="poster-txt fs-2">Experience the Lowest Delivery Costs With Us.</p>
-                        </div>
-                    </div>
-
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </div>
