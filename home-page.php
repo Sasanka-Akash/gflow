@@ -15,9 +15,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/scrollreveal"></script>
-
-
-
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
 
 </head>
@@ -30,7 +27,7 @@
         </div>
     </div>
 
-    <?php include "header-page.php"; ?>
+    <?php include "header.php"; ?>
 
     <div class="container-fulid">
 

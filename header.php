@@ -81,14 +81,14 @@ include "connection.php";
                             </a>
                             <ul class="dropdown-menu">
                                
-                                <li><a class="dropdown-item" href="#"><i class='bx bx-shopping-bag'></i> My Sellings</a>
+                                <li><a class="dropdown-item" href="header-page.php"><i class='bx bx-shopping-bag'></i> My Sellings</a>
                                 </li>
                                 <li><a class="dropdown-item" href="myProducts.php"><i class='bx bx-box'></i> My Produts</a></li>
                                 <li><a class="dropdown-item" href="watchlist.php"><i class='bx bx-heart'></i> Watchlist</a></li>
                                 <li><a class="dropdown-item" href="purchasingHistory.php"><i class='bx bx-history'></i> Purchase History</a>
                                 </li>
 
-                                <li><a class="dropdown-item" href="#"><i class='bx bx-message'></i> Messages</a></li>
+                                <li><a class="dropdown-item" href="home-page.php"><i class='bx bx-message'></i> Messages</a></li>
                                 
                                 <li>
                                     <hr class="dropdown-divider">

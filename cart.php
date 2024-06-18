@@ -19,7 +19,7 @@
 
     <div class="container">
         <div class="row">
-            <?php include "header.php";
+            <?php include "header-page.php";
 
             if (isset($_SESSION["u"])) {
 
