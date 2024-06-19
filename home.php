@@ -44,7 +44,7 @@
                             <source src="img/y2mate.com - 2023 ROG Strix G1618  RAISE YOUR GAME CARRY YOUR SQUAD   ROG_1080p.mp4" />
                         </video>
                         <div class="carousel-caption  d-md-block poster-caption" data-aos="fade-up">
-                            <p class="poster-title" style="font-size: 60px;">Welcome to Gflow Computers</p>
+                            <p class="poster-title" style="font-size: 60px;">Welcome to <span class="text-warning" style="font-size: 60px;">G</span>flow Computers</p>
                             <p class="poster-txt fs-2">The World's Best Online Store By One Click.</p>
                             <a href="#chome"><button type="button" class="btn btn-warning fw-bold" style="font-size: 20px;"><i class='bx bx-down-arrow-alt fw-bold' style="font-size: 20px;"></i> Shop Now</button></a>
                         </div>
