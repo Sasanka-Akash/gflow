@@ -40,7 +40,7 @@ include "connection.php";
                 <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">
-                        <span class="text-warning fs-2">G</span>flow Computers
+                            <span class="text-warning fs-2">G</span>flow Computers
                         </h5>
                         <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
@@ -51,20 +51,17 @@ include "connection.php";
                                     <a class="nav-link text-light active me-2" aria-current="page" href="userProfile.php">Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light me-2" href="header-page.php">Contact</a>
+                                    <a class="nav-link text-light me-2" href="#">Contact</a>
                                 </li>
                                 <li class="nav-item me-2">
                                     <a class="nav-link text-light me-2" href="cart.php">Cart</a>
                                 </li>
-                                
-                            </ul>
-                            <form class="d-flex w-100 me-2" role="search">
-                                <input class="form-control me-3" type="search" placeholder="Search" id="basic_txt" aria-label="Search" />
-                                <button class="btn btn-outline-warning me-2" type="submit" onclick="basicSearch(0);">
-                                    Search
-                                </button>
 
-                            </form>
+                            </ul>
+                            <div class="d-flex w-100 me-2">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="basic_txt" />
+                                <button class="btn btn-outline-warning me-2" onclick="basicSearch(0);">Search</button>
+                            </div>
                         </div>
 
                         <div class=" offcanvas-body pe-3 text-center">
@@ -88,7 +85,7 @@ include "connection.php";
                             <?php
                             }
                             ?>
-                            
+
 
                         </div>
                     </div>
@@ -96,7 +93,6 @@ include "connection.php";
             </div>
         </nav>
     </div>
-
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>

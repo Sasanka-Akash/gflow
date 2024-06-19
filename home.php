@@ -36,7 +36,7 @@
 
         <div class="carousel" data-aos="fade-down">
 
-            <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel slide">
                 
                 <div class="carousel-inner">
                     <div class="carousel-item active c-item">
@@ -55,12 +55,12 @@
     </div>
 
 
-    <div class="container">
-        <div class="col-12">
-            <div class="row">
+    <div class="container" >
+        <div class="col-12"  id="basicSearchResult">
+            <div class="row" >
                 <hr style="color: white;">
 
-                <div class="container " id="chome" data-aos="fade-up">
+                <div class="container " id="chome" data-aos="fade-up" >
                     <div class="input-group mt-3 mb-3">
 
 

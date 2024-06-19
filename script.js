@@ -501,6 +501,7 @@ function basicSearch(x){
         if(request.status == 200 && request.readyState == 4){
             var response = request.responseText;
             document.getElementById("basicSearchResult").innerHTML = response;
+            
         }
     }
 
