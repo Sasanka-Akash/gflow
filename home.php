@@ -32,7 +32,7 @@
 
     <?php include "header-page.php"; ?>
 
-    <div class="container-fulid">
+    <div class="container-fulid" >
 
         <div class="carousel" data-aos="fade-down">
 
@@ -56,7 +56,7 @@
 
 
     <div class="container">
-        <div class="col-12" id="basicSearchResult">
+        <div class="col-12">
             <div class="row">
                 <hr style="color: white;">
 
@@ -84,8 +84,8 @@
 
                             ?>
                         </select>
-                        <input type="text" class="form-control " aria-label="Text input with dropdown button" id="basic_txt" placeholder="Search">
-                        <button class="btn btn-warning" onclick="basicSearch(0);">Search</button>
+                        <!-- <input type="text" class="form-control " aria-label="Text input with dropdown button" id="basic_txt" placeholder="Search"> -->
+                        <!-- <button class="btn btn-warning" onclick="basicSearch(0);">Search</button> -->
                         <!-- <button class="btn btn-outline-warning" type="button" id="button-addon1"><a href="advancedSearch.php" class="btn btn-outline-warning">Advanced</a></button> -->
                     </div>
                 </div>

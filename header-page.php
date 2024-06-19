@@ -51,7 +51,7 @@ include "connection.php";
                                     <a class="nav-link text-light active me-2" aria-current="page" href="userProfile.php">Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light me-2" href="#">Contact</a>
+                                    <a class="nav-link text-light me-2" href="header-page.php">Contact</a>
                                 </li>
                                 <li class="nav-item me-2">
                                     <a class="nav-link text-light me-2" href="cart.php">Cart</a>
@@ -59,8 +59,8 @@ include "connection.php";
                                 
                             </ul>
                             <form class="d-flex w-100 me-2" role="search">
-                                <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" />
-                                <button class="btn btn-outline-warning me-2" type="submit">
+                                <input class="form-control me-3" type="search" placeholder="Search" id="basic_txt" aria-label="Search" />
+                                <button class="btn btn-outline-warning me-2" type="submit" onclick="basicSearch(0);">
                                     Search
                                 </button>
 
@@ -96,6 +96,7 @@ include "connection.php";
             </div>
         </nav>
     </div>
+
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
