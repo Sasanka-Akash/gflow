@@ -36,8 +36,8 @@ if (isset($_GET["id"])) {
 
         <body class="bg">
 
-            <div class="container">
-                <div class="row mt-5" id="basicSearchResult">
+            <div class="container-fluid" id="basicSearchResult">
+                <div class="row mt-3">
                     <hr>
 
 
@@ -49,8 +49,8 @@ if (isset($_GET["id"])) {
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-12 align-items-center">
-                                            <div id="lens"></div>
-                                                <div class="col-6 product-imgs" >
+                                                <div id="lens"></div>
+                                                <div class="col-6 product-imgs">
                                                     <?php
                                                     $image_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $pid . "'");
                                                     $image_num = $image_rs->num_rows;
@@ -58,7 +58,7 @@ if (isset($_GET["id"])) {
                                                     $image_data = $image_rs->fetch_assoc();
 
                                                     ?>
-                                                    <img  style="width: 500px;" src="<?php echo $image_data["img_path"]; ?>" alt="">
+                                                    <img style="width: 500px;" src="<?php echo $image_data["img_path"]; ?>" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@ if (isset($_GET["id"])) {
                                     </nav>
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"> <?php echo $product_data["title"]; ?>
-                                           <?php echo $product_data["description"]; ?>
+                                            <?php echo $product_data["description"]; ?>
                                         </div>
                                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Brand
                                             Lenovo
@@ -299,9 +299,19 @@ if (isset($_GET["id"])) {
                 </div>
             </div>
 
-            
+
             <script src="bootstrap.bundle.js"></script>
             <script src="script.js"></script>
+            <script>
+                var nav = document.querySelector('nav');
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 100) {
+                        nav.classList.add('bg-dark', 'text-light');
+                    } else {
+                        nav.classList.remove('bg-dark', 'text-light');
+                    }
+                });
+            </script>
             <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
             <?php include "footer.php"; ?>
         </body>

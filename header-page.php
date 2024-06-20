@@ -53,7 +53,7 @@ include "connection.php";
                                     <a class="nav-link text-light active me-2" aria-current="page" href="userProfile.php">Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light me-2" href="home-page.php">Contact</a>
+                                    <a class="nav-link text-light me-2" href="#">Contact</a>
                                 </li>
                                 <li class="nav-item me-2">
                                     <a class="nav-link text-light me-2" href="cart.php">Cart</a>
