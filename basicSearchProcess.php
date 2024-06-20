@@ -17,9 +17,11 @@ if (!empty($txt) && $select == 0) {
 
 ?>
 
+
 <div class="row">
-    <div class="offset-lg-1 col-12 col-lg-10 text-center">
-        <div class="row">
+    <div class="offset-lg-1 col-12 col-lg-10 text-center mt-5">
+        <div class="row mt-5">
+
 
             <?php
 

@@ -1,6 +1,6 @@
 <?php
 
-include "header.php";
+include "header-page.php";
 
 if (isset($_GET["id"])) {
 
@@ -36,10 +36,12 @@ if (isset($_GET["id"])) {
 
         <body class="bg">
 
-            <div class="container ">
-                <div class="row">
+            <div class="container">
+                <div class="row mt-5" id="basicSearchResult">
+                    <hr>
 
-                    <div class="col-12 mt-0 bg-white singleProduct p-4 mt-5">
+
+                    <div class="col-12 mt-0 bg-white singleProduct p-4 mt-5 ">
                         <div class="row">
                             <div class="col-12" style="padding: 10px;">
                                 <div class="row">

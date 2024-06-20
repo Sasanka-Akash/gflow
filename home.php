@@ -31,13 +31,14 @@
     </div>
 
     <?php include "header-page.php"; ?>
-
-    <div class="container-fulid" >
+    
+    <div class="container-fulid" id="basicSearchResult">
+        
 
         <div class="carousel" data-aos="fade-down">
 
             <div class="carousel slide">
-                
+
                 <div class="carousel-inner">
                     <div class="carousel-item active c-item">
                         <video class="c-img w-100" autoplay loop muted plays-inline class="back-video">
@@ -52,183 +53,151 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="container" >
-        <div class="col-12"  id="basicSearchResult">
-            <div class="row" >
-                <hr style="color: white;">
-
-                <div class="container " id="chome" data-aos="fade-up" >
-                    <div class="input-group mt-3 mb-3">
-
-
-                        <select class="form-select btn btn-warning" style="max-width: 250px;" id="basic_search_select">
-                            <option value="0">All Categories</option>
-                            <?php
 
 
 
-                            $category_rs = Database::search("SELECT * FROM `category`");
-                            $category_num = $category_rs->num_rows;
-
-                            for ($x = 0; $x < $category_num; $x++) {
-                                $category_data = $category_rs->fetch_assoc();
-                            ?>
-                                <option value="<?php echo $category_data["cat_id"]; ?>">
-                                    <?php echo $category_data["cat_name"]; ?>
-                                </option>
-                            <?php
-                            }
-
-                            ?>
-                        </select>
-                        <!-- <input type="text" class="form-control " aria-label="Text input with dropdown button" id="basic_txt" placeholder="Search"> -->
-                        <!-- <button class="btn btn-warning" onclick="basicSearch(0);">Search</button> -->
-                        <!-- <button class="btn btn-outline-warning" type="button" id="button-addon1"><a href="advancedSearch.php" class="btn btn-outline-warning">Advanced</a></button> -->
-                    </div>
-                </div>
-
-                <hr style="color: white;">
+        <div class="container" id="chome">
+            <div class="col-12" >
+                <div class="row">
+                <hr>
 
 
-                <?php
+                    <?php
 
 
-                $category_rs2 = Database::search("SELECT * FROM `category`");
-                $category_num2 = $category_rs->num_rows;
+                    $category_rs2 = Database::search("SELECT * FROM `category`");
+                    $category_num2 = $category_rs->num_rows;
 
 
-                for ($y = 0; $y < $category_num2; $y++) {
-                    $category_data2 = $category_rs2->fetch_assoc();
-                ?>
-                    <div class="col-12 mt-3 mb-3" data-aos="fade-right">
-                        <a href="#" class="text-decoration-none text-light fs-3 fw-bold">
-                            <?php echo $category_data2["cat_name"] ?></a> &nbsp;&nbsp;
-                        <a href="#" class="text-decoration-none text-light fs-6">See All &nbsp;&rarr;</a>
-                    </div>
-                    <!-- Category Name -->
-                    <!-- products -->
+                    for ($y = 0; $y < $category_num2; $y++) {
+                        $category_data2 = $category_rs2->fetch_assoc();
+                    ?>
+                        <div class="col-12 mt-3 mb-3" data-aos="fade-right">
+                            <a href="#" class="text-decoration-none text-light fs-3 fw-bold">
+                                <?php echo $category_data2["cat_name"] ?></a> &nbsp;&nbsp;
+                            <a href="#" class="text-decoration-none text-light fs-6">See All &nbsp;&rarr;</a>
+                        </div>
+                        <!-- Category Name -->
+                        <!-- products -->
 
-                    <div class="col-12 mb-3">
-                        <div class="row border ">
+                        <div class="col-12 mb-3">
+                            <div class="row border ">
 
-                            <div class="col-12">
-                                <div class="row justify-content-center gap-5" data-aos="zoom-in">
+                                <div class="col-12">
+                                    <div class="row justify-content-center gap-5"  data-aos="zoom-in">
 
-                                    <?php
+                                        <?php
 
-                                    $product_rs = Database::search("SELECT * FROM `product` WHERE `category_cat_id`='" . $category_data2["cat_id"] . "' 
+                                        $product_rs = Database::search("SELECT * FROM `product` WHERE `category_cat_id`='" . $category_data2["cat_id"] . "' 
                                         AND `status_status_id`='1' ORDER BY `datetime_added` DESC LIMIT 4 OFFSET 0");
 
-                                    $product_num = $product_rs->num_rows;
+                                        $product_num = $product_rs->num_rows;
 
-                                    for ($z = 0; $z < $product_num; $z++) {
-                                        $product_data = $product_rs->fetch_assoc();
+                                        for ($z = 0; $z < $product_num; $z++) {
+                                            $product_data = $product_rs->fetch_assoc();
 
-                                    ?>
-                                        <div class="card col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
-
-                                            <?php
-                                            $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $product_data["id"] . "'");
-                                            $img_data = $img_rs->fetch_assoc();
-                                            ?>
-
-                                            <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
-                                            <div class="card-body ms-0 m-0 text-center">
-                                                <h5 class="card-title fw-bold fs-6"><?php echo $product_data["title"]; ?></h5>
-                                                <span class="badge rounded-pill text-bg-info">New</span><br />
-                                                <span class="card-text text-primary"><?php echo $product_data["price"]; ?> .00</span><br />
+                                        ?>
+                                            <div class="card col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
 
                                                 <?php
-
-                                                if ($product_data["qty"] > 0) {
+                                                $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $product_data["id"] . "'");
+                                                $img_data = $img_rs->fetch_assoc();
                                                 ?>
-                                                    <span class="card-text text-warning fw-bold">In Stock</span><br />
-                                                    <span class="card-text text-success fw-bold"><?php echo $product_data["qty"]; ?> Items Available</span><br /><br />
-                                                    <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
 
-                                                    <button class="col-12 btn btn-dark mt-2" onclick="addToCart(<?php echo $product_data['id'] ?>);">
-                                                        <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                                                    </button>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <span class="card-text text-danger fw-bold">Out Stock</span><br />
-                                                    <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br />
-                                                    <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a>
-
-                                                    <button class="col-12 btn btn-dark mt-2 disabled">
-                                                        <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                                                    </button>
+                                                <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
+                                                <div class="card-body ms-0 m-0 text-center">
+                                                    <h5 class="card-title fw-bold fs-6"><?php echo $product_data["title"]; ?></h5>
+                                                    <span class="badge rounded-pill text-bg-info">New</span><br />
+                                                    <span class="card-text text-primary"><?php echo $product_data["price"]; ?> .00</span><br />
 
                                                     <?php
-                                                }
 
-                                                if (isset($_SESSION["u"])) {
-                                                    $watchlist_rs = Database::search("SELECT * FROM `watchlist` WHERE `user_email`='" . $_SESSION["u"]["email"] . "' AND
-                                                 `product_id`='" . $product_data["id"] . "'");
-                                                    $watchlist_num = $watchlist_rs->num_rows;
-
-                                                    if ($watchlist_num == 1) {
+                                                    if ($product_data["qty"] > 0) {
                                                     ?>
+                                                        <span class="card-text text-warning fw-bold">In Stock</span><br />
+                                                        <span class="card-text text-success fw-bold"><?php echo $product_data["qty"]; ?> Items Available</span><br /><br />
+                                                        <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
 
-                                                        <button class="col-12 btn btn-outline-light mt-2 border border-primary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
-                                                            <i class="bi bi-heart-fill text-danger fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
+                                                        <button class="col-12 btn btn-dark mt-2" onclick="addToCart(<?php echo $product_data['id'] ?>);">
+                                                            <i class="bi bi-cart-plus-fill text-white fs-5"></i>
                                                         </button>
-
                                                     <?php
                                                     } else {
                                                     ?>
-                                                        <button class="col-12 btn btn-outline-light mt-2 border border-primary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
-                                                            <i class="bi bi-heart-fill text-dark fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
+                                                        <span class="card-text text-danger fw-bold">Out Stock</span><br />
+                                                        <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br />
+                                                        <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a>
+
+                                                        <button class="col-12 btn btn-dark mt-2 disabled">
+                                                            <i class="bi bi-cart-plus-fill text-white fs-5"></i>
                                                         </button>
-                                                <?php
+
+                                                        <?php
                                                     }
-                                                }
+
+                                                    if (isset($_SESSION["u"])) {
+                                                        $watchlist_rs = Database::search("SELECT * FROM `watchlist` WHERE `user_email`='" . $_SESSION["u"]["email"] . "' AND
+                                                 `product_id`='" . $product_data["id"] . "'");
+                                                        $watchlist_num = $watchlist_rs->num_rows;
+
+                                                        if ($watchlist_num == 1) {
+                                                        ?>
+
+                                                            <button class="col-12 btn btn-outline-light mt-2 border border-primary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
+                                                                <i class="bi bi-heart-fill text-danger fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
+                                                            </button>
+
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                            <button class="col-12 btn btn-outline-light mt-2 border border-primary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
+                                                                <i class="bi bi-heart-fill text-dark fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
+                                                            </button>
+                                                    <?php
+                                                        }
+                                                    }
 
 
 
-                                                ?>
+                                                    ?>
 
 
 
+                                                </div>
                                             </div>
-                                        </div>
-                                    <?php
+                                        <?php
 
-                                    }
+                                        }
 
-                                    ?>
+                                        ?>
 
+                                    </div>
                                 </div>
+
+
                             </div>
-
-
                         </div>
-                    </div>
 
-                    <!-- products -->
-                <?php
-                }
+                        <!-- products -->
+                    <?php
+                    }
 
-                ?>
+                    ?>
 
 
-                <hr style="color: white;">
+                    <hr style="color: white;">
 
+
+                </div>
 
             </div>
+
+
 
         </div>
 
 
-
     </div>
-
-
-
     <?php include "footer.php"; ?>
 
     <script src="bootstrap.bundle.js"></script>
