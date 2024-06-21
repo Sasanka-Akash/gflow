@@ -55,7 +55,7 @@ if (!empty($txt) && $select == 0) {
                 <div class="col-12">
                     <div class="row">
                         <!-- filter -->
-                        <div class="col-11 col-lg-2 mx-3 my-3 border border-warning rounded bg-light">
+                        <div class="col-12 col-lg-2 mx-3 my-3 border border-warning rounded bg-light">
                             <div class="row">
                                 <div class="col-12 mt-3 fs-5">
                                     <div class="row">
@@ -63,7 +63,7 @@ if (!empty($txt) && $select == 0) {
                                         <div class="col-12">
                                             <label class="form-label fw-bold fs-3">Sort Products</label>
                                         </div>
-                                        <div class="col-11">
+                                        <div class="col-11 mt-3">
                                             <div class="row">
                                                 <div class="col-10">
                                                     <input type="text" placeholder="Search..." class="form-control" id="s" />
@@ -82,7 +82,7 @@ if (!empty($txt) && $select == 0) {
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="r1" id="n">
+                                                <input class="form-check-input" type="checkbox" name="r1" id="n">
                                                 <label class="form-check-label" for="n">
                                                     Newest to oldest
                                                 </label>
@@ -90,7 +90,7 @@ if (!empty($txt) && $select == 0) {
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="r1" id="o">
+                                                <input class="form-check-input" type="checkbox" name="r1" id="o">
                                                 <label class="form-check-label" for="o">
                                                     Oldest to newest
                                                 </label>
@@ -106,7 +106,7 @@ if (!empty($txt) && $select == 0) {
 
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="r2" id="h">
+                                                <input class="form-check-input" type="checkbox" name="r2" id="h">
                                                 <label class="form-check-label" for="h">
                                                     High to low
                                                 </label>
@@ -115,7 +115,7 @@ if (!empty($txt) && $select == 0) {
 
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="r2" id="l">
+                                                <input class="form-check-input" type="checkbox" name="r2" id="l">
                                                 <label class="form-check-label" for="l">
                                                     Low to high
                                                 </label>
@@ -131,7 +131,7 @@ if (!empty($txt) && $select == 0) {
 
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="r3" id="b">
+                                                <input class="form-check-input" type="checkbox" name="r3" id="b">
                                                 <label class="form-check-label" for="b">
                                                     Brandnew
                                                 </label>
@@ -140,7 +140,32 @@ if (!empty($txt) && $select == 0) {
 
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="r3" id="u">
+                                                <input class="form-check-input" type="checkbox" name="r3" id="u">
+                                                <label class="form-check-label" for="u">
+                                                    Used
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mt-3">
+                                            <label class="form-label fw-bold">By condition</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <hr style="width: 80%;" />
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="r3" id="b">
+                                                <label class="form-check-label" for="b">
+                                                    Brandnew
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="r3" id="u">
                                                 <label class="form-check-label" for="u">
                                                     Used
                                                 </label>

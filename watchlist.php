@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
 
-            <?php include "header.php";
+            <?php include "header-page.php";
 
 
 
@@ -41,11 +41,11 @@
                         <div class="col-12 ">
                             <div class="row">
 
-                                <div class="col-12">
-                                    <label class="form-label fs-1 fw-bolder">Watchlist &hearts;</label>
+                                <div class="col-12 mt-5">
+                                    <label class="form-label fs-1 fw-bolder mt-3">Watchlist &hearts;</label>
                                 </div>
 
-                                <div class="col-12">
+                                <!-- <div class="col-12">
                                     <hr />
                                 </div>
 
@@ -58,7 +58,7 @@
                                             <button class="btn btn-warning">Search</button>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="col-12">
                                     <hr />
@@ -73,7 +73,7 @@
                                     </nav>
                                     <nav class="nav nav-pills flex-column ">
                                         <a class="nav-link active bg-warning text-dark" aria-current="page" href="#">My Watchlist</a>
-                                        <a class="nav-link" href="#">My Cart</a>
+                                        <a class="nav-link" href="cart.php">My Cart</a>
                                         <a class="nav-link" href="#">Recents</a>
                                     </nav>
                                 </div>

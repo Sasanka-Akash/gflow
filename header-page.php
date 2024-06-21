@@ -50,13 +50,28 @@ include "connection.php";
 
                             <ul class="navbar-nav fs-4 text-light me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link text-light active me-2" aria-current="page" href="userProfile.php">Profile</a>
+                                    <a class="nav-link text-light active me-2" aria-current="page" href="#">About</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-light me-2" href="#">Contact</a>
                                 </li>
                                 <li class="nav-item me-2">
                                     <a class="nav-link text-light me-2" href="cart.php">Cart</a>
+                                </li>
+                                <!-- Example single danger button -->
+                                <li class="nav-item dropdown me-2">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Shop
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="userProfile.php">Profile</a></li>
+                                        <li><a class="dropdown-item" href="watchlist.php">Watchlist</a></li>
+                                        <li><a class="dropdown-item" href="purchasingHistory.php">Purchase History</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
                                 </li>
 
                             </ul>
