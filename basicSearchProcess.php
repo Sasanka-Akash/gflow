@@ -61,7 +61,7 @@ if (!empty($txt) && $select == 0) {
                                     <div class="row">
 
                                         <div class="col-12">
-                                            <label class="form-label fw-bold fs-3">Sort Products</label>
+                                            <label class="form-label fw-bold fs-2">Sort Products</label>
                                         </div>
                                         <div class="col-12 mb-2">
                                             <div class="row">
@@ -72,11 +72,9 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12">
-                                            <label class="form-label fw-bold">Brand</label>
+                                            <label class="form-label fw-bold fs-3">Brand</label>
                                         </div>
-                                        <div class="col-12">
-                                            <hr style="width: 80%;" />
-                                        </div>
+                                        <hr>
                                         <div class="col-12">
                                             <div class="form">
                                                 <input class="form-check-input fs-5" type="checkbox" name="r0" id="r" onclick="sort1(0);">
@@ -111,11 +109,9 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12">
-                                            <label class="form-label fw-bold">Category</label>
+                                            <label class="form-label fw-bold fs-3">Category</label>
                                         </div>
-                                        <div class="col-12">
-                                            <hr style="width: 80%;" />
-                                        </div>
+                                        <hr>
                                         <div class="col-12">
                                             <div class="form">
                                                 <input class="form-check-input fs-5" type="checkbox" name="r4" id="lp" onclick="sort1(0);">
@@ -150,11 +146,62 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12">
-                                            <label class="form-label fw-bold">Price</label>
+                                            <label class="form-label fw-bold fs-3">GPU</label>
+                                        </div>
+                                        <hr>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r5" id="gp1" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="gp1">
+                                                    RTX 4090 16GB
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="col-12">
-                                            <hr style="width: 80%;" />
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r5" id="gp2" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="gp2">
+                                                    RTX 4080 12GB
+                                                </label>
+                                            </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r5" id="gp3" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="gp3">
+                                                    RTX 4070 8GB
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r5" id="gp4" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="gp4">
+                                                    RTX 4060 8GB
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r5" id="gp5" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="gp5">
+                                                    RTX 3050 6GB
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r5" id="gp6" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="gp6">
+                                                    RTX 2050 2GB
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-bold fs-3">Price</label>
+                                        </div>
+                                        <hr>
                                         <div class="col-12">
                                             <div class="form">
                                                 <input class="form-check-input fs-5" type="checkbox" name="r1" id="n" onclick="sort1(0);">
@@ -173,11 +220,9 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12 mt-3">
-                                            <label class="form-label fw-bold">By quantity</label>
+                                            <label class="form-label fw-bold fs-3">By quantity</label>
                                         </div>
-                                        <div class="col-12">
-                                            <hr style="width: 80%;" />
-                                        </div>
+                                        <hr>
 
                                         <div class="col-12">
                                             <div class="form">
@@ -198,40 +243,13 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12 mt-3">
-                                            <label class="form-label fw-bold">By condition</label>
+                                            <label class="form-label fw-bold fs-3">By condition</label>
                                         </div>
-                                        <div class="col-12">
-                                            <hr style="width: 80%;" />
-                                        </div>
+                                        <hr>
 
                                         <div class="col-12">
                                             <div class="form">
                                                 <input class="form-check-input fs-5" type="checkbox" name="r3" id="b" onclick="sort1(0);">
-                                                <label class="form-check-label fs-5" for="b">
-                                                    Brandnew
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="form">
-                                                <input class="form-check-input fs-5" type="checkbox" name="r3" id="u">
-                                                <label class="form-check-label fs-5" for="u">
-                                                    Used
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12 mt-3">
-                                            <label class="form-label fw-bold">By condition</label>
-                                        </div>
-                                        <div class="col-12">
-                                            <hr style="width: 80%;" />
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="form">
-                                                <input class="form-check-input fs-5" type="checkbox" name="r3" id="b">
                                                 <label class="form-check-label fs-5" for="b">
                                                     Brandnew
                                                 </label>
@@ -418,7 +436,7 @@ if (!empty($txt) && $select == 0) {
             ?>
 
 
-
+           
 
 
             <?php

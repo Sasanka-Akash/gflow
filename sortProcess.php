@@ -11,8 +11,10 @@ $qty = $_POST["q"];
 $condition = $_POST["c"];
 $brand = $_POST["b"];
 $category = $_POST["ca"];
+// $gpu = $_POST["gpu"];
 
 $query = "SELECT * FROM `product` WHERE `user_email`='" . $user . "'";
+
 
 if (!empty($search)) {
     $query .= " AND `title` LIKE '%" . $search . "%'"; //congate re asign 
@@ -30,6 +32,10 @@ if ($category != "0") {
     $query .= " AND `category_cat_id`='" . $category . "'";
 }
 
+// if ($gpu != "0") {
+//     $query .= " AND `VGA_card`='" . $gpu . "'";
+// }
+
 if ($time != "0") {
     if ($time == "1") {
         $query .= " ORDER BY `price` DESC";
@@ -37,20 +43,42 @@ if ($time != "0") {
         $query .= " ORDER BY `price` ASC";
     }
 }
-
-if ($brand !== "0" && $time != "0" && $qty = "0" ) {
-    if ($qty == "1") {
-        $query .= " , `price` DESC";
-    } else if ($qty == "2") {
-        $query .= " , `price` ASC";
-    }
-} else if ( $category == "0" && $qty != "0"  && $brand != "0") {
+if ($brand != "0") {
     if ($qty == "1") {
         $query .= " ORDER BY `qty` DESC";
     } else if ($qty == "2") {
         $query .= " ORDER BY `qty` ASC";
     }
 }
+if ($category != "0") {
+    if ($qty == "1") {
+        $query .= " ORDER BY `qty` DESC";
+    } else if ($qty == "2") {
+        $query .= " ORDER BY `qty` ASC";
+    }
+}
+if ($condition != "0") {
+    if ($qty == "1") {
+        $query .= " ORDER BY `qty` DESC";
+    } else if ($qty == "2") {
+        $query .= " ORDER BY `qty` ASC";
+    }
+}
+
+
+// if ($brand !== "0" && $time != "0" && $qty = "0" ) {
+//     if ($qty == "1") {
+//         $query .= " , `price` DESC";
+//     } else if ($qty == "2") {
+//         $query .= " , `price` ASC";
+//     }
+// } else if ( $category == "0" && $qty != "0"  && $brand != "0") {
+//     if ($qty == "1") {
+//         $query .= " ORDER BY `qty` DESC";
+//     } else if ($qty == "2") {
+//         $query .= " ORDER BY `qty` ASC";
+//     }
+// }
 
 ?>
 

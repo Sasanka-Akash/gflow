@@ -421,6 +421,22 @@ function sort1(x){
     }else if(document.getElementById("pt").checked){
         category = "4";
     }
+
+    var gpu = "0";
+
+    if(document.getElementById("gp1").checked){
+        gpu = "1";
+    }else if(document.getElementById("gp2").checked){
+        gpu = "2";
+    }else if(document.getElementById("gp3").checked){
+        gpu = "3";
+    }else if(document.getElementById("gp4").checked){
+        gpu = "4";
+    }else if(document.getElementById("gp5").checked){
+        gpu = "5";
+    }else if(document.getElementById("gp6").checked){
+        gpu = "6";
+    }
     
     var form = new FormData();
     form.append("s",search.value);
@@ -429,6 +445,7 @@ function sort1(x){
     form.append("c",condition);
     form.append("b",brand);
     form.append("ca",category);
+    form.append("gpu",gpu);
     form.append("page",x);
    
     var request = new XMLHttpRequest();
