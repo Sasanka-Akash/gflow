@@ -372,6 +372,7 @@ function changeStatus(id){
 function sort1(x){
 
     var search = document.getElementById("s");
+
     var time = "0";
 
     if(document.getElementById("n").checked){
@@ -396,11 +397,38 @@ function sort1(x){
         condition = "2";
     }
 
+    
+    var brand = "0";
+
+    if(document.getElementById("r").checked){
+        brand = "1";
+    }else if(document.getElementById("m").checked){
+        brand = "2";
+    }else if(document.getElementById("a").checked){
+        brand = "3";
+    }else if(document.getElementById("le").checked){
+        brand = "4";
+    }
+
+    var category = "0";
+
+    if(document.getElementById("lp").checked){
+        category = "1";
+    }else if(document.getElementById("cb").checked){
+        category = "2";
+    }else if(document.getElementById("cp").checked){
+        category = "3";
+    }else if(document.getElementById("pt").checked){
+        category = "4";
+    }
+    
     var form = new FormData();
     form.append("s",search.value);
     form.append("t",time);
     form.append("q",qty);
     form.append("c",condition);
+    form.append("b",brand);
+    form.append("ca",category);
     form.append("page",x);
    
     var request = new XMLHttpRequest();

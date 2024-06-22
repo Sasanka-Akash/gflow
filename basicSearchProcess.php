@@ -19,9 +19,9 @@ if (!empty($txt) && $select == 0) {
 
 
 
+<div class="container-fluid">
 
-<div class="row">
-    <div class="offset-lg-1 col-12 col-lg-10 text-center mt-5 gap-3">
+    <div class=" col-12 col-lg-12 mt-5">
         <div class="row mt-5">
 
 
@@ -55,44 +55,119 @@ if (!empty($txt) && $select == 0) {
                 <div class="col-12">
                     <div class="row">
                         <!-- filter -->
-                        <div class="col-12 col-lg-2 mx-3 my-3 border border-warning rounded bg-light">
+                        <div class="col-10 col-lg-2 mx-3 my-3 border rounded bg-light">
                             <div class="row">
-                                <div class="col-12 mt-3 fs-5">
+                                <div class="col-12 mt-4 fs-5">
                                     <div class="row">
 
                                         <div class="col-12">
                                             <label class="form-label fw-bold fs-3">Sort Products</label>
                                         </div>
-                                        <div class="col-11 mt-3">
+                                        <div class="col-12 mb-2">
                                             <div class="row">
-                                                <div class="col-10">
+                                                <div class="col-12">
                                                     <input type="text" placeholder="Search..." class="form-control" id="s" />
-                                                </div>
-                                                <div class="col-1 p-1">
-                                                    <label class="form-label"><i class="bi bi-search fs-5"></i></label>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label class="form-label fw-bold">Active Time</label>
+                                            <label class="form-label fw-bold">Brand</label>
                                         </div>
                                         <div class="col-12">
                                             <hr style="width: 80%;" />
                                         </div>
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r1" id="n">
-                                                <label class="form-check-label" for="n">
-                                                    Newest to oldest
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r0" id="r" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="r">
+                                                    ROG
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r1" id="o">
-                                                <label class="form-check-label" for="o">
-                                                    Oldest to newest
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r0" id="m" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="m">
+                                                    MSI
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r0" id="a" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="a">
+                                                    ASUS
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r0" id="le" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="le">
+                                                    LENOVO
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-bold">Category</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <hr style="width: 80%;" />
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r4" id="lp" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="lp">
+                                                    Laptops
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r4" id="cb" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="cb">
+                                                    Computer Builds
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r4" id="cp" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="cp">
+                                                    Computer Parts
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r4" id="pt" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="pt">
+                                                    Paystation
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label fw-bold">Price</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <hr style="width: 80%;" />
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r1" id="n" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="n">
+                                                    High to Low
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r1" id="o" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="o">
+                                                    Low to High
                                                 </label>
                                             </div>
                                         </div>
@@ -105,18 +180,18 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r2" id="h">
-                                                <label class="form-check-label" for="h">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r2" id="h" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="h">
                                                     High to low
                                                 </label>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r2" id="l">
-                                                <label class="form-check-label" for="l">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r2" id="l" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="l">
                                                     Low to high
                                                 </label>
                                             </div>
@@ -130,18 +205,18 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r3" id="b">
-                                                <label class="form-check-label" for="b">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r3" id="b" onclick="sort1(0);">
+                                                <label class="form-check-label fs-5" for="b">
                                                     Brandnew
                                                 </label>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r3" id="u">
-                                                <label class="form-check-label" for="u">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r3" id="u">
+                                                <label class="form-check-label fs-5" for="u">
                                                     Used
                                                 </label>
                                             </div>
@@ -155,18 +230,18 @@ if (!empty($txt) && $select == 0) {
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r3" id="b">
-                                                <label class="form-check-label" for="b">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r3" id="b">
+                                                <label class="form-check-label fs-5" for="b">
                                                     Brandnew
                                                 </label>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="r3" id="u">
-                                                <label class="form-check-label" for="u">
+                                            <div class="form">
+                                                <input class="form-check-input fs-5" type="checkbox" name="r3" id="u">
+                                                <label class="form-check-label fs-5" for="u">
                                                     Used
                                                 </label>
                                             </div>
@@ -190,7 +265,8 @@ if (!empty($txt) && $select == 0) {
                         <!-- filter -->
 
                         <!-- product -->
-                        <div class="col-12 col-lg-9 mt-3 mb-3 bg-white">
+
+                        <div class="col-12 col-lg-9 mt-3 mb-3 bg-white border rounded">
                             <div class="row" id="sort">
 
                                 <div class="offset-1 col-10 text-center">
@@ -257,10 +333,10 @@ if (!empty($txt) && $select == 0) {
                                                             <i class="bi bi-cart-plus-fill text-white fs-5"></i>
                                                         </button>
 
-                                                        <?php
+                                                    <?php
                                                     }
 
-                                                    
+
 
 
 
@@ -330,6 +406,7 @@ if (!empty($txt) && $select == 0) {
 
                             </div>
                         </div>
+
                         <!-- product -->
 
                     </div>
@@ -350,48 +427,6 @@ if (!empty($txt) && $select == 0) {
 
             ?>
 
-            <!-- <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination pagination-lg justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link" <?php if ($pageno <= 1) {
-                                                        echo ("#");
-                                                    } else {
-                                                    ?> onclick="basicSearch(<?php echo ($pageno - 1); ?>);" ; <?php
-                                                                                                            } ?> aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <?php
-                        for ($x = 1; $x <= $number_of_pages; $x++) {
-                            if ($x == $pageno) {
-                        ?>
-                                <li class="page-item active">
-                                    <a class="page-link" onclick="basicSearch(<?php echo ($x); ?>);"><?php echo $x; ?></a>
-                                </li>
-                            <?php
-                            } else {
-                            ?>
-                                <li class="page-item ">
-                                    <a class="page-link" onclick="basicSearch(<?php echo ($x); ?>);"><?php echo $x; ?></a>
-                                </li>
-                        <?php
-                            }
-                        }
-                        ?>
-
-                        <li class="page-item">
-                            <a class="page-link" <?php if ($pageno >= $number_of_pages) {
-                                                        echo ("#");
-                                                    } else {
-                                                    ?> onclick="basicSearch(<?php echo ($pageno + 1); ?>);" ; <?php
-                                                                                                            } ?> aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div> -->
 
         </div>
     </div>
@@ -403,6 +438,5 @@ if (!empty($txt) && $select == 0) {
 
     ?>
 
-</div>
 </div>
 </div>

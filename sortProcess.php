@@ -9,6 +9,8 @@ $search = $_POST["s"];
 $time = $_POST["t"];
 $qty = $_POST["q"];
 $condition = $_POST["c"];
+$brand = $_POST["b"];
+$category = $_POST["ca"];
 
 $query = "SELECT * FROM `product` WHERE `user_email`='" . $user . "'";
 
@@ -20,21 +22,29 @@ if ($condition != "0") {
     $query .= " AND `condition_condition_id`='" . $condition . "'";
 }
 
+if ($brand != "0") {
+    $query .= " AND `model_has_brand_id`='" . $brand . "'";
+}
+
+if ($category != "0") {
+    $query .= " AND `category_cat_id`='" . $category . "'";
+}
+
 if ($time != "0") {
     if ($time == "1") {
-        $query .= " ORDER BY `datetime_added` DESC";
+        $query .= " ORDER BY `price` DESC";
     } else if ($time == "2") {
-        $query .= " ORDER BY `datetime_added` ASC";
+        $query .= " ORDER BY `price` ASC";
     }
 }
 
-if ($time != "0" && $qty != "0") {
+if ($brand !== "0" && $time != "0" && $qty = "0" ) {
     if ($qty == "1") {
-        $query .= " , `qty` DESC";
+        $query .= " , `price` DESC";
     } else if ($qty == "2") {
-        $query .= " , `qty` ASC";
+        $query .= " , `price` ASC";
     }
-} else if ($time == "0" && $qty != "0") {
+} else if ( $category == "0" && $qty != "0"  && $brand != "0") {
     if ($qty == "1") {
         $query .= " ORDER BY `qty` DESC";
     } else if ($qty == "2") {
@@ -141,7 +151,7 @@ if ($time != "0" && $qty != "0") {
                                             echo ("#");
                                         } else {
                                         ?> onclick="sort1(<?php echo ($pageno - 1); ?>);" ; <?php
-                                                                                            } ?> aria-label="Previous">
+                                                                                        } ?> aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -168,7 +178,7 @@ if ($time != "0" && $qty != "0") {
                                             echo ("#");
                                         } else {
                                         ?> onclick="sort1(<?php echo ($pageno + 1); ?>);" ; <?php
-                                                                                            } ?> aria-label="Next">
+                                                                                        } ?> aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
