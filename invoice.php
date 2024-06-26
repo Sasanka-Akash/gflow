@@ -15,8 +15,7 @@
 </head>
 
 <body class="mt-2" style="background-color: #f7f7ff;">
-    <hr>
-    <hr>
+    
 
 
 
@@ -30,20 +29,20 @@
                 $oid = $_GET["id"];
 
             ?>
-                <div class="col-12">
+                <div class="col-12  mt-5">
                     <hr />
                 </div>
 
-                <div class="col-12 btn-toolbar justify-content-end">
+                <div class="col-12  mt-5 btn-toolbar justify-content-end">
                     <button class="btn btn-dark me-2" onclick="printInvoice();"><i class="bi bi-printer-fill"></i> Print</button>
                     <button class="btn btn-danger me-2"><i class="bi bi-filetype-pdf"></i> Export as PDF</button>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12  mt-5">
                     <hr />
                 </div>
 
-                <div class="col-12" id="page">
+                <div class="col-12 mt-5" id="page">
                     <div class="row">
 
                         <!-- <div class="col-6">

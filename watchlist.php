@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+
 
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
 </head>
@@ -195,6 +197,8 @@
     <?php include "footer.php"; ?>
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

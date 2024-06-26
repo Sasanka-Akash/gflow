@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include "connection.php";
 
 ?>
@@ -29,76 +29,103 @@ include "connection.php";
 
 <body>
 
-    <div class="container">
-
-
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top ">
-            <div class="container">
-                <a class="navbar-brand fw-bold" style="font-size: 30px; color: white;" href="home.php" data-aos="fade-right">Gflow Computers</a>
-                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon "></span>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg fixed-top bg-dark" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-light fs-2" href="#">
+                    <span class="text-warning fs-2">G</span>flow Computers</a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-
-
-                    <ul class="navbar-nav me-4 mb-2 mb-lg-0 ms-auto" data-aos="fade-left">
-
-                        <?php
-                        session_start();
-
-                        if (isset($_SESSION["u"])) {
-                            $data = $_SESSION["u"];
-                        ?>
-                            <span class="text-lg-start text-warning mt-2 me-3"><b>Hi <?php echo $data["fname"]; ?></b></span>
-                            <li class="nav-item me-3 mt-2">
-                                <span class="text-lg-start fw-bold signout " style="cursor: pointer; color: #ffcc00 ;" onclick="signout();"> Signout </span>
-                            </li>
-                        <?php
-
-                        } else {
-                        ?>
-                            <li class="nav-item me-3 mb-3 mt-2">
-                                <a href="index.php" class="text-decoration-none fw-bold text-warning"> Sign In or Register</a>  |
-                            </li>
-                        <?php
-                        }
+                <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">
+                            <span class="text-warning fs-2">G</span>flow Computers
+                        </h5>
+                        <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body pe-3  fw-bold fs-6">
+                        <div class="navbar-collapse  offcanvas-collapse" id="navbarsExampleDefault">
 
 
-                        ?>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="cart.php"><i class='bx bxs-cart' style="font-size: 30px; color: white;"></i></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="userProfile.php"><i class='bx bxs-user' style="font-size: 30px; color: white;"></i></a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bx-menu' style="font-size: 30px; color: white;"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                               
-                                <li><a class="dropdown-item" href="header-page.php"><i class='bx bx-shopping-bag'></i> My Sellings</a>
+                            <ul class="navbar-nav fs-4 text-light me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link text-light active me-2" aria-current="page" href="#">About</a>
                                 </li>
-                                <li><a class="dropdown-item" href="myProducts.php"><i class='bx bx-box'></i> My Produts</a></li>
-                                <li><a class="dropdown-item" href="watchlist.php"><i class='bx bx-heart'></i> Watchlist</a></li>
-                                <li><a class="dropdown-item" href="purchasingHistory.php"><i class='bx bx-history'></i> Purchase History</a>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light me-2" href="home-page.php">Contact</a>
+                                </li>
+                                <li class="nav-item me-2">
+                                    <a class="nav-link text-light me-2" href="cart.php">Cart</a>
+                                </li>
+                                <!-- Example single danger button -->
+                                <li class="nav-item dropdown me-2">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Shop
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="userProfile.php">Profile</a></li>
+                                        <li><a class="dropdown-item" href="watchlist.php">Watchlist</a></li>
+                                        <li><a class="dropdown-item" href="purchasingHistory.php">Purchase History</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
                                 </li>
 
-                                <li><a class="dropdown-item" href="home-page.php"><i class='bx bx-message'></i> Messages</a></li>
-                                
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#"><i class='bx bx-phone-call'></i> Contact Admin</a>
-                                </li>
                             </ul>
-                        </li>
-                    </ul>
+                            <div class="input-group">
+                                <select class="form-select btn btn-warning" style="max-width: 250px;" id="basic_search_select">
+                                    <option value="0">All Categories</option>
+                                    <?php
 
+
+
+                                    $category_rs = Database::search("SELECT * FROM `category`");
+                                    $category_num = $category_rs->num_rows;
+
+                                    for ($x = 0; $x < $category_num; $x++) {
+                                        $category_data = $category_rs->fetch_assoc();
+                                    ?>
+                                        <option value="<?php echo $category_data["cat_id"]; ?>">
+                                            <?php echo $category_data["cat_name"]; ?>
+                                        </option>
+                                    <?php
+                                    }
+
+                                    ?>
+                                </select>
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="basic_txt" />
+                                <button class="btn btn-outline-warning me-2" onclick="basicSearch(0);">Search</button>
+                            </div>
+                        </div>
+
+                        <div class=" offcanvas-body pe-3 text-center">
+
+                            <?php
+
+
+                            if (isset($_SESSION["u"])) {
+                                $data = $_SESSION["u"];
+
+                            ?>
+                                <button class="btn btn-outline-warning me-2"><b>Hi <?php echo $data["fname"]; ?></b></button>
+                                <span class="justify-content-end text-light  me-2 fs-4" style="max-height: 50px;">|</span>
+                                <button class="btn btn-outline-warning me-2" type="submit" onclick="signout();">Sign Out</button>
+
+                            <?php
+                            } else {
+                            ?>
+                                <a href="index.php"><button class="btn btn-outline-warning" type="submit">Register or Sign In</button></a>
+
+                            <?php
+                            }
+                            ?>
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -106,6 +133,16 @@ include "connection.php";
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <!-- <script>
+        var nav = document.querySelector('nav');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 100) {
+                nav.classList.add('bg-dark', 'text-light');
+            } else {
+                nav.classList.remove('bg-dark', 'text-light');
+            }
+        });
+    </script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

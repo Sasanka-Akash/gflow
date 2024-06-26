@@ -145,7 +145,7 @@ if (!empty($txt) && $select == 0) {
                                             </div>
                                         </div>
 
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                             <label class="form-label fw-bold fs-3">GPU</label>
                                         </div>
                                         <hr>
@@ -196,7 +196,7 @@ if (!empty($txt) && $select == 0) {
                                                     RTX 2050 2GB
                                                 </label>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-12">
                                             <label class="form-label fw-bold fs-3">Price</label>

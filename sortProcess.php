@@ -16,55 +16,56 @@ $category = $_POST["ca"];
 $query = "SELECT * FROM `product` WHERE `user_email`='" . $user . "'";
 
 
-if (!empty($search)) {
-    $query .= " AND `title` LIKE '%" . $search . "%'"; //congate re asign 
-}
 
-if ($condition != "0") {
-    $query .= " AND `condition_condition_id`='" . $condition . "'";
-}
 
-if ($brand != "0") {
-    $query .= " AND `model_has_brand_id`='" . $brand . "'";
-}
-
-if ($category != "0") {
-    $query .= " AND `category_cat_id`='" . $category . "'";
-}
-
-// if ($gpu != "0") {
-//     $query .= " AND `VGA_card`='" . $gpu . "'";
-// }
-
-if ($time != "0") {
-    if ($time == "1") {
-        $query .= " ORDER BY `price` DESC";
-    } else if ($time == "2") {
-        $query .= " ORDER BY `price` ASC";
+    if (!empty($search)) {
+        $query .= " AND `title` LIKE '%" . $search . "%'"; //congate re asign 
     }
-}
-if ($brand != "0") {
-    if ($qty == "1") {
-        $query .= " ORDER BY `qty` DESC";
-    } else if ($qty == "2") {
-        $query .= " ORDER BY `qty` ASC";
-    }
-}
-if ($category != "0") {
-    if ($qty == "1") {
-        $query .= " ORDER BY `qty` DESC";
-    } else if ($qty == "2") {
-        $query .= " ORDER BY `qty` ASC";
-    }
-}
-if ($condition != "0") {
-    if ($qty == "1") {
-        $query .= " ORDER BY `qty` DESC";
-    } else if ($qty == "2") {
-        $query .= " ORDER BY `qty` ASC";
-    }
-}
 
+    if ($condition != "0") {
+        $query .= " AND `condition_condition_id`='" . $condition . "'";
+    }
+
+    if ($brand != "0") {
+        $query .= " AND `model_has_brand_id`='" . $brand . "'";
+    }
+
+    if ($category != "0") {
+        $query .= " AND `category_cat_id`='" . $category . "'";
+    }
+
+    // if ($gpu != "0") {
+    //     $query .= " AND `VGA_card`='" . $gpu . "'";
+    // }
+
+    if ($time != "0" && $gpu = '0') {
+        if ($time == "1") {
+            $query .= " ORDER BY `price` DESC";
+        } else if ($time == "2") {
+            $query .= " ORDER BY `price` ASC";
+        }
+    }
+    if ($brand != "0") {
+        if ($qty == "1") {
+            $query .= " ORDER BY `qty` DESC";
+        } else if ($qty == "2") {
+            $query .= " ORDER BY `qty` ASC";
+        }
+    }
+    if ($category != "0") {
+        if ($qty == "1") {
+            $query .= " ORDER BY `qty` DESC";
+        } else if ($qty == "2") {
+            $query .= " ORDER BY `qty` ASC";
+        }
+    }
+    if ($condition != "0") {
+        if ($qty == "1") {
+            $query .= " ORDER BY `qty` DESC";
+        } else if ($qty == "2") {
+            $query .= " ORDER BY `qty` ASC";
+        }
+    }
 
 // if ($brand !== "0" && $time != "0" && $qty = "0" ) {
 //     if ($qty == "1") {

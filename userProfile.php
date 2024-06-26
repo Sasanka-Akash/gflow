@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- or -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
@@ -296,6 +297,7 @@
     </div>
     <?php include "footer.php"; ?>
     <script src="bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
 </body>
 
