@@ -115,10 +115,11 @@
 }
 
 .bg{
-    background-image: url(img/bg1.jpg);
+    background: rgba(0, 0, 0,0.5) url(img/bgpc.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-blend-mode: darken;
 }
 .pm0{
     background-image: url("img/payment_method/american_express_img.png");
