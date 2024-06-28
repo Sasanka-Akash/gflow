@@ -18,8 +18,6 @@
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
 
-
-
     <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
 
 </head>
@@ -119,7 +117,7 @@
 
                                         ?>
 
-                                            <div class="card col-6 col-lg-2 mt-2 mb-2 text-dark" style="width: 18rem;">
+                                            <div class="card col-6 col-lg-2 mt-2 mb-2 " style="width: 18rem;">
                                                 <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="link-dark text-decoration-none">
                                                     <?php
                                                     $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $product_data["id"] . "'");
@@ -128,7 +126,7 @@
 
                                                     <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
                                                     <div class="card-body ms-0 m-0 text-center">
-                                                        <h5 class="card-title fw-bold fs-6 link-dark text-decoration-none"><?php echo $product_data["title"]; ?></h5>
+                                                        <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $product_data["title"]; ?></h5>
                                                         <span class="badge rounded-pill text-bg-info">New</span><br />
                                                         <span class="card-text text-primary"><?php echo $product_data["price"]; ?> .00</span><br />
 
@@ -166,14 +164,14 @@
                                                             if ($watchlist_num == 1) {
                                                             ?>
 
-                                                                <button class="col-12 btn btn-outline-light mt-2 border border-primary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
+                                                                <button class="col-12 btn btn-outline-light mt-2 " onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
                                                                     <i class="bi bi-heart-fill text-danger fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
                                                                 </button>
 
                                                             <?php
                                                             } else {
                                                             ?>
-                                                                <button class="col-12 btn btn-outline-light mt-2 border border-primary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
+                                                                <button class="col-12 btn btn-outline-light mt-2 " onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
                                                                     <i class="bi bi-heart-fill text-dark fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
                                                                 </button>
                                                         <?php
