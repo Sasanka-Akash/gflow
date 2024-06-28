@@ -64,7 +64,7 @@ if (isset($_GET["id"])) {
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="row ">
+                                        <div class="row mt-4">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb">
                                                     <li class="breadcrumb-item"><a class="link-light text-decoration-none" href="home.php">Home</a></li>

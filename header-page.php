@@ -5,7 +5,7 @@ include "connection.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
 
@@ -29,9 +29,9 @@ include "connection.php";
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container">
         <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
-            <div class="container-fluid">
+            <div class="container">
                 <a class="navbar-brand fw-bold text-light fs-2" href="#">
                     <span class="text-warning fs-2">G</span>flow Computers</a>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -44,23 +44,23 @@ include "connection.php";
                         </h5>
                         <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body pe-3  fw-bold fs-6">
-                        <div class="navbar-collapse  offcanvas-collapse" id="navbarsExampleDefault">
+                    <div class="offcanvas-body pe-3 text-warning fw-bold fs-6">
+                        <div class="navbar-collapse  offcanvas-collapse nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 " id="navbarsExampleDefault">
 
 
-                            <ul class="navbar-nav fs-4 text-light me-auto mb-2 mb-lg-0">
+                            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                                 <li class="nav-item">
-                                    <a class="nav-link text-light active me-2" aria-current="page" href="#">About</a>
+                                    <a class="nav-link text-warning active me-2" aria-current="page" href="#">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light me-2" href="home-page.php">Contact</a>
+                                    <a class="nav-link text-warning me-2" href="home-page.php">Contact</a>
                                 </li>
                                 <li class="nav-item me-2">
-                                    <a class="nav-link text-light me-2" href="cart.php">Cart</a>
+                                    <a class="nav-link text-warning me-2" href="cart.php">Cart</a>
                                 </li>
                                 <!-- Example single danger button -->
                                 <li class="nav-item dropdown me-2">
-                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle text-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Shop
                                     </a>
                                     <ul class="dropdown-menu">
@@ -75,34 +75,12 @@ include "connection.php";
                                 </li>
 
                             </ul>
-                            <div class="input-group">
-                                <select class="form-select btn btn-warning" style="max-width: 250px;" id="basic_search_select">
-                                    <option value="0">All Categories</option>
-                                    <?php
 
-
-
-                                    $category_rs = Database::search("SELECT * FROM `category`");
-                                    $category_num = $category_rs->num_rows;
-
-                                    for ($x = 0; $x < $category_num; $x++) {
-                                        $category_data = $category_rs->fetch_assoc();
-                                    ?>
-                                        <option value="<?php echo $category_data["cat_id"]; ?>">
-                                            <?php echo $category_data["cat_name"]; ?>
-                                        </option>
-                                    <?php
-                                    }
-
-                                    ?>
-                                </select>
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="basic_txt" />
-                                <button class="btn btn-outline-warning me-2" onclick="basicSearch(0);">Search</button>
-                            </div>
                         </div>
 
                         <div class=" offcanvas-body pe-3 text-center">
 
+                            <button type="button" class="btn btn-outline-warning me-2" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-search"></i></button>
                             <?php
 
 
@@ -129,7 +107,58 @@ include "connection.php";
                 </div>
             </div>
         </nav>
+
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Product Search</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <select class="form-select btn btn-warning mb-4" id="basic_search_select">
+                            <option value="0">All Categories</option>
+                            <?php
+
+
+
+                            $category_rs = Database::search("SELECT * FROM `category`");
+                            $category_num = $category_rs->num_rows;
+
+                            for ($x = 0; $x < $category_num; $x++) {
+                                $category_data = $category_rs->fetch_assoc();
+                            ?>
+                                <option value="<?php echo $category_data["cat_id"]; ?>">
+                                    <?php echo $category_data["cat_name"]; ?>
+                                </option>
+                            <?php
+                            }
+
+                            ?>
+                        </select>
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="basic_txt" />
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-warning"  onclick="basicSearch(0);">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
+
+
+
+
+
+
+
 
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>

@@ -58,16 +58,17 @@
 
 
 
+
         <div class="container" id="chome">
             <div class="col-12 mt-3">
                 <div class="row align-items-center">
 
                     <div class="col-3">
-                        <a href="user-report.php" class="btn btn-outline-warning w-100">Laptop</a>
+                        <a href="" class="btn btn-outline-warning w-100">Laptop</a>
                     </div>
 
                     <div class="col-3">
-                        <a href="product-report.php" class="btn btn-outline-warning w-100">Computer Builds</a>
+                        <a href="" class="btn btn-outline-warning w-100">Computer Builds</a>
                     </div>
 
                     <div class="col-3">
@@ -101,7 +102,7 @@
                         <!-- products -->
 
                         <div class="col-12 mb-3">
-                            <div class="row border ">
+                            <div class="row  ">
 
                                 <div class="col-12">
                                     <div class="row justify-content-center gap-5">
@@ -118,7 +119,7 @@
 
                                         ?>
 
-                                            <div class="card col-6 col-lg-2 mt-2 mb-2 text-light bg-dark" style="width: 18rem;">
+                                            <div class="card col-6 col-lg-2 mt-2 mb-2 text-dark" style="width: 18rem;">
                                                 <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="link-dark text-decoration-none">
                                                     <?php
                                                     $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $product_data["id"] . "'");
@@ -127,7 +128,7 @@
 
                                                     <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
                                                     <div class="card-body ms-0 m-0 text-center">
-                                                        <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $product_data["title"]; ?></h5>
+                                                        <h5 class="card-title fw-bold fs-6 link-dark text-decoration-none"><?php echo $product_data["title"]; ?></h5>
                                                         <span class="badge rounded-pill text-bg-info">New</span><br />
                                                         <span class="card-text text-primary"><?php echo $product_data["price"]; ?> .00</span><br />
 
@@ -207,9 +208,6 @@
                     }
 
                     ?>
-
-
-                    <hr style="color: white;">
 
 
                 </div>
