@@ -169,11 +169,9 @@ function signout() {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "success") {
-        showAlert("Success", "Sign Out", "success").then(
-          () => {
-            window.location.reload();
-          }
-        );
+        showAlert("Success", "Sign Out", "success").then(() => {
+          window.location.reload();
+        });
       }
     }
   };
@@ -589,7 +587,7 @@ function qty_inc(qty) {
     var newValue = parseInt(input.value) + 1; //ekt vad vadinm ekhthu
     input.value = newValue;
   } else {
-    showAlert("Warning","Maximum Quantity has Achieved.","warning");
+    showAlert("Warning", "Maximum Quantity has Achieved.", "warning");
     // alert("Maximum Quantity has Achieved.");
     input.value = 1;
   }
@@ -602,7 +600,7 @@ function qty_dec() {
     var newValue = parseInt(input.value) - 1; //ekt vad vadinm adu
     input.value = newValue;
   } else {
-    showAlert("Warning","Minimum Quantity has Achieved.","warning");
+    showAlert("Warning", "Minimum Quantity has Achieved.", "warning");
     // alert("Minimum Quantity has Achieved.");
     input.value = 1;
   }
@@ -637,11 +635,11 @@ function removeFromWatchlist(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "success") {
-        showAlert("Success","Remove From Watchlist","success").then(()=>{
-            window.location.reload();
+        showAlert("Success", "Remove From Watchlist", "success").then(() => {
+          window.location.reload();
         });
       } else {
-        showAlert("Error",resp,"error");
+        showAlert("Error", resp, "error");
       }
     }
   };
@@ -1079,6 +1077,39 @@ function saveCategory() {
   };
 
   request.open("POST", "saveCategoryProcess.php", true);
+  request.send(form);
+}
+
+function contactSubmit() {
+  var name = document.getElementById("name");
+  var email = document.getElementById("email");
+  var mobile = document.getElementById("mobile");
+  var prod_name = document.getElementById("prod_name");
+  var comment = document.getElementById("comment");
+
+  var form = new FormData();
+  form.append("name", name.value);
+  form.append("email", email.value);
+  form.append("mobile", mobile.value);
+  form.append("prod_name", prod_name.value);
+  form.append("comment", comment.value);
+
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      if (response == "success") {
+        showAlert("Success", "Submit Your Commet", "success").then(() => {
+          window.location.reload();
+        });
+      } else {
+        showAlert("Error", response, "error");
+      }
+    }
+  };
+
+  request.open("POST", "contact_submit_process.php", true);
   request.send(form);
 }
 

@@ -142,7 +142,7 @@
 
                                                 <div class="col-md-4">
 
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<?php echo $product_data["description"]; ?>" title="Product Description">
+                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<?php echo $product_data["title"]; ?>" title="Product Description">
                                                         <img src="<?php echo $product_data["img_path"]; ?>" class="img-fluid rounded-start" style="max-width: 200px;">
                                                     </span>
 
@@ -150,7 +150,7 @@
                                                 <div class="col-md-5">
                                                     <div class="card-body">
 
-                                                        <h3 class="card-title"><?php echo $product_data["title"]; ?></h3>
+                                                        <h3 class="card-title text-dark fw-bold"><?php echo $product_data["title"]; ?></h3>
 
 
 

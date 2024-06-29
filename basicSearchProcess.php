@@ -55,7 +55,7 @@ if (!empty($txt) && $select == 0) {
                 <div class="col-12">
                     <div class="row">
                         <!-- filter -->
-                        <div class="col-10 col-lg-2 mx-3 my-3 border rounded bg-light">
+                        <div class="col-10 col-lg-2 mx-3 my-3 text-light">
                             <div class="row">
                                 <div class="col-12 mt-4 fs-5">
                                     <div class="row">
@@ -284,7 +284,7 @@ if (!empty($txt) && $select == 0) {
 
                         <!-- product -->
 
-                        <div class="col-12 col-lg-9 mt-3 mb-3 bg-white border rounded">
+                        <div class="col-12 col-lg-9 mt-3 mb-3 ">
                             <div class="row" id="sort">
 
                                 <div class="offset-1 col-10 text-center">

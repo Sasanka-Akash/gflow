@@ -54,7 +54,7 @@
                 <div class="col-12">
                     <div class="row mt-8">
 
-                        <div class="col-12 bg-body rounded mt-4 mb-4">
+                        <div class="col-12 text-light rounded mt-4 mb-4">
                             <div class="row g-2">
 
                                 <div class="col-12 border-end">
@@ -75,10 +75,10 @@
                                         ?>
 
                                         <span class="fw-bold mt-2"><?php echo $user_details["fname"] . " " . $user_details["lname"] ?></span>
-                                        <span class="fw-bold text-black-50"><?php echo $email; ?></span>
+                                        <span class="fw-bold text-light-50"><?php echo $email; ?></span>
 
                                         <input type="file" class="d-none" id="profileimage" />
-                                        <label for="profileimage" class="btn btn-primary mt-5" onclick="changeProfileImg();">Update Profile Image</label>
+                                        <label for="profileimage" class="btn btn-warning mt-5" onclick="changeProfileImg();">Update Profile Image</label>
 
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                                                     <label class="form-label">Password</label>
                                                     <div class="input-group">
                                                         <input type="password" id="ps" class="form-control" value="<?php echo $user_details["password"]; ?>" readonly />
-                                                        <span class="input-group-text bg-primary" style="cursor: pointer;" id="ph" onclick="UshowPassword();">
+                                                        <span class="input-group-text bg-warning" style="cursor: pointer;" id="ph" onclick="UshowPassword();">
                                                             <i class="bi bi-eye-slash-fill text-white"></i>
                                                         </span>
                                                     </div>
@@ -262,7 +262,7 @@
                                                 </div>
 
                                                 <div class="col-12 d-grid mt-2">
-                                                    <button class="btn btn-primary" onclick="updateProfile();">Update My Profile</button>
+                                                    <button class="btn btn-warning" onclick="updateProfile();">Update My Profile</button>
                                                 </div>
 
                                             </div>

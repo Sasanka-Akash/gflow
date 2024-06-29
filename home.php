@@ -57,9 +57,9 @@
 
 
 
-        <div class="container" id="chome">
+        <div class="container">
             <div class="col-12 mt-3">
-                <div class="row align-items-center">
+                <div class="row align-items-center" id="chome">
 
                     <div class="col-3">
                         <a href="" class="btn btn-outline-warning w-100">Laptop</a>
@@ -207,6 +207,7 @@
 
                     ?>
 
+                    <img class=" w-100 rounded mb-3" src="img/banner.jpg" />
 
                 </div>
 

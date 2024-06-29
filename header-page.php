@@ -32,7 +32,7 @@ include "connection.php";
     <div class="container">
         <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
             <div class="container">
-                <a class="navbar-brand fw-bold text-light fs-2" href="#">
+                <a class="navbar-brand fw-bold text-light fs-2" href="home.php">
                     <span class="text-warning fs-2">G</span>flow Computers</a>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -50,10 +50,10 @@ include "connection.php";
 
                             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                                 <li class="nav-item">
-                                    <a class="nav-link text-warning active me-2" aria-current="page" href="#">About</a>
+                                    <a class="nav-link text-warning active me-2" aria-current="page" href="about.php">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-warning me-2" href="home-page.php">Contact</a>
+                                    <a class="nav-link text-warning me-2" href="contact.php">Contact</a>
                                 </li>
                                 <li class="nav-item me-2">
                                     <a class="nav-link text-warning me-2" href="cart.php">Cart</a>
@@ -63,7 +63,7 @@ include "connection.php";
                                     <a class="nav-link dropdown-toggle text-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Shop
                                     </a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu text-warning">
                                         <li><a class="dropdown-item" href="userProfile.php">Profile</a></li>
                                         <li><a class="dropdown-item" href="watchlist.php">Watchlist</a></li>
                                         <li><a class="dropdown-item" href="purchasingHistory.php">Purchase History</a></li>
