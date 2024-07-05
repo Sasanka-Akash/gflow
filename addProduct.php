@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
+    <<link rel="icon" href="img/g1.png">
 
 </head>
 

@@ -23,7 +23,7 @@ if (isset($_SESSION["u"])) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
         <link rel="stylesheet" href="style.css" />
 
-        <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
+        <link rel="icon" href="img/g1.png">
 
     </head>
 

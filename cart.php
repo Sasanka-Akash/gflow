@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
 
-    <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
+    <link rel="icon" href="img/g1.png">
 
 </head>
 

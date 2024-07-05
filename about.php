@@ -16,7 +16,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/scrollreveal"></script>
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
+    <link rel="icon" href="img/g1.png">
 
 </head>
 
