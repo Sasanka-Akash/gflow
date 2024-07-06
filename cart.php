@@ -14,7 +14,6 @@
 
 
     <link rel="icon" href="img/g1.png">
-
 </head>
 
 <body class="bg">
@@ -58,7 +57,7 @@
                 </div>
 
                 <div class="col-md-8">
-                    <div class="p-3 fs-5 border bg-light rounded text-center" >
+                    <div class="p-3 fs-5 border bg-light rounded text-center">
                         <?php
 
                         $cart_rs = Database::search("SELECT * FROM `cart` WHERE `user_email`='" . $user . "'");
@@ -129,20 +128,20 @@
                                     ?>
                                         <div class="card mb-3 mx-0 col-12">
                                             <div class="row g-0">
-                                                <div class="col-md-12 mt-3 mb-3">
+                                                <!-- <div class="col-md-12 mt-3 mb-3">
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <span class="fw-bold text-black-50 fs-5">Seller :</span>&nbsp;
                                                             <span class="fw-bold text-black fs-5"><?php echo $seller; ?></span>&nbsp;
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                                 <hr>
 
                                                 <div class="col-md-4">
 
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<?php echo $product_data["title"]; ?>" title="Product Description">
+                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<?php echo $product_data["title"]; ?>" title="Product Title">
                                                         <img src="<?php echo $product_data["img_path"]; ?>" class="img-fluid rounded-start" style="max-width: 200px;">
                                                     </span>
 
@@ -154,7 +153,7 @@
 
 
 
-                                                        <span class="fw-bold text-black-50">Colour : <?php echo $product_data["clr_name"]; ?></span> &nbsp; |
+                                                        <span class="fw-bold text-black-50">Colour : <?php echo $product_data["clr_name"]; ?></span> <br> &nbsp; |
 
                                                         &nbsp; <span class="fw-bold text-black-50">Condition : <?php echo $product_data["condition_condition_id"]; ?></span>
                                                         <br>
@@ -187,6 +186,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <hr class="text-dark">
                                             </div>
                                         </div>
                                     <?php
