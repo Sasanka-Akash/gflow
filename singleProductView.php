@@ -42,6 +42,8 @@ if (isset($_GET["id"])) {
 
         <body class="bg">
 
+            
+
             <div class="container" id="basicSearchResult">
                 <div class="row mt-3">
 

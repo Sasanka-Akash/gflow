@@ -123,7 +123,7 @@
 
                                                             ?>
 
-                                                            <img src="<?php echo $img_data["img_path"]; ?>" class=" justify-content-center align-items-center" style="height: 200px;" />
+                                                            <img src="<?php echo $img_data["img_path"]; ?>" class="img-fluid" style="height: 200px;" />
                                                         </div>
                                                         <div class=" col-md-6 justify-content-center align-items-center">
                                                             <div class="card-body">
