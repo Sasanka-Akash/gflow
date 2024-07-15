@@ -102,7 +102,7 @@
                                 } else {
                                 ?>
                                     <!-- have products -->
-                                    <div class="col-12 col-lg-9 text-light">
+                                    <div class="col-12 col-lg-9">
                                         <div class="row">
                                             <?php
 
@@ -111,7 +111,7 @@
                                                 $list_id = $watchlist_data["w_id"];
                                             ?>
 
-                                                <div class="card mb-3 mx-0 mx-lg-2 col-12">
+                                                <div class="card card-design mb-3 mx-0 mx-lg-2 col-12">
                                                     <div class="row g-0">
                                                         <div class="col-md-4 mt-5">
 
@@ -123,33 +123,33 @@
 
                                                             ?>
 
-                                                            <img src="<?php echo $img_data["img_path"]; ?>" class="img-fluid rounded-start" style="height: 200px;" />
+                                                            <img src="<?php echo $img_data["img_path"]; ?>" class=" justify-content-center align-items-center" style="height: 200px;" />
                                                         </div>
-                                                        <div class="col-md-5 justify-content-center align-items-center">
-                                                            <div class="card-body text-light">
+                                                        <div class=" col-md-6 justify-content-center align-items-center">
+                                                            <div class="card-body">
 
-                                                                <h5 class="card-title fs-3 fw-bold text-primary"><?php echo $watchlist_data["title"]; ?></h5>
+                                                                <h5 class="card-title fs-4 fw-bold text-warning"><?php echo $watchlist_data["title"]; ?></h5>
 
-                                                                <span class="fs-5 fw-bold text-light-50">Colour : <?php echo $watchlist_data["clr_name"]; ?></span>
+                                                                <span class="fs-5 text-light-50">Colour : <?php echo $watchlist_data["clr_name"]; ?></span>
                                                                 &nbsp;&nbsp; | &nbsp;&nbsp;
 
-                                                                <span class="fs-5 fw-bold text-light-50">Condition : <?php echo $watchlist_data["condition_name"]; ?></span>
+                                                                <span class="fs-5 text-light-50">Condition : <?php echo $watchlist_data["condition_name"]; ?></span>
                                                                 <br />
-                                                                <span class="fs-5 fw-bold text-light-50">Price :</span>&nbsp;&nbsp;
-                                                                <span class="fs-5 fw-bold text-light">Rs. <?php echo $watchlist_data["price"]; ?> .00</span>
+                                                                <span class="fs-5 text-light-50">Price :</span>&nbsp;&nbsp;
+                                                                <span class="fs-5 text-light">Rs. <?php echo $watchlist_data["price"]; ?> .00</span>
                                                                 <br />
-                                                                <span class="fs-5 fw-bold text-light-50">Quantity
+                                                                <span class="fs-5 text-light-50">Quantity
                                                                     :</span>&nbsp;&nbsp;
-                                                                <span class="fs-5 fw-bold text-light"><?php echo $watchlist_data["qty"]; ?> Items available</span>
+                                                                <span class="fs-5 text-light"><?php echo $watchlist_data["qty"]; ?> Items available</span>
                                                                 <br />
-                                                                <span class="fs-5 fw-bold text-light-50">Seller :</span>
-                                                                <br />
-                                                                <span class="fs-5 fw-bold text-light">
+                                                                <span class="fs-5 text-light-50">Seller :</span>
+                                                               
+                                                                <span class="fs-5 text-light">
                                                                     <?php echo $data["fname"] . " " . $data["lname"]; ?>
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3 mt-2">
+                                                        <div class="col-md-2">
                                                             <div class="card-body d-lg-grid">
                                                                 <a href="#" class="btn btn-warning mb-2 "><i class="bi bi-plus-lg"></i><i class="bi bi-cart-fill"></i></a>
                                                                 <a href="#" class="btn btn-danger" onclick='removeFromWatchlist(<?php echo $list_id; ?>);'>

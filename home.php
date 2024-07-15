@@ -117,26 +117,24 @@
 
                                         ?>
 
-                                            <div class="card col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
+                                            <div class="card card-design col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
                                                 <a href='<?php echo "singleProductView.php?id=" . ($product_data["id"]); ?>' class="link-dark text-decoration-none">
                                                     <?php
                                                     $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $product_data["id"] . "'");
                                                     $img_data = $img_rs->fetch_assoc();
                                                     ?>
 
-                                                    <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
+                                                    <img src="<?php echo $img_data["img_path"]; ?>" class="card-img justify-content-center align-items-center" style="height: 250px;" />
                                                     <div class="card-body ms-0 m-0 text-center">
                                                         <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $product_data["title"]; ?></h5>
-                                                        <span class="badge rounded-pill text-bg-info">New</span><br />
-                                                        <span class="card-text text-primary"><?php echo $product_data["price"]; ?> .00</span><br />
+                                                        <!-- <span class="badge rounded-pill text-bg-info">New</span><br /> -->
+                                                        <span class="fs-3 fw-bold card-text text-warning">LKR <?php echo $product_data["price"]; ?>.00</span><br />
 
                                                         <?php
 
                                                         if ($product_data["qty"] > 0) {
                                                         ?>
-                                                            
-
-                                                            <button class="col-12 btn btn-warning mt-2" onclick="addToCart(<?php echo $product_data['id'] ?>);">
+                                                            <button class="col-12 btn  btn-warning mt-2" onclick="addToCart(<?php echo $product_data['id'] ?>);">
                                                                 <i class="bi bi-cart-plus-fill text-dark fs-5"></i>
                                                             </button>
                                                         <?php
@@ -154,27 +152,7 @@
                                                             <?php
                                                         }
 
-                                                        if (isset($_SESSION["u"])) {
-                                                            $watchlist_rs = Database::search("SELECT * FROM `watchlist` WHERE `user_email`='" . $_SESSION["u"]["email"] . "' AND
-                                                 `product_id`='" . $product_data["id"] . "'");
-                                                            $watchlist_num = $watchlist_rs->num_rows;
-
-                                                            if ($watchlist_num == 1) {
-                                                            ?>
-
-                                                                <button class="col-12 btn btn-outline-light mt-2 " onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
-                                                                    <i class="bi bi-heart-fill text-danger fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
-                                                                </button>
-
-                                                            <?php
-                                                            } else {
-                                                            ?>
-                                                                <button class="col-12 btn btn-outline-light mt-2 " onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
-                                                                    <i class="bi bi-heart-fill text-dark fs-5" id="heart<?php echo $product_data["id"]; ?>"></i>
-                                                                </button>
-                                                        <?php
-                                                            }
-                                                        }
+                                                        
 
 
 

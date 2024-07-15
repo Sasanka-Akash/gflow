@@ -23,6 +23,7 @@ if (isset($_GET["id"])) {
         <html>
 
         <head>
+            <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
             <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
@@ -31,8 +32,11 @@ if (isset($_GET["id"])) {
             <title><?php echo $product_data["title"]; ?> | Gflow</title>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- or -->
             <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
             <link rel="stylesheet" href="style.css">
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+            <script src="https://unpkg.com/scrollreveal"></script>
             <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
 
@@ -73,58 +77,110 @@ if (isset($_GET["id"])) {
                                             </nav>
                                         </div>
                                         <h1 class="mt-2 fs-1 fw-bold"><?php echo $product_data["title"]; ?></h1>
-                                            <?php
+                                        <?php
 
-                                            $price = $product_data["price"];
-                                            $adding_price = ($price / 100) * 10;
-                                            $new_price = $price + $adding_price;
-                                            $difference = $new_price - $price;
+                                        $price = $product_data["price"];
+                                        $adding_price = ($price / 100) * 10;
+                                        $new_price = $price + $adding_price;
+                                        $difference = $new_price - $price;
 
-                                            ?>
-                                            <!-- <div class="row ">
+                                        ?>
+                                        <!-- <div class="row ">
                                                 <div class="col-12 my-2">
                                                     <span class="fs-4 text-light"><b class="fs-4">Warrenty : </b>6 Months Warrenty</span><br />
                                                     <span class="fs-4 text-light"><b class="fs-4">Return Policy : </b>1 Months Return Policy</span><br />
                                                     <span class="fs-4 text-light"><b class="fs-4">In Stock : </b><?php echo $product_data["qty"]; ?> Items Available</span>
                                                 </div>
                                             </div> -->
-                                            <ul class="fs-4 mt-3">
-                                                <?php
-                                                echo $product_data["description"];
-                                                ?>
-                                            </ul>
-                                            
-                                            <div class="btn-group mt-4" role="group" aria-label="Basic outlined example">
-                                                <button type="button" class="btn " onclick="qty_dec();"><i class='bx bx-minus text-light'></i></button>
-                                                <input onkeyup='check_value(<?php echo $product_data["qty"]; ?>);' class="text-center border-rounded-bottom-circle " type="text" pattern="[0-9]" value="1" id="qty_input">
-                                                <button type="button" class="btn" onclick='qty_inc(<?php echo $product_data["qty"]; ?>);'><i class='bx bx-plus text-light'></i></button>
-                                            </div>
-                                            
-                                            <div class="row mt-4">
-                                                <div class="col-12 my-2">
-                                                    <span class="fs-1 text-light fw-bold">Rs. <?php echo $price; ?> .00</span>
-                                                    <span class="fs-1">&nbsp;&nbsp; | &nbsp;&nbsp;</span>
-                                                    <span class="fs-2 text-danger fw-bold text-decoration-line-through">Rs. <?php echo $new_price; ?> .00</span>
-                                                </div>
-                                            </div>
+                                        <ul class="fs-4 mt-3">
+                                            <?php
+                                            echo $product_data["description"];
+                                            ?>
+                                        </ul>
 
-                                            <div class="row">
-                                                <div class="col-12 mt-5">
-                                                    <div class="row">
+                                        <div class="btn-group mt-4" role="group" aria-label="Basic outlined example">
+                                            <button type="button" class="btn " onclick="qty_dec();"><i class='bx bx-minus text-light'></i></button>
+                                            <input onkeyup='check_value(<?php echo $product_data["qty"]; ?>);' class="text-center border-rounded-bottom-circle " type="text" pattern="[0-9]" value="1" id="qty_input">
+                                            <button type="button" class="btn" onclick='qty_inc(<?php echo $product_data["qty"]; ?>);'><i class='bx bx-plus text-light'></i></button>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                            <div class="col-12 my-2">
+                                                <span class="fs-1 text-light fw-bold">Rs. <?php echo $price; ?> .00</span>
+                                                <span class="fs-1">&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+                                                <span class="fs-2 text-danger fw-bold text-decoration-line-through">Rs. <?php echo $new_price; ?> .00</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12 mt-5">
+                                                <div class="row">
+
+                                                    <?php
+
+                                                    if ($product_data["qty"] > 0) {
+                                                    ?>
                                                         <div class="col-4 d-grid">
                                                             <button class="btn btn-warning" type="submit" id="payhere-payment" onclick="payNow(<?php echo $pid; ?>);">Buy Now</button>
                                                         </div>
-                                                        <!-- <div class="col-4 d-grid">
+                                                    <?php
+                                                    } else {
+                                                    ?>
+
+                                                        <span class="fs-3 card-text text-danger fw-bold mb-4">Out Of Stock</span><br />
+                                                        <!-- <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br /> -->
+                                                        <!-- <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a> -->
+
+                                                        <div class="col-4 d-grid">
+                                                            <button class="btn btn-warning disabled" type="submit" id="payhere-payment" onclick="payNow(<?php echo $pid; ?>);">Buy Now</button>
+                                                        </div>
+
+                                                    <?php
+                                                    }
+
+                                                    ?>
+
+
+                                                    <!-- <div class="col-4 d-grid">
                                                             <button class="btn btn-dark">Add To Cart</button>
                                                         </div> -->
-                                                        <div class="col-4 d-grid">
-                                                            <button class="btn btn-secondary">
-                                                                <i class="bi bi-heart-fill fs-4 text-danger"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                                    <?php
+                                                    if (isset($_SESSION["u"])) {
+                                                        $watchlist_rs = Database::search("SELECT * FROM `watchlist` WHERE `user_email`='" . $_SESSION["u"]["email"] . "' AND
+`product_id`='" . $product_data["id"] . "'");
+                                                        $watchlist_num = $watchlist_rs->num_rows;
+
+                                                        if ($watchlist_num == 1) {
+                                                    ?>
+                                                            <div class="col-4 d-grid">
+                                                                <button class="btn btn-secondary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
+                                                                    <i class="bi bi-heart-fill fs-4 text-danger" id="heart<?php echo $product_data["id"]; ?>"></i>
+                                                                </button>
+                                                            </div>
+                                                            <!-- <button class="col-12 btn btn-outline-light mt-2 ">
+                                                                <i class="bi bi-heart-fill text-danger fs-5" ></i>
+                                                            </button> -->
+
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                            <div class="col-4 d-grid">
+                                                                <button class="btn btn-secondary" onclick='addToWatchlist(<?php echo $product_data["id"]; ?>);'>
+                                                                    <i class="bi bi-heart-fill fs-4 text-dark" id="heart<?php echo $product_data["id"]; ?>"></i>
+                                                                </button>
+                                                            </div>
+                                                    <?php
+                                                        }
+                                                    }
+
+
+
+
+                                                    ?>
+
                                                 </div>
                                             </div>
+                                        </div>
                                     </div>
 
                                     <nav>
@@ -202,9 +258,9 @@ if (isset($_GET["id"])) {
                                                                                                                         ?><span class="badge bg-warning">Neutral</span> <?php
                                                                                                                                                                     } else if ($feedback_data["type"] == 3) {
                                                                                                                                                                         ?><span class="badge bg-danger">Negative</span> <?php
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                            ?>
+                                                                                                                                                                                                                        ?>
 
 
                                                                 </div>
@@ -254,7 +310,7 @@ if (isset($_GET["id"])) {
                                             $related_data = $related_rs->fetch_assoc();
 
                                         ?>
-                                            <div class="card " style="width: 18rem;">
+                                            <div class="card card-design" style="width: 18rem;">
                                                 <?php
                                                 $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $related_data["id"] . "'");
                                                 $img_data = $img_rs->fetch_assoc();
@@ -263,7 +319,7 @@ if (isset($_GET["id"])) {
                                                 <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title"><?php echo $related_data["title"]; ?></h5>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                                                     <a href='<?php echo "singleProductView.php?id=" . ($related_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
                                                 </div>
                                             </div>
@@ -276,7 +332,7 @@ if (isset($_GET["id"])) {
 
                                     </div>
 
-                                    
+
                                 </div>
 
                             </div>
