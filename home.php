@@ -24,7 +24,7 @@
 
 <body class="bg">
 
-    <div class="spinner-wrapper">
+    <div class="spinner-wrapper ">
         <div class="spinner-border text-warning" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
