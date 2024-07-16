@@ -39,6 +39,7 @@
     transition: all ease .3s;
   }
 
+  
 
 /*------------ Right box ------------*/
 
@@ -309,7 +310,7 @@ img{
   /* plus sign */
   .sign {
     width: 100%;
-    font-size: 2em;
+    font-size: 3em;
     color: white;
     transition-duration: .3s;
     display: flex;
@@ -323,19 +324,22 @@ img{
     width: 0%;
     opacity: 0;
     color: white;
-    font-size: 1.2em;
+    font-size: 15px;
     font-weight: 500;
     transition-duration: .3s;
+    align-items: center;
+    justify-content: center;
   }
+  
   /* hover effect on button width */
   .Btn:hover {
-    width: 125px;
+    width: 150px;
     border-radius: 50px;
     transition-duration: .3s;
   }
   
   .Btn:hover .sign {
-    width: 30%;
+    width: 10%;
     transition-duration: .3s;
     padding-left: 20px;
   }
@@ -350,7 +354,6 @@ img{
   .Btn:active {
     transform: translate(2px ,2px);
   }
-
 
 
 

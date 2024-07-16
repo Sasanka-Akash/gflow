@@ -134,8 +134,9 @@
 
                                                         if ($product_data["qty"] > 0) {
                                                         ?>
-                                                            <button class="col-12 btn  btn-warning mt-2" onclick="addToCart(<?php echo $product_data['id'] ?>);">
-                                                                <i class="bi bi-cart-plus-fill text-dark fs-5"></i>
+                                                            <button class="col-12 btn cartbtn Btn btn-warning" onclick="addToCart(<?php echo $product_data['id'] ?>);">
+                                                                <div class="sign"><i class="bi bi-cart-plus-fill text-light fs-5"></i></div>
+                                                                <div class="text">Add To Cart</div>
                                                             </button>
                                                         <?php
                                                         } else {
@@ -145,8 +146,8 @@
                                                             <!-- <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br /> -->
                                                             <!-- <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a> -->
 
-                                                            <button class="col-12 btn btn-warning mt-2 disabled">
-                                                                <i class="bi bi-cart-plus-fill text-dark fs-5"></i>
+                                                            <button class="col-12 cartbtn btn Btn btn-warning mt-2 disabled">
+                                                                <i class="bi bi-cart-plus-fill text text-dark fs-5"></i>
                                                             </button>
 
                                                             <?php
