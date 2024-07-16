@@ -59,24 +59,7 @@
 
         <div class="container">
             <div class="col-12 mt-3">
-                <div class="row align-items-center" id="chome">
-
-                    <div class="col-3">
-                        <a href="" class="btn btn-outline-warning w-100">Laptop</a>
-                    </div>
-
-                    <div class="col-3">
-                        <a href="" class="btn btn-outline-warning w-100">Computer Builds</a>
-                    </div>
-
-                    <div class="col-3">
-                        <a href="#" class="btn btn-outline-warning w-100">Computer Parts</a>
-                    </div>
-                    <div class="col-3">
-                        <a href="#" class="btn btn-outline-warning w-100">Playstation</a>
-                    </div>
-
-                </div>
+                
                 <div class="row">
 
 
@@ -135,8 +118,8 @@
                                                         if ($product_data["qty"] > 0) {
                                                         ?>
                                                             <button class="col-12 btn cartbtn sci Btn btn-warning" onclick="addToCart(<?php echo $product_data['id'] ?>);">
-                                                                <div class="sign"><i class="bi bi-cart-plus-fill text-light fs-5"></i></div>
-                                                                <div class="text">Add to</div>
+                                                                <div class="sign fs-4 text-warning">+</div>
+                                                                <div class="text text-dark">Add to</div>
                                                             </button>
                                                         <?php
                                                         } else {
@@ -152,10 +135,6 @@
 
                                                             <?php
                                                         }
-
-                                                        
-
-
 
                                                         ?>
 
