@@ -129,14 +129,14 @@
                                                         <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $product_data["title"]; ?></h5>
                                                         <!-- <span class="badge rounded-pill text-bg-info">New</span><br /> -->
                                                         <span class="fs-3 fw-bold card-text text-warning">LKR <?php echo $product_data["price"]; ?>.00</span><br />
-
+                                                        
                                                         <?php
 
                                                         if ($product_data["qty"] > 0) {
                                                         ?>
-                                                            <button class="col-12 btn cartbtn Btn btn-warning" onclick="addToCart(<?php echo $product_data['id'] ?>);">
+                                                            <button class="col-12 btn cartbtn sci Btn btn-warning" onclick="addToCart(<?php echo $product_data['id'] ?>);">
                                                                 <div class="sign"><i class="bi bi-cart-plus-fill text-light fs-5"></i></div>
-                                                                <div class="text">Add To Cart</div>
+                                                                <div class="text">Add to</div>
                                                             </button>
                                                         <?php
                                                         } else {
