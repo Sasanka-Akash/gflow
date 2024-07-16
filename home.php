@@ -124,7 +124,7 @@
                                                     $img_data = $img_rs->fetch_assoc();
                                                     ?>
 
-                                                    <img src="<?php echo $img_data["img_path"]; ?>" class="card-img justify-content-center align-items-center" style="height: 250px;" />
+                                                    <img src="<?php echo $img_data["img_path"]; ?>" class=" card-img justify-content-center align-items-center" style="height: 250px;" />
                                                     <div class="card-body ms-0 m-0 text-center">
                                                         <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $product_data["title"]; ?></h5>
                                                         <!-- <span class="badge rounded-pill text-bg-info">New</span><br /> -->
