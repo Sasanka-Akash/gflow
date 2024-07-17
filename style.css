@@ -45,7 +45,13 @@
   opacity: 0.9;
 }
 
-
+#exampleModal1{
+  color: black;
+  background: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
 
 /*------------ Right box ------------*/
 

@@ -42,7 +42,7 @@ if (isset($_GET["id"])) {
 
         <body class="bg">
 
-            
+
 
             <div class="container" id="basicSearchResult">
                 <div class="row mt-3">
@@ -55,8 +55,8 @@ if (isset($_GET["id"])) {
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-12 align-items-center">
-                                                <div id="lens"></div>
-                                                <div class="col-6 product-imgs">
+
+                                                <div class="col-6 image-container">
                                                     <?php
                                                     $image_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $pid . "'");
                                                     $image_num = $image_rs->num_rows;
@@ -64,11 +64,38 @@ if (isset($_GET["id"])) {
                                                     $image_data = $image_rs->fetch_assoc();
 
                                                     ?>
-                                                    <img style="width: 500px;" src="<?php echo $image_data["img_path"]; ?>" alt="">
+                                                    <img style="width: 500px;" src="<?php echo $image_data["img_path"]; ?>" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
+
+                                    <!-- Button trigger modal -->
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                                            <div class="modal-content ">
+                                                <div class="modal-header bg-warning">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $product_data["title"]; ?></h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body bg-dark">
+
+                                                    <img class="w-100" src="<?php echo $image_data["img_path"]; ?>" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
                                     <div class="col-lg-6">
                                         <div class="row mt-4">
                                             <nav aria-label="breadcrumb">
@@ -312,7 +339,7 @@ if (isset($_GET["id"])) {
                                             $related_data = $related_rs->fetch_assoc();
 
                                         ?>
-                                            
+
 
                                             <div class="card card-design col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
                                                 <a href='<?php echo "singleProductView.php?id=" . ($related_data["id"]); ?>' class="link-dark text-decoration-none">
