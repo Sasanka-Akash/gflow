@@ -27,16 +27,9 @@ include "connection.php";
         </div>
     </div>
 
-
-    <!----------------------- Main Container -------------------------->
-
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
-
-        <!----------------------- Login Container -------------------------->
-
+  
         <div class="row border rounded-5 p-3 bg-white shadow box-area">
-
-            <!--------------------------- Left Box ----------------------------->
 
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background-image: url(img/photo-1624705002806-5d72df19c3ad.avif); background-size: cover;">
                 <div class="featured-image mb-3">
@@ -45,7 +38,7 @@ include "connection.php";
                 <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Gflow Computers</p>
             </div>
 
-            <!-------------------- ------ Right Box ---------------------------->
+      
 
             <div class="col-md-6 right-box d-none" id="signInBox">
                 <div class="row align-items-center">

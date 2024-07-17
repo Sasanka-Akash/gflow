@@ -288,9 +288,10 @@ img {
 
 .Btn {
   display: flex;
+  width: 130px;
   align-items: center;
   justify-content: flex-start;
-  width: 45px;
+  /* width: 45px; */
   height: 45px;
   border: none;
   border-radius: 50px;
@@ -300,13 +301,14 @@ img {
   transition-duration: 0.3s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
   background-color: black;
+  color: black;
 }
 
 /* plus sign */
 .sign {
   width: 100%;
   font-size: 3em;
-  color: white;
+  color: #f6bf47;
   transition-duration: 0.3s;
   display: flex;
   align-items: center;
@@ -319,7 +321,7 @@ img {
   width: 0%;
   opacity: 0;
   color: white;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 500;
   transition-duration: 0.3s;
   align-items: center;
@@ -328,15 +330,16 @@ img {
 
 /* hover effect on button width */
 .Btn:hover {
-  width: 130px;
   border-radius: 50px;
   transition-duration: 0.3s;
+  background-color: #000;
 }
 
 .Btn:hover .sign {
   width: 10%;
   transition-duration: 0.3s;
   padding-left: 20px;
+  
 }
 /* hover effect button's text */
 .Btn:hover .text {

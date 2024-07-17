@@ -7,19 +7,31 @@
 
     <title>Purchasing History | Gflow</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap.css" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="icon" href="img/g1.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+
 
     <link rel="icon" href="img/g1.png">
 </head>
 
-<body>
+<body class="bg">
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
 
-            <?php include "header.php";
+            <?php include "header-page.php";
 
 
             if (isset($_SESSION["u"])) {
@@ -30,8 +42,8 @@
 
             ?>
 
-                <div class="col-12 text-center mb-3">
-                    <span class="fs-1 fw-bold text-primary">Purchasing History</span>
+                <div class="col-12 text-center mb-3 mt-5">
+                    <span class="fs-1 fw-bold text-warning mt-5">Purchasing History</span>
                 </div>
 
                 <?php
@@ -52,7 +64,7 @@
                     <div class="col-12">
                         <div class="row">
 
-                            <div class="col-12 d-none d-lg-block">
+                            <div class="col-12 d-none d-lg-block justify-content-center rounded-1">
                                 <div class="row">
                                     <div class="col-1 bg-light">
                                         <label class="form-label fw-bold">#</label>
@@ -82,15 +94,15 @@
                                 $invoice_data = $invoice_rs->fetch_assoc();
 
                             ?>
-                                <div class="col-12">
+                                <div class="col-12 card-design">
                                     <div class="row">
 
-                                        <div class="col-12 col-lg-1 bg-info text-center text-lg-start">
+                                        <div class="col-12 col-lg-1 text-center text-lg-start">
                                             <label class="form-label text-white fs-6 py-5"><?php echo $invoice_data["invoice_id"]; ?></label>
                                         </div>
                                         <div class="col-12 col-lg-3">
                                             <div class="row">
-                                                <div class="card mx-0 mx-lg-3 my-3" style="max-width: 540px;">
+                                                <div class=" mx-0 mx-lg-3 my-3" style="max-width: 540px;">
                                                     <div class="row g-0">
                                                         <div class="col-md-4">
 
@@ -106,7 +118,7 @@
 
                                                             <img src="<?php echo $product_data["img_path"]; ?>" class="img-thumbnail rounded-start mt-3" />
                                                         </div>
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-8 text-lg-end">
                                                             <div class="card-body">
 
                                                                 <h5 class="card-title"><?php echo $product_data["title"]; ?></h5>
@@ -124,7 +136,7 @@
                                         <div class="col-12 col-lg-1 text-center text-lg-end">
                                             <label class="form-label fs-4 py-5"><?php echo $invoice_data["qty"]; ?></label>
                                         </div>
-                                        <div class="col-12 col-lg-2 text-center text-lg-end bg-info">
+                                        <div class="col-12 col-lg-2 text-center text-lg-end ">
                                             <label class="form-label fs-5 py-5 text-white">Rs. <?php echo $invoice_data["total"]; ?> .00</label>
                                         </div>
                                         <div class="col-12 col-lg-2 text-center text-lg-end">
@@ -134,12 +146,12 @@
                                             <div class="row">
                                                 <div class="col-6 d-grid">
                                                     <button class="btn btn-secondary rounded border border-1 border-primary mt-5 fs-5" onclick="addFeedback(<?php echo $invoice_data['product_id']; ?>);">
-                                                        <i class="bi bi-info-circle-fill"></i> Feedback
+                                                        <i class="bi bi-info-circle-fill fs-5"></i> Feedback
                                                     </button>
                                                 </div>
                                                 <div class="col-6 d-grid">
                                                     <button class="btn btn-danger rounded mt-5 fs-5" onclick="deleteFeedback(<?php echo $invoice_data['product_id']; ?>);">
-                                                        <i class="bi bi-trash3-fill"></i> Delete
+                                                        <i class="bi bi-trash3-fill fs-5"></i> Delete
                                                     </button>
                                                 </div>
                                             </div>
@@ -159,9 +171,9 @@
 
                             <div class="col-12 mb-3">
                                 <div class="row">
-                                    <div class="offset-lg-10 col-12 col-lg-2 d-grid">
+                                    <div class="offset-lg-4 col-12 col-lg-4 justify-content-center d-grid">
                                         <button class="btn btn-danger rounded mt-5 fs-5" onclick="deleteAllFeedback(<?php echo $invoice_data['product_id']; ?>);">
-                                            <i class="bi bi-trash3-fill"></i> Delete All Records
+                                            <i class="bi bi-trash3-fill fs-5"></i> Delete All Records
                                         </button>
                                     </div>
                                 </div>
@@ -215,7 +227,7 @@
                                                                 <label class="form-label fw-bold">User's Email</label>
                                                             </div>
                                                             <div class="col-9">
-                                                                <input type="text" class="form-control" disabled id="mail" value="<?php echo $mail; ?>"/>
+                                                                <input type="text" class="form-control" disabled id="mail" value="<?php echo $mail; ?>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -244,19 +256,32 @@
                         </div>
                     </div>
                     <!-- Have Product -->
-            <?php
+                <?php
                 }
+            } else {
+                ?>
+                <div class="col-12 text-center mt-5 mb-5">
+                    <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 150px;"></i>
+                    <h2 class="text-danger fw-bold">Please Register or Sign In</h2>
+                    <span class="text-muted">No matching User wre found for the search text you have entered.</span>
+                </div>
+            <?php
             }
 
             ?>
 
-            
+
 
         </div>
     </div>
+
+
+
     <?php include "footer.php"; ?>
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

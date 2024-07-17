@@ -312,18 +312,53 @@ if (isset($_GET["id"])) {
                                             $related_data = $related_rs->fetch_assoc();
 
                                         ?>
-                                            <div class="card card-design" style="width: 18rem;">
-                                                <?php
-                                                $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $related_data["id"] . "'");
-                                                $img_data = $img_rs->fetch_assoc();
-                                                ?>
+                                            
 
-                                                <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><?php echo $related_data["title"]; ?></h5>
-                                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                                    <a href='<?php echo "singleProductView.php?id=" . ($related_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
-                                                </div>
+                                            <div class="card card-design col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
+                                                <a href='<?php echo "singleProductView.php?id=" . ($related_data["id"]); ?>' class="link-dark text-decoration-none">
+                                                    <?php
+                                                    $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $related_data["id"] . "'");
+                                                    $img_data = $img_rs->fetch_assoc();
+                                                    ?>
+
+                                                    <img src="<?php echo $img_data["img_path"]; ?>" class=" card-img justify-content-center align-items-center" style="height: 250px;" />
+                                                    <div class="card-body ms-0 m-0 text-center">
+                                                        <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $related_data["title"]; ?></h5>
+                                                        <!-- <span class="badge rounded-pill text-bg-info">New</span><br /> -->
+                                                        <span class="fs-3 fw-bold card-text text-warning">LKR <?php echo $related_data["price"]; ?>.00</span><br />
+
+                                                        <?php
+
+                                                        if ($product_data["qty"] > 0) {
+                                                        ?>
+                                                            <div class="ms-4">
+                                                                <button class="col-12 btn Btn ms-4" onclick="addToCart(<?php echo $product_data['id'] ?>);">
+                                                                    <div class="sign fs-3">+ </div>
+                                                                    <div class="text">Add to</div>
+                                                                </button>
+                                                            </div>
+                                                        <?php
+                                                        } else {
+                                                        ?>
+
+                                                            <span class="card-text text-danger fw-bold">Out Stock</span><br />
+                                                            <!-- <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br /> -->
+                                                            <!-- <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a> -->
+                                                            <div class="ms-4">
+                                                                <button class="col-12 btn Btn bg-danger disabled ms-4">
+                                                                    <div class="sign fs-3">+ </div>
+                                                                    <div class="text">Add to</div>
+                                                                </button>
+                                                            </div>
+                                                        <?php
+                                                        }
+
+                                                        ?>
+
+
+
+                                                    </div>
+                                                </a>
                                             </div>
                                         <?php
                                         }

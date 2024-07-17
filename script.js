@@ -927,15 +927,13 @@ function adminVerification() {
     if (request.status == 200 && request.readyState == 4) {
       var response = request.responseText;
       if (response == "Success") {
-        alert(
-          "Please take a look chat at your email to find the VERIFICATION CODE."
-        );
+        showAlert("Success","Please take a look chat at your email to find the VERIFICATION CODE.","success");
         var adminVerificationModel =
           document.getElementById("verificationModel");
         av = new bootstrap.Modal(adminVerificationModel);
         av.show();
       } else {
-        alert(response);
+        showAlert("Error",response,"error");
       }
     }
   };

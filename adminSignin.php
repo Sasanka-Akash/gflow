@@ -14,7 +14,9 @@ include "connection.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/g1.png">
-    <title> Admin Panel | Gflow</title>
+    <title> Admin Sign In | Gflow</title>
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+
 </head>
 
 <body style="background-image: url(img/bgpc.webp); background-size: cover;">
@@ -24,15 +26,15 @@ include "connection.php";
         </div>
     </div>
 
-    <!----------------------- Main Container -------------------------->
+   
 
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-        <!----------------------- Login Container -------------------------->
+       
 
         <div class="row border rounded-5 p-3 bg-white shadow box-area">
 
-            <!--------------------------- Left Box ----------------------------->
+       
 
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background-image: url(img/photo-1624705002806-5d72df19c3ad.avif); background-size: cover;">
                 <div class="featured-image mb-3">
@@ -41,7 +43,6 @@ include "connection.php";
                 <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Gflow Computers</p>
             </div>
 
-            <!-------------------- ------ Right Box ---------------------------->
 
             <!--model-->
             <div class="modal" tabindex="-1" id="verificationModel">
@@ -55,6 +56,7 @@ include "connection.php";
                             <label class="form-label">Enter Your Verification Code</label>
                             <input type="text" class="form-control" id="vcode">
                         </div>
+                        
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary" onclick="verify();">Verify</button>
@@ -68,7 +70,7 @@ include "connection.php";
             <div class="col-md-6 right-box">
                 <div class="row align-items-center">
                     <div class="header-text mb-3">
-                        <h2>Hi Welcome to Gflow Computers Admin Panel.</h2>
+                        <h2>Hi Welcome to Gflow Computers Admin Sign In.</h2>
                         <p></p>
                     </div>
 
@@ -81,6 +83,10 @@ include "connection.php";
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" id="e" value="">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" id="p" value="">
                     </div>
 
                     <div class="input-group  mb-3">
@@ -107,6 +113,8 @@ include "connection.php";
     <script src="script.js"></script>
     <script src="bootstrap.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
 </body>

@@ -256,7 +256,13 @@
 
 
             } else {
-                echo ("Please Login or Signup First.");
+            ?>
+                <div class="col-12 text-center mt-5 mb-5">
+                    <i class="bi bi-exclamation-triangle-fill text-danger mb-5" style="font-size: 150px;"></i>
+                    <h2 class="text-danger fw-bold">Please Register or Sign In</h2>
+                    <span class="text-muted">No matching User wre found for the search text you have entered.</span>
+                </div>
+            <?php
             }
 
             ?>
