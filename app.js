@@ -56,19 +56,103 @@ if (window.innerWidth < 768) {
   sideBar.classList.add("hide");
 }
 
-
-function logoutadmin(){
+function logoutadmin() {
   var request = new XMLHttpRequest();
-    
-  request.onreadystatechange = function(){
-      if(request.status == 200 & request.readyState == 4){
-          var response = request.responseText;
-          if(response == "success"){
-              window.location.reload();
-          }
-      }
-  }
 
-  request.open("GET","logOutProcess.php",true);
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      if (response == "success") {
+        window.location.reload();
+      }
+    }
+  };
+
+  request.open("GET", "logOutProcess.php", true);
   request.send();
+}
+
+function startTime() {
+  var today = new Date();
+  var hr = today.getHours();
+  var min = today.getMinutes();
+  var sec = today.getSeconds();
+  ap = hr < 12 ? "<span>AM</span>" : "<span>PM</span>";
+  hr = hr == 0 ? 12 : hr;
+  hr = hr > 12 ? hr - 12 : hr;
+  //Add a zero in front of numbers<10
+  hr = checkTime(hr);
+  min = checkTime(min);
+  sec = checkTime(sec);
+  document.getElementById("clock").innerHTML =
+    hr + ":" + min + ":" + sec + " " + ap;
+
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var curWeekDay = days[today.getDay()];
+  var curDay = today.getDate();
+  var curMonth = months[today.getMonth()];
+  var curYear = today.getFullYear();
+  var date = curWeekDay + ", " + curDay + " " + curMonth + " " + curYear;
+  document.getElementById("date").innerHTML = date;
+
+  var time = setTimeout(function () {
+    startTime();
+  }, 500);
+}
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function loadChart() {
+  var chart1 = document.getElementById("chart1");
+
+  var req = new XMLHttpRequest();
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 200) {
+      var resp = req.responseText;
+
+      var json = JSON.parse(resp);
+
+      new Chart(chart1, {
+        type: "bar",
+        data: {
+          labels: json.labels,
+          datasets: [
+            {
+              label: "# of Quntities",
+              data: json.data,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+  };
+  req.open("GET", "loadChartProcess.php", true);
+  req.send();
 }

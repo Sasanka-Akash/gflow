@@ -14,14 +14,17 @@
     <link rel="icon" href="img/g1.png">
 </head>
 
-<body class="mt-2" style="background-color: #f7f7ff;">
-    
+<body class="mt-2 " style="background-color: #f7f7ff;">
+
 
 
 
     <div class="container-fluid">
         <div class="row">
-            <?php include "header.php";
+            <?php
+
+            session_start();
+            include "connection.php";
 
 
             if (isset($_SESSION["u"])) {
@@ -29,9 +32,7 @@
                 $oid = $_GET["id"];
 
             ?>
-                <div class="col-12  mt-5">
-                    <hr />
-                </div>
+
 
                 <div class="col-12  mt-5 btn-toolbar justify-content-end">
                     <button class="btn btn-dark me-2" onclick="printInvoice();"><i class="bi bi-printer-fill"></i> Print</button>
@@ -45,33 +46,59 @@
                 <div class="col-12 mt-5" id="page">
                     <div class="row">
 
-                        <!-- <div class="col-6">
-                            <div class="ms-5 logo"></div>
-                        </div> -->
+
 
                         <div class="col-12 text-center">
                             <div class="row">
                                 <div class="col-12 fs-1 text-end text-center ">
                                     <ul class="text">
-                                        <li class="text-warning fs-5 fw-bold mt-4"><h1> G </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> f </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> l </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> o </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> w </h1></li>
-                                      
-                                        <li class="fs-5 fw-bold mt-4"><h1> - </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> C </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> o </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> m </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> p </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> u </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> t </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> e </h1></li>
-                                        <li class="fs-5 fw-bold mt-4"><h1> r </h1></li>
-                                        
+                                        <li class="text-warning fs-5 fw-bold mt-4">
+                                            <h1> G </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> f </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> l </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> o </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> w </h1>
+                                        </li>
+
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> - </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> C </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> o </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> m </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> p </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> u </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> t </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> e </h1>
+                                        </li>
+                                        <li class="fs-5 fw-bold mt-4">
+                                            <h1> r </h1>
+                                        </li>
+
                                     </ul>
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -113,7 +140,7 @@
                         <div class="col-12">
                             <table class="table ">
                                 <thead>
-                                    <tr class="border border-1 border-secondary">
+                                    <tr class="  border-secondary">
                                         <th>#</th>
                                         <th>Order ID & Product</th>
                                         <th class="text-end">Unit Price</th>
@@ -240,7 +267,7 @@
                         <p class="form-label fs-8 text-black-50 fw-bold">
                             Maradana, Colombo 10, Sri Lanka. Tel:+94112 555448 , Email: gflow@gmail.com
                         </p>
-            
+
                     </div>
 
 
@@ -260,9 +287,6 @@
 
 
 
-    </div>
-    </div>
-    <?php include "footer.php"; ?>
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
 </body>

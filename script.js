@@ -518,6 +518,7 @@ function basicSearch(x) {
     if (request.status == 200 && request.readyState == 4) {
       var response = request.responseText;
       document.getElementById("basicSearchResult").innerHTML = response;
+      
     }
   };
 
@@ -955,7 +956,7 @@ function verify() {
       var response = request.responseText;
       if (response == "success") {
         av.hide();
-        window.location = "admin.php";
+        window.location = "admindashboard.php";
       } else {
         alert(response);
       }

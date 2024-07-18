@@ -4,8 +4,8 @@ session_start();
 
 include "connection.php";
 
-if (isset($_SESSION["u"])) {
-    $email = $_SESSION["u"]["email"];
+if (isset($_SESSION["au"])) {
+    $email = $_SESSION["au"]["email"];
     $pageno;
 
 ?>
@@ -27,46 +27,26 @@ if (isset($_SESSION["u"])) {
 
     </head>
 
-    <body style="background-color: #E9EBEE;">
+    <body >
 
         <div class="container-fluid">
             <div class="row">
 
                 <!-- header -->
-                <div class="col-12 bg-dark">
+                <div class="col-12 bg-dark fixed-top">
                     <div class="row">
                         <div class="col-12 col-lg-4">
                             <div class="row">
-                                <div class="col-12 col-lg-4 mt-1 mb-1 text-center">
-
-                                    <?php
-                                    $profile_img_rs = Database::search("SELECT * FROM `profile_img` WHERE 
-                                `user_email`='" . $email . "'");
-
-                                    if ($profile_img_num = 1) {
-                                        $profile_img_data = $profile_img_rs->fetch_assoc();
-                                    ?>
-                                        <img src="<?php echo $profile_img_data["path"]; ?>" width="90px" height="90px" class="rounded-circle" />
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <img src="img/new_user.svg" width="90px" height="90px" class="rounded-circle" />
-                                    <?php
-                                    }
-
-                                    ?>
-
-
-                                </div>
+                                
                                 <div class="col-12 col-lg-8">
                                     <div class="row text-center text-lg-start">
                                         <div class="col-12 mt-0 mt-lg-4">
-                                            <span class="text-white fw-bold">
-                                                <?php echo $_SESSION["u"]["fname"] . " " . $_SESSION["u"]["lname"]; ?></span>
+                                            <span class="text-white fs-2 fw-bold">
+                                                <?php echo $_SESSION["au"]["fname"] . " " . $_SESSION["au"]["lname"]; ?></span>
                                         </div>
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                             <span class="text-white-50 fw-bold"><?php echo $email; ?></span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -75,9 +55,9 @@ if (isset($_SESSION["u"])) {
                         <div class="col-12 col-lg-8">
                             <div class="row">
                                 <div class="col-12 col-lg-10 mt-2 my-lg-4">
-                                    <h1 class="offset-4 offset-lg-2 text-white fw-bold">My Products</h1>
+                                    <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
                                 </div>
-                                <div class="col-12 col-lg-2 mx-2 mb-2 my-lg-4 mx-lg-0 d-grid">
+                                <div class="col-12 col-lg-2 mx-2  my-lg-4 mx-lg-0 d-grid">
                                     <button class="btn btn-warning fw-bold" onclick="window.location='addProduct.php'">Add Product</button>
                                 </div>
                             </div>
@@ -88,10 +68,10 @@ if (isset($_SESSION["u"])) {
                 <!-- header -->
 
                 <!-- body -->
-                <div class="col-12">
-                    <div class="row">
+                <div class="col-12 bg-secondary mt-5">
+                    <div class="row mt-5">
                         <!-- filter -->
-                        <div class="col-11 col-lg-2 mx-3 my-3 border border-warning rounded">
+                        <!-- <div class="col-11 col-lg-2 mx-3 my-3 border border-warning rounded">
                             <div class="row">
                                 <div class="col-12 mt-3 fs-5">
                                     <div class="row">
@@ -197,11 +177,11 @@ if (isset($_SESSION["u"])) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- filter -->
 
                         <!-- product -->
-                        <div class="col-12 col-lg-9 mt-3 mb-3 bg-white">
+                        <div class="col-12 col-lg-12 mt-3 mb-3">
                             <div class="row" id="sort">
 
                                 <div class="offset-1 col-10 text-center">
@@ -218,7 +198,7 @@ if (isset($_SESSION["u"])) {
                                         $product_rs = Database::search("SELECT * FROM `product` WHERE `user_email`='" . $email . "'");
                                         $product_num = $product_rs->num_rows;
 
-                                        $result_per_page = 5;
+                                        $result_per_page = 6;
                                         $number_of_pages = ceil($product_num / $result_per_page); // dashama sankaya thiyed kiyl balala purn sankay vt harwim 
 
                                         $page_results = ($pageno - 1) * $result_per_page; //inna page eka anuva kothan idan kothatad result pennane
@@ -230,7 +210,7 @@ if (isset($_SESSION["u"])) {
                                             $selected_data = $selected_rs->fetch_assoc();
                                         ?>
                                             <!-- card -->
-                                            <div class="card mb-3 mt-3 col-12 col-lg-6">
+                                            <div class="card mb-3 mt-3 col-12 col-lg-6 bg-dark text-light">
                                                 <div class="row">
                                                     <div class="col-md-4 mt-4">
 
@@ -244,11 +224,11 @@ if (isset($_SESSION["u"])) {
                                                     <div class="col-md-8">
                                                         <div class="card-body">
                                                             <h5 class="card-title fw-bold"><?php echo $selected_data["title"]; ?></h5>
-                                                            <span class="card-text fw-bold text-primary"><?php echo $selected_data["price"]; ?>.00</span><br />
-                                                            <span class="card-text fw-bold text-success"><?php echo $selected_data["qty"]; ?> Items left</span>
+                                                            <span class="card-text fs-3 fw-bold text-warning"><?php echo $selected_data["price"]; ?>.00</span><br />
+                                                            <span class="card-text fs-5 fw-bold text-success"><?php echo $selected_data["qty"]; ?> Items left</span>
                                                             <div class="form-check form-switch">
                                                                 <input class="form-check-input" type="checkbox" role="switch" id="toggle<?php echo $selected_data["id"]; ?>" onchange="changeStatus(<?php echo $selected_data['id']; ?>);" <?php if ($selected_data["status_status_id"] == 2) { ?> checked <?php } ?> />
-                                                                <label class="form-check-label fw-bold text-info" for="toggle<?php echo $selected_data["id"]; ?>">
+                                                                <label class="form-check-label fw-bold text-light" for="toggle<?php echo $selected_data["id"]; ?>">
                                                                     <?php if ($selected_data["status_status_id"] == 1) { ?>
                                                                         Make Your Product Deactive
                                                                     <?php } else { ?>
@@ -256,7 +236,7 @@ if (isset($_SESSION["u"])) {
                                                                     <?php } ?>
                                                                 </label>
                                                             </div>
-                                                            <div class="row">
+                                                            <div class="row mt-4">
                                                                 <div class="col-12">
                                                                     <div class="row g-1">
                                                                         <div class="col-12 d-grid">
@@ -281,7 +261,7 @@ if (isset($_SESSION["u"])) {
 
                                 <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
                                     <nav aria-label="Page navigation example">
-                                        <ul class="pagination pagination-lg justify-content-center">
+                                        <ul class="pagination pagination-md justify-content-center">
                                             <li class="page-item">
                                                 <a class="page-link" href=" 
                                                 <?php if ($pageno <= 1) {
@@ -345,7 +325,7 @@ if (isset($_SESSION["u"])) {
 <?php
 
 } else {
-    header("Location: home.php");
+    header("Location: admin.php");
 }
 
 ?>

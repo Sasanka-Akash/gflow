@@ -16,6 +16,11 @@ if (isset($_SESSION["au"])) {
     <title>Admin Panel | Gflow</title>
 
     <!--font awesome-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="icon" href="img/g1.png">
@@ -24,10 +29,11 @@ if (isset($_SESSION["au"])) {
     <link rel="stylesheet" href="styles1.css" />
   </head>
 
-  <body>
+  <body onload="startTime()" class="bg-dark">
+
     <section class="sidebar">
       <a href="#" class="logo">
-        <img src="img/Screenshot 2023-12-17 202109.png" alt="" style="width: 60px; height: 50px;">
+        <img src="img/g1.png" alt="" style="width: 60px; height: 50px;">
         <span class="text">Gflow Admin Panel</span>
       </a>
 
@@ -51,9 +57,9 @@ if (isset($_SESSION["au"])) {
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link">
+          <a href="myProducts.php" class="nav-link">
             <i class="fas fa-message"></i>
-            <span class="text">Message</span>
+            <span class="text">Add Product</span>
           </a>
         </li>
         <li>
@@ -135,9 +141,9 @@ if (isset($_SESSION["au"])) {
 
           <div class="col-12">
             <div class="row">
-              <div class="col-12 col-lg-2 text-center my-3">
+              <!-- <div class="col-12 col-lg-2 text-center my-3">
                 <label style="color: #F1C40F; font-weight: bold; font-size: 20px; justify-content: center;" class="form-label fs-4 fw-bold ">Total Active Time</label>
-              </div>
+              </div> -->
               <div style="color: #F1C40F; font-weight: bold; font-size: 20px;" class="col-12 col-lg-10 text-center my-3 ">
 
                 <?php
@@ -153,14 +159,29 @@ if (isset($_SESSION["au"])) {
 
                 ?>
 
-                <label class="form-label fs-4 fw-bold text-warning">
+                <!-- <label class="form-label fs-4 fw-bold text-warning">
                   <?php
                   echo $difference->format('%Y') . " Years " . $difference->format('%m') . " Months " .
                     $difference->format('%d') . " Days " .  $difference->format('%H') . " Hours " .
                     $difference->format('%i') . " Minutes " . $difference->format('%s') . " Seconds ";
                   ?>
 
-                </label>
+                </label> -->
+
+                <div id="clockdate">
+                  <div class="clockdate-wrapper">
+                    <label style="color: #F1C40F; font-weight: bold; font-size: 20px; justify-content: center;" class="form-label fs-4 fw-bold ">Total Active Time</label>
+
+                    <div id="clock"></div>
+                    <div id="date"></div><br>
+                    <?php
+                    echo $difference->format('%Y') . " Years " . $difference->format('%m') . " Months " . $difference->format('%d') . " Days ";
+                    // $difference->format('%H') . " Hours " ;
+                    // $difference->format('%i') . " Minutes " . $difference->format('%s') . " Seconds ";
+                    ?>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -358,10 +379,10 @@ if (isset($_SESSION["au"])) {
               ?>
                 <li class="not-completed">
                   <img src="<?php echo $produc_data["img_path"]; ?>" class="img-fluid rounded-top" style="height: 50px;" />
-                  <span class="fs-5 fw-bold"><?php echo $produc_data["title"]; ?></span><br />
-                  <span class="fs-6"><?php echo $qty_data["qty_total"]; ?> items</span><br />
-                  <span class="fs-6">Rs. <?php echo $qty_data["qty_total"] * $produc_data["price"]; ?> .00</span>
-                  <i class="fas fa-ellipsis-vertical"></i>
+                  <span class="col-4"><?php echo $produc_data["title"]; ?></span><br />
+                  <span class="col- "><?php echo $qty_data["qty_total"]; ?> items </span><br />
+                  <span class="col- ">LKR <?php echo $qty_data["qty_total"] * $produc_data["price"]; ?> .00</span>
+
                 </li>
                 <?php
 
