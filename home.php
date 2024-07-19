@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Home | Gflow</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
     <!-- or -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/scrollreveal"></script>
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <link rel="icon" href="img/g1.png">
@@ -75,9 +76,9 @@
                         $category_data2 = $category_rs2->fetch_assoc();
                     ?>
                         <div class="col-12 mt-3 mb-3" data-aos="fade-right">
-                            <a href="#" class="text-decoration-none text-light fs-3 fw-bold">
+                            <a href='<?php echo "categorysetProduct.php?id=" . ($category_data2["cat_id"]); ?>' class="text-decoration-none text-light fs-3 fw-bold">
                                 <?php echo $category_data2["cat_name"] ?></a> &nbsp;&nbsp;
-                            <a href="#" class="text-decoration-none text-light fs-6">See All &nbsp;&rarr;</a>
+                            <a href='<?php echo "categorysetProduct.php?id=" . ($category_data2["cat_id"]); ?>' class="text-decoration-none text-light fs-6">See All &nbsp;&rarr;</a>
                         </div>
                         <!-- Category Name -->
                         <!-- products -->

@@ -35,41 +35,7 @@ if (isset($_SESSION["au"])) {
 
 
 
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg bg-secondary fixed-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand fs-3 fw-bold text-light" href="#"><span class=" text-warning">G</span>flow Admin Panel</a>
-                    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel"><span class=" text-warning">G</span>flow Admin Panel</h5>
-                            <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end  flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="admindashboard.php">Dashboard</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" href="manageUsers.php">User Managment</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" href="manageProducts.php">Product Managment</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" href="myProducts.php">Add Product</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="home.php"><button class="btn btn-warning text-dark" href="#">Go to Gflow Home</button></a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </nav>
+        <?php include "adminHeader.php"; ?>
 
 
             <section class="content">

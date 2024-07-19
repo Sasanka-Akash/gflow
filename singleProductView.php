@@ -11,7 +11,7 @@ if (isset($_GET["id"])) {
     product.category_cat_id,product.model_has_brand_id,product.condition_condition_id,product.status_status_id,
     product.user_email,model.model_name AS mname,brand.brand_name AS bname FROM `product` INNER JOIN `model_has_brand`
     ON model_has_brand.id=product.model_has_brand_id  INNER JOIN `brand` ON brand.brand_id=model_has_brand.brand_brand_id
-    INNER JOIN `model` ON model.model_id=model_has_brand.model_model_id WHERE product.id='" . $pid . "'");
+    INNER JOIN `model` ON model.model_id=model_has_brand.model_model_id   WHERE product.id='" . $pid . "'");
 
     $product_num = $product_rs->num_rows;
     if ($product_num == 1) {
@@ -31,13 +31,14 @@ if (isset($_GET["id"])) {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
             <title><?php echo $product_data["title"]; ?> | Gflow</title>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <!-- or -->
             <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
             <link rel="stylesheet" href="style.css">
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
             <script src="https://unpkg.com/scrollreveal"></script>
             <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
         <body class="bg">
@@ -56,7 +57,7 @@ if (isset($_GET["id"])) {
                                         <div class="row">
                                             <div class="col-12 align-items-center">
 
-                                                <div class="col-6 image-container">
+                                                <div class="col-6 image-container justify-content-center">
                                                     <?php
                                                     $image_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $pid . "'");
                                                     $image_num = $image_rs->num_rows;
@@ -65,7 +66,9 @@ if (isset($_GET["id"])) {
 
                                                     ?>
                                                     <img style="width: 500px;" src="<?php echo $image_data["img_path"]; ?>" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-
+                                                </div>
+                                                <div class="row ms-5 mt-4">
+                                                    <h5 class="col-7 col-lg-7 fw-bold text-warning text-center ms-4"><i class="bi bi-hand-index-thumb-fill fs-4"></i> Click On Image</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -406,7 +409,11 @@ if (isset($_GET["id"])) {
                 </div>
             </div>
 
-
+            <div class="col-12 text-center mt-5">
+                <div class="col-12 d-none d-lg-block">
+                    <p style="color: white;" class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>
+                </div>
+            </div>
 
 
 
