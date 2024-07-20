@@ -38,7 +38,7 @@ if ($category != "0") {
 //     $query .= " AND `VGA_card`='" . $gpu . "'";
 // }
 
-if ($time != "0" && $gpu = '0') {
+if ($time != "0") {
     if ($time == "1") {
         $query .= " ORDER BY `price` DESC";
     } else if ($time == "2") {
@@ -112,63 +112,56 @@ if ($condition != "0") {
                 $selected_data = $selected_rs->fetch_assoc();
         ?>
                 <!-- card -->
-                <div class="card col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
-
-
-                    <?php
-                    $product_img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
-                    $product_img_data = $product_img_rs->fetch_assoc();
-
-
-                    ?>
-
-                    <img src="<?php echo $product_img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
-
-                    <div class="card-body ms-0 m-0 text-center">
-                        <h5 class="card-title fw-bold fs-6"><?php echo $selected_data["title"]; ?></h5>
-                        <span class="badge rounded-pill text-bg-info">New</span><br />
-                        <span class="card-text text-primary"><?php echo $selected_data["price"]; ?> .00</span><br />
-
+                <div class="card card-design col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
+                    <a href='<?php echo "singleProductView.php?id=" . ($selected_data["id"]); ?>' class="link-dark text-decoration-none">
                         <?php
-
-                        if ($selected_data["qty"] > 0) {
-                        ?>
-                            <span class="card-text text-warning fw-bold">In Stock</span><br />
-                            <span class="card-text text-success fw-bold"><?php echo $selected_data["qty"]; ?> Items Available</span><br /><br />
-                            <a href='<?php echo "singleProductView.php?id=" . ($selected_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
-
-                            <button class="col-12 btn btn-dark mt-2" onclick="addToCart(<?php echo $selected_data['id'] ?>);">
-                                <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                            </button>
-                        <?php
-                        } else {
-                        ?>
-                            <span class="card-text text-danger fw-bold">Out Stock</span><br />
-                            <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br />
-                            <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a>
-
-                            <button class="col-12 btn btn-dark mt-2 disabled">
-                                <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                            </button>
-
-                        <?php
-                        }
-
-
-
-
-
+                        $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
+                        $img_data = $img_rs->fetch_assoc();
                         ?>
 
+                        <img src="<?php echo $img_data["img_path"]; ?>" class=" card-img justify-content-center align-items-center" style="height: 250px;" />
+                        <div class="card-body ms-0 m-0 text-center">
+                            <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $selected_data["title"]; ?></h5>
+                            <!-- <span class="badge rounded-pill text-bg-info">New</span><br /> -->
+                            <span class="fs-3 fw-bold card-text text-warning">LKR <?php echo $selected_data["price"]; ?>.00</span><br />
+
+                            <?php
+
+                            if ($selected_data["qty"] > 0) {
+                            ?>
+                                <div class="ms-4">
+                                    <button class="col-12 btn Btn ms-4" onclick="addToCart(<?php echo $selected_data['id'] ?>);">
+                                        <div class="sign fs-3">+ </div>
+                                        <div class="text">Add to</div>
+                                    </button>
+                                </div>
+                            <?php
+                            } else {
+                            ?>
+
+                                <span class="card-text text-danger fw-bold">Out Stock</span><br />
+                                <!-- <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br /> -->
+                                <!-- <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a> -->
+                                <div class="ms-4">
+                                    <button class="col-12 btn Btn bg-danger disabled ms-4">
+                                        <div class="sign fs-3">+ </div>
+                                        <div class="text">Add to</div>
+                                    </button>
+                                </div>
+                            <?php
+                            }
+
+                            ?>
 
 
-                    </div>
 
+                        </div>
+                    </a>
                 </div>
                 <!-- card -->
-        <?php
+            <?php
             }
-        }else{
+        } else {
             ?>
             <div class="col-12 text-center mt-5">
                 <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 150px;"></i>
@@ -188,7 +181,7 @@ if ($condition != "0") {
 
 <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
     <nav aria-label="Page navigation example">
-        <ul class="pagination pagination-lg justify-content-center">
+        <ul class="pagination pagination-md justify-content-center">
             <li class="page-item">
                 <a class="page-link" <?php if ($pageno <= 1) {
                                             echo ("#");

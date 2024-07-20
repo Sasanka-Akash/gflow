@@ -518,6 +518,7 @@ function basicSearch(x) {
     if (request.status == 200 && request.readyState == 4) {
       var response = request.responseText;
       document.getElementById("basicSearchResult").innerHTML = response;
+    
       
     }
   };
@@ -640,7 +641,7 @@ function removeFromWatchlist(id) {
           window.location.reload();
         });
       } else {
-        showAlert("Error", resp, "error");
+        showAlert("Error", response, "error");
       }
     }
   };
@@ -672,9 +673,11 @@ function changeQTY(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "Updated") {
-        window.location.reload();
+        showAlert("Success", "Add QTY", "success").then(() => {
+          window.location.reload();
+        });
       } else {
-        alert(response);
+        showAlert("Error", response, "error");
       }
     }
   };
@@ -694,10 +697,11 @@ function deleteFromCart(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "Removed") {
-        alert("Product removed from Cart.");
-        window.location.reload();
+        showAlert("Success", "Product removed from Cart.", "success").then(() => {
+          window.location.reload();
+        });
       } else {
-        alert(response);
+        showAlert("Error", response, "error");
       }
     }
   };
@@ -860,10 +864,11 @@ function saveFeedback(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "success") {
-        alert("Feedback saved.");
+        showAlert("Success", "Feedback saved.", "success");
+        // alert("Feedback saved.");
         m.hide();
       } else {
-        alert(response);
+        showAlert("Error", response, "error");
       }
     }
   };
@@ -879,10 +884,11 @@ function deleteFeedback(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "Removed") {
-        alert("Product Delete From Purchasing History.");
-        window.location.reload();
+        showAlert("Success", "Product Delete From Purchasing History.", "success").then(() => {
+          window.location.reload();
+        });
       } else {
-        alert(response);
+        showAlert("Error", response, "error");
       }
     }
   };
@@ -898,10 +904,13 @@ function deleteAllFeedback(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "Removed") {
-        alert("All Product Delete From Purchasing History.");
-        window.location.reload();
+        showAlert("Success", "All Product Delete From Purchasing History.", "success").then(() => {
+          window.location.reload();
+        });
+        // alert("All Product Delete From Purchasing History.");
+        // window.location.reload();
       } else {
-        alert(response);
+        showAlert("Error", response, "error");
       }
     }
   };
