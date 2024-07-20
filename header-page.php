@@ -5,7 +5,7 @@ include "connection.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
 
@@ -120,7 +120,9 @@ include "connection.php";
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Product Search</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
                     <div class="modal-body">
+
 
                         <select class="form-select btn btn-warning mb-4" id="basic_search_select">
                             <option value="0">All Categories</option>
@@ -147,7 +149,7 @@ include "connection.php";
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-warning"  onclick="basicSearch(0);">Search</button>
+                        <button type="button" class="btn btn-warning" onclick="basicSearch(0);">Search</button>
                     </div>
                 </div>
             </div>

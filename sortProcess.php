@@ -18,54 +18,54 @@ $query = "SELECT * FROM `product` WHERE `user_email`='" . $user . "'";
 
 
 
-    if (!empty($search)) {
-        $query .= " AND `title` LIKE '%" . $search . "%'"; //congate re asign 
-    }
+if (!empty($search)) {
+    $query .= " AND `title` LIKE '%" . $search . "%'"; //congate re asign 
+}
 
-    if ($condition != "0") {
-        $query .= " AND `condition_condition_id`='" . $condition . "'";
-    }
+if ($condition != "0") {
+    $query .= " AND `condition_condition_id`='" . $condition . "'";
+}
 
-    if ($brand != "0") {
-        $query .= " AND `model_has_brand_id`='" . $brand . "'";
-    }
+if ($brand != "0") {
+    $query .= " AND `model_has_brand_id`='" . $brand . "'";
+}
 
-    if ($category != "0") {
-        $query .= " AND `category_cat_id`='" . $category . "'";
-    }
+if ($category != "0") {
+    $query .= " AND `category_cat_id`='" . $category . "'";
+}
 
-    // if ($gpu != "0") {
-    //     $query .= " AND `VGA_card`='" . $gpu . "'";
-    // }
+// if ($gpu != "0") {
+//     $query .= " AND `VGA_card`='" . $gpu . "'";
+// }
 
-    if ($time != "0" && $gpu = '0') {
-        if ($time == "1") {
-            $query .= " ORDER BY `price` DESC";
-        } else if ($time == "2") {
-            $query .= " ORDER BY `price` ASC";
-        }
+if ($time != "0" && $gpu = '0') {
+    if ($time == "1") {
+        $query .= " ORDER BY `price` DESC";
+    } else if ($time == "2") {
+        $query .= " ORDER BY `price` ASC";
     }
-    if ($brand != "0") {
-        if ($qty == "1") {
-            $query .= " ORDER BY `qty` DESC";
-        } else if ($qty == "2") {
-            $query .= " ORDER BY `qty` ASC";
-        }
+}
+if ($brand != "0") {
+    if ($qty == "1") {
+        $query .= " ORDER BY `qty` DESC";
+    } else if ($qty == "2") {
+        $query .= " ORDER BY `qty` ASC";
     }
-    if ($category != "0") {
-        if ($qty == "1") {
-            $query .= " ORDER BY `qty` DESC";
-        } else if ($qty == "2") {
-            $query .= " ORDER BY `qty` ASC";
-        }
+}
+if ($category != "0") {
+    if ($qty == "1") {
+        $query .= " ORDER BY `qty` DESC";
+    } else if ($qty == "2") {
+        $query .= " ORDER BY `qty` ASC";
     }
-    if ($condition != "0") {
-        if ($qty == "1") {
-            $query .= " ORDER BY `qty` DESC";
-        } else if ($qty == "2") {
-            $query .= " ORDER BY `qty` ASC";
-        }
+}
+if ($condition != "0") {
+    if ($qty == "1") {
+        $query .= " ORDER BY `qty` DESC";
+    } else if ($qty == "2") {
+        $query .= " ORDER BY `qty` ASC";
     }
+}
 
 // if ($brand !== "0" && $time != "0" && $qty = "0" ) {
 //     if ($qty == "1") {
@@ -105,66 +105,80 @@ $query = "SELECT * FROM `product` WHERE `user_email`='" . $user . "'";
         $selected_rs = Database::search($query . " LIMIT " . $result_per_page . " OFFSET " . $page_results . ""); //view karan product tika view kirim
 
         $selected_num = $selected_rs->num_rows;
-        for ($x = 0; $x < $selected_num; $x++) {
-            $selected_data = $selected_rs->fetch_assoc();
+
+        if ($selected_num > 0) {
+
+            for ($x = 0; $x < $selected_num; $x++) {
+                $selected_data = $selected_rs->fetch_assoc();
         ?>
-            <!-- card -->
-            <div class="card col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
+                <!-- card -->
+                <div class="card col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
 
-
-                <?php
-                $product_img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
-                $product_img_data = $product_img_rs->fetch_assoc();
-
-
-                ?>
-
-                <img src="<?php echo $product_img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
-
-                <div class="card-body ms-0 m-0 text-center">
-                    <h5 class="card-title fw-bold fs-6"><?php echo $selected_data["title"]; ?></h5>
-                    <span class="badge rounded-pill text-bg-info">New</span><br />
-                    <span class="card-text text-primary"><?php echo $selected_data["price"]; ?> .00</span><br />
 
                     <?php
-
-                    if ($selected_data["qty"] > 0) {
-                    ?>
-                        <span class="card-text text-warning fw-bold">In Stock</span><br />
-                        <span class="card-text text-success fw-bold"><?php echo $selected_data["qty"]; ?> Items Available</span><br /><br />
-                        <a href='<?php echo "singleProductView.php?id=" . ($selected_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
-
-                        <button class="col-12 btn btn-dark mt-2" onclick="addToCart(<?php echo $selected_data['id'] ?>);">
-                            <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                        </button>
-                    <?php
-                    } else {
-                    ?>
-                        <span class="card-text text-danger fw-bold">Out Stock</span><br />
-                        <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br />
-                        <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a>
-
-                        <button class="col-12 btn btn-dark mt-2 disabled">
-                            <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                        </button>
-
-                    <?php
-                    }
-
-
-
+                    $product_img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
+                    $product_img_data = $product_img_rs->fetch_assoc();
 
 
                     ?>
 
+                    <img src="<?php echo $product_img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 250px;" />
 
+                    <div class="card-body ms-0 m-0 text-center">
+                        <h5 class="card-title fw-bold fs-6"><?php echo $selected_data["title"]; ?></h5>
+                        <span class="badge rounded-pill text-bg-info">New</span><br />
+                        <span class="card-text text-primary"><?php echo $selected_data["price"]; ?> .00</span><br />
+
+                        <?php
+
+                        if ($selected_data["qty"] > 0) {
+                        ?>
+                            <span class="card-text text-warning fw-bold">In Stock</span><br />
+                            <span class="card-text text-success fw-bold"><?php echo $selected_data["qty"]; ?> Items Available</span><br /><br />
+                            <a href='<?php echo "singleProductView.php?id=" . ($selected_data["id"]); ?>' class="col-12 btn btn-warning">Buy Now</a>
+
+                            <button class="col-12 btn btn-dark mt-2" onclick="addToCart(<?php echo $selected_data['id'] ?>);">
+                                <i class="bi bi-cart-plus-fill text-white fs-5"></i>
+                            </button>
+                        <?php
+                        } else {
+                        ?>
+                            <span class="card-text text-danger fw-bold">Out Stock</span><br />
+                            <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br />
+                            <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a>
+
+                            <button class="col-12 btn btn-dark mt-2 disabled">
+                                <i class="bi bi-cart-plus-fill text-white fs-5"></i>
+                            </button>
+
+                        <?php
+                        }
+
+
+
+
+
+                        ?>
+
+
+
+                    </div>
 
                 </div>
-
+                <!-- card -->
+        <?php
+            }
+        }else{
+            ?>
+            <div class="col-12 text-center mt-5">
+                <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 150px;"></i>
+                <h2 class="text-danger fw-bold">No Product</h2>
+                <span class="text-muted">No matching products wre found for the search text you have entered.</span>
             </div>
-            <!-- card -->
         <?php
         }
+
+
 
         ?>
 
