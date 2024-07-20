@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <link rel="icon" href="img/g1.png">
@@ -58,7 +59,7 @@
                 </div> -->
 
                 <div class="col-md-8">
-                    <div class="p-3 fs-5 border bg-light rounded text-center">
+                    <div class="p-3 fs-5  rounded text-center">
                         <?php
 
                         $cart_rs = Database::search("SELECT * FROM `cart` WHERE `user_email`='" . $user . "'");
@@ -127,8 +128,11 @@
                                         $seller = $data["fname"] . " " . $data["lname"];
 
                                     ?>
-                                        <div class="card mb-3 mx-0 col-12">
-                                            <div class="row g-0">
+                                        <div class="card mb-3 mx-0 col-12" style="background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); border-radius: 10px;">
+                                            <div class="row g-0" >
                                                 <!-- <div class="col-md-12 mt-3 mb-3">
                                                     <div class="row">
                                                         <div class="col-12">
@@ -150,22 +154,22 @@
                                                 <div class="col-md-5">
                                                     <div class="card-body">
 
-                                                        <h3 class="card-title text-dark fw-bold"><?php echo $product_data["title"]; ?></h3>
+                                                        <h3 class="card-title text-light fw-bold"><?php echo $product_data["title"]; ?></h3>
 
 
 
-                                                        <span class="fw-bold text-black-50">Colour : <?php echo $product_data["clr_name"]; ?></span> <br> &nbsp; |
+                                                        <span class="fw-bold text-light fs-5">Colour : <?php echo $product_data["clr_name"]; ?></span> <br> &nbsp; |
 
-                                                        &nbsp; <span class="fw-bold text-black-50">Condition : <?php echo $product_data["condition_condition_id"]; ?></span>
+                                                        &nbsp; <span class="fw-bold text">Condition : <?php echo $product_data["condition_condition_id"]; ?></span>
                                                         <br>
-                                                        <span class="fw-bold text-black-50 fs-5">Price :</span>&nbsp;
-                                                        <span class="fw-bold text-black fs-5">Rs. <?php echo $product_data["price"]; ?> .00</span>
+                                                        <span class="fw-bold text-light fs-5">Price :</span>&nbsp;
+                                                        <span class="fw-bold text-light fs-5">Rs. <?php echo $product_data["price"]; ?> .00</span>
                                                         <br>
-                                                        <span class="fw-bold text-black-50 fs-5">Quantity :</span>&nbsp;
+                                                        <span class="fw-bold text-light fs-5">Quantity :</span>&nbsp;
                                                         <input type="number" class="mt-2 border border-2 border-secondary fs-4 fw-bold rounded px-3 cardqtytext" style="width: 90px;height: 40px;" value="<?php echo $cart_data["qty"]; ?>" onchange="changeQTY(<?php echo $cart_data['cart_id']; ?>);" id="qty_num">
                                                         <br><br>
-                                                        <span class="fw-bold text-black-50 fs-5">Delivery Fee :</span>&nbsp;
-                                                        <span class="fw-bold text-black fs-5">Rs.<?php echo $ship; ?>.00</span>
+                                                        <span class="fw-bold text-light fs-5">Delivery Fee :</span>&nbsp;
+                                                        <span class="fw-bold text-light fs-5">Rs.<?php echo $ship; ?>.00</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -180,10 +184,10 @@
                                                 <div class="col-md-12 mt-3 mb-3">
                                                     <div class="row">
                                                         <div class="col-6 col-md-6">
-                                                            <span class="fw-bold fs-5 text-black-50">Requested Total <i class="bi bi-info-circle"></i></span>
+                                                            <span class="fw-bold fs-5 text-light">Requested Total <i class="bi bi-info-circle"></i></span>
                                                         </div>
                                                         <div class="col-6 col-md-6 text-end">
-                                                            <span class="fw-bold fs-5 text-black-50">Rs.<?php echo ($product_data["price"] * $cart_data["qty"]) + $ship; ?>.00</span>
+                                                            <span class="fw-bold fs-5 text-light">Rs.<?php echo ($product_data["price"] * $cart_data["qty"]) + $ship; ?>.00</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -206,8 +210,11 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class=" p-3 fs-7 row bg-light rounded">
+                <div class="col-md-4 mt-3" >
+                    <div class=" p-3 fs-7 row text-light rounded" style="background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); border-radius: 10px;">
 
                         <div class="col-12">
                             <label class="form-label fs-3 fw-bold">Order Summary</label>

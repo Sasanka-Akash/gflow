@@ -113,7 +113,10 @@
                                                 $list_id = $watchlist_data["w_id"];
                                             ?>
 
-                                                <div class="card card-design mb-3 mx-0 mx-lg-2 col-12">
+                                                <div class="card text-light mb-3 mx-0 mx-lg-2 col-12" style="background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); border-radius: 10px;">
                                                     <div class="row g-0">
                                                         <div class="col-md-4 mt-5">
 

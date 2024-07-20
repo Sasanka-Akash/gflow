@@ -329,7 +329,10 @@ if (isset($_GET["id"])) {
 
 
 
-                                <div class="col-12 mt-5">
+                                <div class="col-12">
+
+                                <h1 class="mb-4 text-warning">Related Items</h1>
+
                                     <div class="row g-4 align-items-center justify-content-center" style="gap: 30px;">
                                         <?php
 
