@@ -36,10 +36,13 @@
                 <hr style="height: 70px;">
 
 
-                <div class="col-12 pt-2 rounded" style="background-color: white;">
+                <div class="col-12 pt-2 rounded t" style="background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); border-radius: 10px;"">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="home.php">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-light text-decoration-none" href="home.php">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Cart</li>
                         </ol>
                     </nav>

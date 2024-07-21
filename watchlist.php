@@ -45,8 +45,8 @@
                         <div class="col-12 ">
                             <div class="row">
 
-                                <div class="col-12 mt-5">
-                                    <label class="form-label fs-1 fw-bolder mt-3 text-light">Watchlist &hearts;</label>
+                                <div class="col-12 mt-5 text-center fs-1">
+                                    <label class="form-label fs-1 text-center fw-bolder mt-3 text-warning">Watchlist &hearts;</label>
                                 </div>
 
                                 <!-- <div class="col-12">
@@ -68,7 +68,7 @@
                                     <hr />
                                 </div>
 
-                                <div class="col-11 col-lg-2 border-0 border-end border-1 border-dark">
+                                <!-- <div class="col-11 col-lg-2 border-0 border-end border-1 border-dark">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="home.php">Home</a></li>
@@ -80,14 +80,14 @@
                                         <a class="nav-link" href="cart.php">My Cart</a>
                                         <a class="nav-link" href="#">Recents</a>
                                     </nav>
-                                </div>
+                                </div> -->
 
                                 <?php
 
                                 if ($watchlist_num == 0) {
                                 ?>
                                     <!-- empty view -->
-                                    <div class="col-12 col-lg-9">
+                                    <div class="col-12 col-lg-12">
                                         <div class="row">
                                             <div class="col-12 emptyView"></div>
                                             <div class="col-12 text-center">
@@ -104,7 +104,7 @@
                                 } else {
                                 ?>
                                     <!-- have products -->
-                                    <div class="col-12 col-lg-9">
+                                    <div class="col-12 col-lg-12">
                                         <div class="row">
                                             <?php
 

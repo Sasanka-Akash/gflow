@@ -19,7 +19,7 @@ if (isset($_SESSION["au"])) {
 
         <title>Add Products | Gflow</title>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         <link rel="stylesheet" href="bootstrap.css" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -27,7 +27,7 @@ if (isset($_SESSION["au"])) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="icon" href="img/g1.png">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         < <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
             <link rel="stylesheet" href="styles1.css" />
@@ -69,7 +69,7 @@ if (isset($_SESSION["au"])) {
                                 <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
                             </div>
                             <div class="col-12 col-lg-2 mx-2  my-lg-4 mx-lg-0 d-grid">
-                                <button class="btn btn-warning fw-bold" onclick="window.location='addProduct.php'">Add Product</button>
+                                <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#registerProductModal" onclick="window.location='addProduct.php'">Add Product</button>
                             </div>
                         </div>
                     </div>
@@ -77,6 +77,133 @@ if (isset($_SESSION["au"])) {
                 </div>
             </div>
             <!-- header -->
+
+
+
+
+            <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addproduct">
+                Launch demo modal
+            </button> -->
+
+            <!-- Modal -->
+            <!-- <div class="container admin-body">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 mt-5">
+                        <h2 class="text-center">Product Managment</h2>
+
+                        <div class="row mt-4">
+                            <div class="col-4 offset-4 d-flex justify-content-center mb-3">
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#registerProductModal">Register Product</button>
+                            </div>
+                            <div class="col-6 offset-3 d-flex justify-content-around">
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerBrandModal">Add Brand</button>
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerCategoryModal">Add Category</button>
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerColorModal">Add Color</button>
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerSizeModal">Add Size</button>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 table-responsive" id="content">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+
+
+            <div class="modal" id="registerProductModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header fs-5">
+                        <h2>Product Register</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="mb-2">
+                            <label class="form-label" for="prodname">Product Name</label>
+                            <input class="form-control" type="text" id="prodname">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label" for="proddesc">Product Description</label>
+                            <textarea class="form-control" type="text" id="proddesc" rows="5"></textarea>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label" for="prodcategory">Category</label>
+                            <select class="form-control" id="prodcategory">
+                                <option value="0">Select Category</option>
+
+                                
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label" for="prodbrand">Brand</label>
+                            <select class="form-control" id="prodbrand">
+                                <option value="0">Select brand</option>
+
+                                
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label" for="prodcolor">Color</label>
+                            <select class="form-control" id="prodcolor">
+                                <option value="0">Select Color</option>
+
+                               
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label" for="prodsize">Size</label>
+                            <select class="form-control" id="prodsize">
+                                <option value="0">Select Size</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label" for="prodimage">Product Image</label>
+                            <input class="form-control" type="file" id="prodimage">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="registerProduct();">Register Product</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- brand Modal
+            <div class="modal fade" id="registerBrandModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5">Product Register</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label class="form-label" for="">Brand Name</label>
+                            <input class="form-control" type="text" id="brandName">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="registerBrand();">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
 
             <!-- body -->
             <div class="col-12 bg-secondary ">
@@ -326,7 +453,7 @@ if (isset($_SESSION["au"])) {
             <!-- body -->
 
         </div>
-     
+
         <div class="col-12 text-center mt-5">
             <div class="col-12 d-none d-lg-block">
                 <p style="color: white;" class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>

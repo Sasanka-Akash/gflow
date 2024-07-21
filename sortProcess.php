@@ -52,6 +52,13 @@ if ($brand != "0") {
         $query .= " ORDER BY `qty` ASC";
     }
 }
+if ($brand != "0") {
+    if ($condition == "1") {
+        $query .= " ORDER BY `price` DESC";
+    } else if ($condition == "2") {
+        $query .= " ORDER BY `price` ASC";
+    }
+}
 if ($category != "0") {
     if ($qty == "1") {
         $query .= " ORDER BY `qty` DESC";
@@ -60,22 +67,23 @@ if ($category != "0") {
     }
 }
 if ($condition != "0") {
-    if ($qty == "1") {
+    if ($time == "1") {
         $query .= " ORDER BY `qty` DESC";
-    } else if ($qty == "2") {
+    } else if ($time == "2") {
         $query .= " ORDER BY `qty` ASC";
     }
 }
 
-// if ($brand !== "0" && $time != "0" && $qty = "0" ) {
-//     if ($qty == "1") {
-//         $query .= " , `price` DESC";
-//     } else if ($qty == "2") {
-//         $query .= " , `price` ASC";
+// if ($brand != "0" && $qty != "0") {
+//     if ($time == "1") {
+//         $query .= " , `qty` DESC";
+//     } else if ($time == "2") {
+//         $query .= " , `qty` ASC";
 //     }
-// } else if ( $category == "0" && $qty != "0"  && $brand != "0") {
+// }
+// if ($category == "0" && $qty != "0"  && $brand != "0") {
 //     if ($qty == "1") {
-//         $query .= " ORDER BY `qty` DESC";
+//         $query .= " ORDER BY `price` DESC";
 //     } else if ($qty == "2") {
 //         $query .= " ORDER BY `qty` ASC";
 //     }
@@ -98,7 +106,7 @@ if ($condition != "0") {
         $product_rs = Database::search($query);
         $product_num = $product_rs->num_rows;
 
-        $result_per_page = 6;
+        $result_per_page = 8;
         $number_of_pages = ceil($product_num / $result_per_page); // dashama sankaya thiyed kiyl balala purn sankay vt harwim 
 
         $page_results = ($pageno - 1) * $result_per_page; //inna page eka anuva kothan idan kothatad result pennane

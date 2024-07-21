@@ -412,8 +412,8 @@ if (isset($_GET["id"])) {
                 </div>
             </div>
 
-            <div class="col-12 text-center mt-5">
-                <div class="col-12 d-none d-lg-block">
+            <div class="col-12 col-lg-12 text-center mt-5" >
+                <div class=" text-center justify-content-center">
                     <p style="color: white;" class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>
                 </div>
             </div>

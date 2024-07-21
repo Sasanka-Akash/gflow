@@ -33,15 +33,15 @@
         <div class="col-lg-12">
             <div class="row mt-4">
                 <div class="col-lg-6 mt-4">
-                    <div class="mt-4">
+                    <div class="mt-5">
                         <video class="w-100 rounded-2" autoplay loop muted plays-inline class="back-video">
                             <source src="img/Screen_Recording_20240415_082201_Instagram.mp4" />
                         </video>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-4">
+                <div class="col-lg-6 mt-5">
                     <div class="mb-1 mt-4">
-                        <h1 class="fs-2 fw-bold text-light mx-2 mt-4">About</h1>
+                        <h1 class="fs-2 fw-bold text-warning mx-2 mt-4">About</h1>
                         <p class="text-light mt-3">
                             Established in 2024, Gflow Computers has strived to be one of the leading retailers for branded & customizable computers and related products in today’s market. Our many years of experience has provided us with the expertise to cater you; our valued customers with the latest technology, while providing an excellent service that would culminate in providing you the best available products. Gflow Computers has always been the stable backdrop for many PC enthusiasts in the face of rising enthusiasm for high-end computer gaming and custom-built PCs. Thus, enabling the dreams of making one's own computer that would fit all of one's needs come true.
 

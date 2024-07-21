@@ -16,7 +16,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/scrollreveal"></script>
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <link rel="icon" href="img/Screenshot 2023-12-17 202109.png">
+    <link rel="icon" href="img/g1.png">
 
 </head>
 
@@ -29,13 +29,13 @@
 
     <?php include "header-page.php"; ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
 
 
-        <div class="row mt-4">
-            <h2 class="mt-4 text-light fs-2 fw-bold">Contact</h2>
+        <div class="row mt-5">
+            <h2 class="mt-5 text-warning text-center fs-1 fw-bold"><i class="bi bi-person-lines-fill fs-1"></i> Contact</h2>
         </div>
-        <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0194594794643!2d144.96305781564814!3d-37.81627974274248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57721db0217f82d!2sFederation+Square!5e0!3m2!1sen!2sau!4v1464763199766" width="600" height="400" frameborder="0" style="border:0" allowfullscreen>
+        <iframe class="w-100 mt-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0194594794643!2d144.96305781564814!3d-37.81627974274248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57721db0217f82d!2sFederation+Square!5e0!3m2!1sen!2sau!4v1464763199766" width="600" height="400" frameborder="0" style="border:0" allowfullscreen>
         </iframe>
     </div>
     <div class="container">

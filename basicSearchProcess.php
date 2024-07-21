@@ -24,36 +24,8 @@ if (!empty($txt) && $select == 0) {
     <div class=" col-12 col-lg-12 mt-5">
         <div class="row mt-5">
 
-
-            <?php
-
-            $pageno;
-
-            if ("0" != ($_POST["page"])) {
-                $pageno = $_POST["page"];
-            } else {
-                $pageno = 1;
-            }
-
-            $product_rs = Database::search($query);
-            $product_num = $product_rs->num_rows; //num_rows -> rows count 
-
-            $result_per_page = 12;
-            $number_of_pages = ceil($product_num / $result_per_page); // dashama sankaya thiyed kiyl balala purn sankay vt harwim 
-
-            $page_results = ($pageno - 1) * $result_per_page; //inna page eka anuva kothan idan kothatad result pennane
-            $selected_rs = Database::search($query . " LIMIT " . $result_per_page . " OFFSET " . $page_results . ""); //view karan product tika view kirim
-
-            $selected_num = $selected_rs->num_rows;
-            for ($x = 0; $x < $selected_num; $x++) {
-                $selected_data = $selected_rs->fetch_assoc();
-
-            ?>
-
-
-
                 <div class="col-12">
-                    <div class="row">
+                    <div class="row mt-5">
                         <!-- filter -->
                         <div class=" col-10 col-lg-2 mx-3 my-3 text-light" style="background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
@@ -290,7 +262,7 @@ if (!empty($txt) && $select == 0) {
                         <div class="col-12 col-lg-9 mt-3 mb-3 ">
                             <div class="row" id="sort">
 
-                                <div class="offset-1 col-10 text-center">
+                                <div class=" col-12 text-center">
                                     <div class="row justify-content-center">
 
                                         <?php
@@ -304,7 +276,7 @@ if (!empty($txt) && $select == 0) {
                                         $product_rs = Database::search($query);
                                         $product_num = $product_rs->num_rows;
 
-                                        $result_per_page = 5;
+                                        $result_per_page = 8;
                                         $number_of_pages = ceil($product_num / $result_per_page); // dashama sankaya thiyed kiyl balala purn sankay vt harwim 
 
                                         $page_results = ($pageno - 1) * $result_per_page; //inna page eka anuva kothan idan kothatad result pennane
@@ -427,7 +399,7 @@ if (!empty($txt) && $select == 0) {
                 </div>
             <?php
 
-            }
+            
 
             ?>
 
