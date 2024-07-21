@@ -59,7 +59,7 @@ if (isset($_GET["id"])) {
                                 <?php
 
                                 $product_rs = Database::search("SELECT * FROM `product` WHERE `category_cat_id`= $pid 
-                                        AND `status_status_id`='1' ORDER BY `datetime_added` DESC LIMIT 4 OFFSET 0");
+                                        AND `status_status_id`='1' ORDER BY `datetime_added` DESC ");
 
                                 $product_num = $product_rs->num_rows;
 

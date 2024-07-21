@@ -3,7 +3,7 @@
 session_start();
 include "connection.php";
 
-$email = $_SESSION["u"]["email"];
+$email = $_SESSION["au"]["email"];
 
 $category = $_POST["ca"];
 $brand = $_POST["b"];

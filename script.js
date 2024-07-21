@@ -302,6 +302,7 @@ function addProduct() {
         alert("Product Saved Successfull");
         window.location.reload();
       } else {
+        alert(response);
       }
     }
   };
@@ -320,7 +321,7 @@ function changeProductImage() {
         var file = this.files[x];
         var url = window.URL.createObjectURL(file);
 
-        document.getElementById("i" + x).src = url;
+        document.getElementById("i").src = url;
       }
     } else {
       alert(
