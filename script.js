@@ -299,10 +299,13 @@ function addProduct() {
       var response = request.responseText;
 
       if (response == "success") {
-        alert("Product Saved Successfull");
-        window.location.reload();
+        showAlert("Success", "Product Saved Successfull", "success").then(() => {
+          window.location.reload();
+        });
+        // alert("Product Saved Successfull");
+        // window.location.reload();
       } else {
-        alert(response);
+        // showAlert("Error", response, "error");
       }
     }
   };
@@ -321,7 +324,7 @@ function changeProductImage() {
         var file = this.files[x];
         var url = window.URL.createObjectURL(file);
 
-        document.getElementById("i").src = url;
+        document.getElementById("image").src = url;
       }
     } else {
       alert(
@@ -484,7 +487,7 @@ function updateProduct() {
   var file_count = images.files.length;
 
   for (var x = 0; x < file_count; x++) {
-    form.append("i" + x, images.files[x]);
+    form.append("image", images.files[x]);
   }
 
   var request = new XMLHttpRequest();

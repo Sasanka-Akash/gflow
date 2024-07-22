@@ -52,7 +52,7 @@ if (isset($_SESSION["p"])) {
                         $new_img_extension = ".svg";
                     }
 
-                    $file_name = "img/products/" . $title . "_" . $x . "_" . uniqid() . $new_img_extension;
+                    $file_name = "img//products//" . $title . "_" . uniqid() . $new_img_extension;
                     move_uploaded_file($image_file["tmp_name"], $file_name);
 
                     Database::iud("INSERT INTO `product_img`(`img_path`,`product_id`) VALUES 
@@ -65,7 +65,7 @@ if (isset($_SESSION["p"])) {
             }
         }
 
-        //echo ("success");
+        // echo ("success");
     } else {
         //echo ("Invalid Image Count.");
     }

@@ -23,7 +23,7 @@
 
             <?php include "header.php";
 
-            if (isset($_SESSION["u"])) {
+            if (isset($_SESSION["au"])) {
                 if (isset($_SESSION["p"])) {
 
 

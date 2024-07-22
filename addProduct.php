@@ -29,6 +29,8 @@
 
             if (isset($_SESSION["u"])) {
 
+                // include "connection.php";
+
             ?>
                 <hr style="height: 90px;">
 
@@ -68,14 +70,14 @@
                                 <div class="offset-lg-3 col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col-4 border border-primary rounded">
-                                            <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i0" />
+                                            <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i" />
                                         </div>
-                                        <div class="col-4 border border-primary rounded">
+                                        <!-- <div class="col-4 border border-primary rounded">
                                             <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i1" />
                                         </div>
                                         <div class="col-4 border border-primary rounded">
                                             <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i2" />
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="offset-lg-3 col-12 col-lg-6 d-grid mt-3">

@@ -9,9 +9,9 @@ if (isset($_GET["id"])) {
     $product_rs = Database::search("SELECT product.id,product.price,product.qty,product.description,
     product.title,product.datetime_added,product.delivery_fee_colombo,product.delivery_fee_other,
     product.category_cat_id,product.model_has_brand_id,product.condition_condition_id,product.status_status_id,
-    product.user_email,model.model_name AS mname,brand.brand_name AS bname,category.cat_name AS cname FROM `product` INNER JOIN `model_has_brand`
+    product.user_email,model.model_name AS mname,brand.brand_name AS bname FROM `product` INNER JOIN `model_has_brand`
     ON model_has_brand.id=product.model_has_brand_id  INNER JOIN `brand` ON brand.brand_id=model_has_brand.brand_brand_id
-    INNER JOIN `model` ON model.model_id=model_has_brand.model_model_id INNER JOIN `category` ON category.cat_id=model_has_brand.category_cat_id  
+    INNER JOIN `model` ON model.model_id=model_has_brand.model_model_id 
     WHERE product.id='" . $pid . "'");
 
     $product_num = $product_rs->num_rows;
@@ -32,7 +32,7 @@ if (isset($_GET["id"])) {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 
-            <title><?php echo $product_data["cname"]; ?> | Gflow</title>
+            <title> | Gflow</title>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
             <!-- or -->
@@ -54,7 +54,7 @@ if (isset($_GET["id"])) {
                         <div class="col-12 mt-5">
                             <div class="row justify-content-center gap-5">
                                 
-                                <h1 class="text-center text-warning fw-bold"><?php echo $product_data["cname"]; ?></h1>
+                                <h1 class="text-center text-warning fw-bold"></h1>
 
                                 <?php
 

@@ -31,7 +31,7 @@ if (isset($_SESSION["au"])) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles1.css" />
-        <!-- <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet"> -->
+        <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
 
 
@@ -71,7 +71,7 @@ if (isset($_SESSION["au"])) {
                                 <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
                             </div>
                             <div class="col-12 col-lg-2 mx-2  my-lg-4 mx-lg-0 d-grid">
-                                <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#registerProductModal">Add Product</button>
+                                <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#registerProductModal" >Add Product</button>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ if (isset($_SESSION["au"])) {
 
                                 <div class="mb-2">
                                     <label class="form-label">Product Image</label>
-                                    <img src="" id="i" class="w-100">
+                                    <img src="" id="image" class="w-100">
                                 </div>
 
                                 <!-- <div class="offset-lg-3 col-12 col-lg-6">
@@ -593,7 +593,7 @@ if (isset($_SESSION["au"])) {
             </div>
         </div>
         <script src="script.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     </body>
 
