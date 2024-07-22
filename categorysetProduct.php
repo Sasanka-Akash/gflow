@@ -5,6 +5,7 @@ include "header-page.php";
 if (isset($_GET["id"])) {
 
     $pid = $_GET["id"];
+    $product = $_SESSION["p"];
 
     $product_rs = Database::search("SELECT product.id,product.price,product.qty,product.description,
     product.title,product.datetime_added,product.delivery_fee_colombo,product.delivery_fee_other,
@@ -31,8 +32,12 @@ if (isset($_GET["id"])) {
             <link rel="stylesheet" href="bootstrap.css" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+            <?php
+            $category_rs = Database::search("SELECT * FROM `category` WHERE `cat_id`='" . $pid . "'");
+            $category_data1 = $category_rs->fetch_assoc();
+            ?>
 
-            <title> | Gflow</title>
+            <title><?php echo $category_data1["cat_name"]; ?> | Gflow</title>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
             <!-- or -->
@@ -49,12 +54,17 @@ if (isset($_GET["id"])) {
 
                 <div class="col-12 mb-3 mt-5">
                     <div class="row mt-5 ">
+                        <?php
+                        $category_rs = Database::search("SELECT * FROM `category` WHERE `cat_id`='" . $pid . "'");
+                        $category_data = $category_rs->fetch_assoc();
+                        ?>
 
-                        
+
+
                         <div class="col-12 mt-5">
                             <div class="row justify-content-center gap-5">
-                                
-                                <h1 class="text-center text-warning fw-bold"></h1>
+
+                                <h1 class="text-center text-warning fw-bold"><?php echo $category_data["cat_name"]; ?></h1>
 
                                 <?php
 

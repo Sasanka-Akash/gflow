@@ -26,7 +26,6 @@
             if (isset($_SESSION["au"])) {
                 if (isset($_SESSION["p"])) {
 
-
                     $product = $_SESSION["p"];
 
             ?>
@@ -74,17 +73,17 @@
                                         $img = array(); //index arry
 
                                         $img[0] = "img/addproductimg.svg";
-                                        $img[1] = "img/addproductimg.svg";
-                                        $img[2] = "img/addproductimg.svg";
+                                        // $img[1] = "img/addproductimg.svg";
+                                        // $img[2] = "img/addproductimg.svg";
 
                                         $product_img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $product["id"] . "'");
                                         $product_img_num = $product_img_rs->num_rows;
 
-                                        for ($x = 0; $x < $product_img_num; $x++) {
+                                      
                                             $product_img_data = $product_img_rs->fetch_assoc();
 
-                                            $img[$x] = $product_img_data["img_path"];
-                                        }
+                                            $img[0] = $product_img_data["img_path"];
+                                        
 
                                         ?>
 
@@ -92,17 +91,17 @@
                                             <div class="col-4 border border-primary rounded">
                                                 <img id="i0" src="<?php echo $img[0]; ?>" class="img-fluid" style="width: 250px;" />
                                             </div>
-                                            <div class="col-4 border border-primary rounded">
+                                            <!-- <div class="col-4 border border-primary rounded">
                                                 <img id="i1" src="<?php echo $img[1]; ?>" class="img-fluid" style="width: 250px;" />
                                             </div>
                                             <div class="col-4 border border-primary rounded">
                                                 <img id="i2" src="<?php echo $img[2]; ?>" class="img-fluid" style="width: 250px;" />
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                     <div class="offset-lg-3 col-12 col-lg-6 d-grid mt-3">
                                         <input type="file" class="d-none" id="imageuploader" multiple />
-                                        <label for="imageuploader" class="col-12 btn btn-warning" onclick="changeProductImage();">Upload Images</label>
+                                        <label for="imageuploader" class="col-12 btn btn-primary" onclick="changeProductImage();">Upload Images</label>
                                     </div>
                                 </div>
                             </div>
@@ -346,7 +345,7 @@
                                         </div>
                                     </div>
 
-                                 
+
                                     <div class="offset-lg-4 col-12 col-lg-4 d-grid mt-3 mb-3">
                                         <button class="btn btn-warning" onclick="updateProduct();">Update Product</button>
                                     </div>

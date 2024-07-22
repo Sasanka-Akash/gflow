@@ -57,9 +57,9 @@ $desc = $_POST["de"];
         $allowed_image_extensions = array("image/jpeg", "image/png", "image/svg+xml");
 
         for ($x = 0; $x < $length; $x++) {
-            if (isset($_FILES["image" . $x])) {
+            if (isset($_FILES["image".$x])) {
 
-                $image_file = $_FILES["image" . $x];
+                $image_file = $_FILES["image".$x];
                 $file_extension = $image_file["type"];
 
                 if (in_array($file_extension, $allowed_image_extensions)) {
