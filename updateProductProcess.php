@@ -67,7 +67,7 @@ if (isset($_SESSION["p"])) {
 
         //echo ("success");
     } else {
-        echo ("Invalid Image Count.");
+        // echo ("Invalid Image Count.");
     }
 }
 

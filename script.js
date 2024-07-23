@@ -450,6 +450,7 @@ function clearSort() {
   window.location.reload();
 }
 
+
 function sendid(id) {
   var request = new XMLHttpRequest();
 

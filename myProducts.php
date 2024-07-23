@@ -67,11 +67,14 @@ if (isset($_SESSION["au"])) {
 
                     <div class="col-12 col-lg-8">
                         <div class="row">
-                            <div class="col-12 col-lg-10 mt-2 my-lg-4">
+                            <div class="col-12 col-lg-6 mt-2 my-lg-4">
                                 <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
                             </div>
                             <div class="col-12 col-lg-2 mx-2  my-lg-4 mx-lg-0 d-grid">
                                 <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#registerProductModal">Add Product</button>
+                            </div>
+                            <div class="col-12 col-lg-4 mx-2  my-lg-4 mx-lg-0 d-grid">
+                                <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Category,Brand,Color,Model</button>
                             </div>
                         </div>
                     </div>
@@ -515,24 +518,36 @@ if (isset($_SESSION["au"])) {
 
 
 
-                            <!-- <div class="modal fade bg-dark" id="updateProductModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal fade bg-dark" id="addProductModal" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog bg-dark">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5">Product Register</h1>
+                                            <h1 class="modal-title fs-5">Product Deatils</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label class="form-label" for="">Category Name</label>
+                                            <input class="form-control" type="text" id="brandName">
                                         </div>
                                         <div class="modal-body">
                                             <label class="form-label" for="">Brand Name</label>
                                             <input class="form-control" type="text" id="brandName">
                                         </div>
+                                        <div class="modal-body">
+                                            <label class="form-label" for="">Model Name</label>
+                                            <input class="form-control" type="text" id="brandName">
+                                        </div>
+                                        <div class="modal-body">
+                                            <label class="form-label" for="">Color Name</label>
+                                            <input class="form-control" type="text" id="brandName">
+                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onclick="registerBrand();">Save changes</button>
+                                            <button type="button" class="btn btn-warning" onclick="registerBrand();">Save changes</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
 
 

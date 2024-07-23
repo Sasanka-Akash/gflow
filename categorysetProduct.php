@@ -5,7 +5,7 @@ include "header-page.php";
 if (isset($_GET["id"])) {
 
     $pid = $_GET["id"];
-    $product = $_SESSION["p"];
+    // $product = $_SESSION["p"];
 
     $product_rs = Database::search("SELECT product.id,product.price,product.qty,product.description,
     product.title,product.datetime_added,product.delivery_fee_colombo,product.delivery_fee_other,

@@ -369,7 +369,7 @@
                 ?>
                 <script>
                     alert("You have to sigin to the system for access this function.");
-                    window.location = "home.php";
+                    window.location = "admin.php";
                 </script>
             <?php
             }
