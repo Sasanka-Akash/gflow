@@ -337,7 +337,7 @@ if (isset($_GET["id"])) {
                                         <?php
 
                                         $related_rs = Database::search("SELECT * FROM `product` WHERE 
-                                    `model_has_brand_id`='" . $product_data["model_has_brand_id"] . "' LIMIT 5");
+                                    `model_has_brand_id`='" . $product_data["model_has_brand_id"] . "'");
 
 
                                         $related_num = $related_rs->num_rows;
