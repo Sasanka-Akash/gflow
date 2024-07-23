@@ -32,15 +32,15 @@ if (isset($_POST["email"]) && isset($_POST["name"])) {
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'sasankaakash22@gmail.com';
-            $mail->Password = 'ekefppnphpkcrqem';
+            $mail->Password = 'wdamnqgzoegdghhg';
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
             $mail->setFrom('sasankaakash22@gmail.com', 'Admin Verification');
             $mail->addReplyTo('sasankaakash22@gmail.com', 'Admin Verification');
-            $mail->addAddress($umail);
+            $mail->addAddress($email);
             $mail->isHTML(true);
-            $mail->Subject = 'eShop Admin Login Verification Code for Add new category';
-            $bodyContent = '<h1 style="color:red;">Your Verification Code is ' . $code . '</h1>';
+            $mail->Subject = 'Gflow Admin Login Verification Code for Add new category';
+            $bodyContent = '<h1 style="color:blue;">Your Verification Code is '.$code.'</h1>';
             $bodyContent .= '******************';
             $mail->Body    = $bodyContent;
 

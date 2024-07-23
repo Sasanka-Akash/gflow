@@ -8,26 +8,29 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <title>User Profile | Gflow</title>
+    <title>Add Products | Gflow</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- or -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
-    <<link rel="icon" href="img/g1.png">
+    <link rel="icon" href="img/g1.png">
 
 </head>
 
 <body>
     <?php
-    include "header.php";
+    session_start();
+    include "connection.php";
+
     ?>
 
     <div class="container">
         <div class="row  gy-3">
             <?php
 
-            if (isset($_SESSION["u"])) {
+            if (isset($_SESSION["au"])) {
 
                 // include "connection.php";
 
@@ -70,7 +73,7 @@
                                 <div class="offset-lg-3 col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col-4 border border-primary rounded">
-                                            <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i" />
+                                            <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i0" />
                                         </div>
                                         <!-- <div class="col-4 border border-primary rounded">
                                             <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i1" />
@@ -396,6 +399,8 @@
     <?php include "footer.php"; ?>
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

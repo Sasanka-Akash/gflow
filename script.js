@@ -1047,8 +1047,8 @@ function verifyCategory() {
   var ncm = document.getElementById("addCategoryVerificationModal");
   var vc = new bootstrap.Modal(ncm);
 
-  e = document.getElementById("e").value;
-  n = document.getElementById("n").value;
+  e = document.getElementById("em").value;
+  n = document.getElementById("nm").value;
 
   var form = new FormData();
   form.append("email", e);

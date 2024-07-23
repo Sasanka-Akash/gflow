@@ -1,98 +1,90 @@
 <?php
 
-session_start();
-
 include "connection.php";
-
-if (isset($_SESSION["au"])) {
-    $email = $_SESSION["au"]["email"];
-    $pageno;
-
 ?>
-    <!DOCTYPE html>
 
-    <html>
+<!DOCTYPE html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
 
-        <title>Add Products | Gflow</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-        <link rel="stylesheet" href="bootstrap.css" />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Add Products | Gflow</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-        <link rel="icon" href="img/g1.png">
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="styles1.css" />
-        <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="icon" href="img/g1.png">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles1.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
 
 
-        <link rel="icon" href="img/g1.png">
+    <link rel="icon" href="img/g1.png">
 
-    </head>
+</head>
 
-    <body class="bg-dark">
+<body class="bg-dark">
 
-        <?php include "adminHeader.php"; ?>
-        <!-- <div class="container-fluid"> -->
-        <div class="row mt-3">
+    <?php include "adminHeader.php"; ?>
+    <!-- <div class="container-fluid"> -->
+    <div class="row mt-3">
 
-            <!-- header -->
-            <div class="col-12 bg-dark mt-4">
-                <div class="row">
-                    <div class="col-12 col-lg-4">
-                        <div class="row">
+        <!-- header -->
+        <div class="col-12 bg-dark mt-4">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="row">
 
-                            <div class="col-12 col-lg-8">
-                                <div class="row text-center text-lg-start">
-                                    <!-- <div class="col-12 mt-0 mt-lg-4">
+                        <div class="col-12 col-lg-8">
+                            <div class="row text-center text-lg-start">
+                                <!-- <div class="col-12 mt-0 mt-lg-4">
                                             <span class="text-white fs-2 fw-bold">
                                                 <?php echo $_SESSION["au"]["fname"] . " " . $_SESSION["au"]["lname"]; ?></span>
                                         </div> -->
-                                    <!-- <div class="col-12">
+                                <!-- <div class="col-12">
                                             <span class="text-white-50 fw-bold"><?php echo $email; ?></span>
                                         </div> -->
-                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-12 col-lg-8">
-                        <div class="row">
-                            <div class="col-12 col-lg-6 mt-2 my-lg-4">
-                                <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
-                            </div>
-                            <div class="col-12 col-lg-2 mx-2  my-lg-4 mx-lg-0 d-grid">
-                                <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#registerProductModal">Add Product</button>
-                            </div>
-                            <div class="col-12 col-lg-4 mx-2  my-lg-4 mx-lg-0 d-grid">
-                                <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Category,Brand,Color,Model</button>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="col-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-12 col-lg-10 mt-2 my-lg-4">
+                            <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
+                        </div>
+                        <div class="col-12 col-lg-2 mx-2  my-lg-4 mx-lg-0 d-grid">
+                            <button class="btn btn-warning fw-bold" onclick="window.location='addProduct.php'">Add Product</button>
+                        </div>
+                        
+                    </div>
+                </div>
+
             </div>
-            <!-- header -->
+        </div>
+        <!-- header -->
 
 
 
 
-            <!-- Button trigger modal -->
-            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addproduct">
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addproduct">
                 Launch demo modal
             </button> -->
 
-            <!-- Modal -->
-            <!-- <div class="container admin-body">
+        <!-- Modal -->
+        <!-- <div class="container admin-body">
                 <div class="row d-flex justify-content-center">
                     <div class="col-10 mt-5">
                         <h2 class="text-center">Product Managment</h2>
@@ -118,23 +110,23 @@ if (isset($_SESSION["au"])) {
             </div> -->
 
 
-            <div class="modal fade bg-dark" id="registerProductModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <div class="modal-header fs-5">
-                            <h2>Product Register</h2>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
+        <div class="modal fade bg-dark" id="registerProductModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header fs-5">
+                        <h2>Product Register</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="mb-2">
 
                             <div class="mb-2">
+                                <label class="form-label">Product Image</label>
+                                <img src="" id="i0" class="w-100">
+                            </div>
 
-                                <div class="mb-2">
-                                    <label class="form-label">Product Image</label>
-                                    <img src="" id="i0" class="w-100">
-                                </div>
-
-                                <!-- <div class="offset-lg-3 col-12 col-lg-6">
+                            <!-- <div class="offset-lg-3 col-12 col-lg-6">
                                     <div class="row">
                                         <div class="col-4 border border-primary rounded">
                                             <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i" />
@@ -142,193 +134,193 @@ if (isset($_SESSION["au"])) {
                                     </div>
                                 </div> -->
 
-                                <input type="file" class="d-none" multiple id="imageuploader" />
-                                <label for="imageuploader" class="col-12 btn btn-warning" onclick="changeProductImage();">Upload Images</label>
+                            <input type="file" class="d-none" multiple id="imageuploader" />
+                            <label for="imageuploader" class="col-12 btn btn-warning" onclick="changeProductImage();">Upload Images</label>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Product Name</label>
+                            <input class="form-control" type="text" id="title">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Product Description</label>
+                            <textarea class="form-control" type="text" id="desc" rows="5"></textarea>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Category</label>
+                            <select class="form-control" id="category">
+                                <option value="0">Select Category</option>
+
+                                <?php
+                                $category_rs = Database::search("SELECT * FROM `category`");
+                                $category_num = $category_rs->num_rows;
+
+                                for ($x = 0; $x < $category_num; $x++) {
+                                    $category_data = $category_rs->fetch_assoc();
+
+                                ?>
+                                    <option value="<?php echo $category_data["cat_id"]; ?>">
+                                        <?php echo $category_data["cat_name"]; ?></option>
+                                <?php
+                                }
+                                ?>
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Brand</label>
+                            <select class="form-control" id="brand">
+                                <option value="0">Select brand</option>
+
+                                <?php
+                                $brand_rs = Database::search("SELECT * FROM `brand`");
+                                $brand_num = $brand_rs->num_rows;
+
+                                for ($x = 0; $x < $brand_num; $x++) {
+                                    $brand_data = $brand_rs->fetch_assoc();
+
+                                ?>
+                                    <option value="<?php echo $brand_data["brand_id"]; ?>">
+                                        <?php echo $brand_data["brand_name"]; ?></option>
+                                <?php
+                                }
+                                ?>
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Model</label>
+                            <select class="form-control" id="model">
+                                <option value="0">Select Model</option>
+
+                                <?php
+                                $model_rs = Database::search("SELECT * FROM `model`");
+                                $model_num = $model_rs->num_rows;
+
+                                for ($x = 0; $x < $model_num; $x++) {
+                                    $model_data = $model_rs->fetch_assoc();
+
+                                ?>
+                                    <option value="<?php echo $model_data["model_id"]; ?>">
+                                        <?php echo $model_data["model_name"]; ?></option>
+                                <?php
+                                }
+                                ?>
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Color</label>
+                            <select class="form-control" id="clr">
+                                <option value="0">Select Color</option>
+                                <?php
+                                $color_rs = Database::search("SELECT * FROM `color`");
+                                $color_num = $color_rs->num_rows;
+
+                                for ($x = 0; $x < $color_num; $x++) {
+                                    $color_data = $color_rs->fetch_assoc();
+
+                                ?>
+                                    <option value="<?php echo $color_data["clr_id"]; ?>">
+                                        <?php echo $color_data["clr_name"]; ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Add Product Quantity</label>
+                            <input type="number" class="form-control" value="0" min="0" id="qty" />
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label ">Select Product Condition</label>
+                            <div class="form-check form-check-inline mx-5">
+                                <input class="form-check-input" type="radio" name="c" id="b" checked />
+                                <label class="form-check-label " for="b">Brandnew</label>
                             </div>
-
-                            <div class="mb-2">
-                                <label class="form-label">Product Name</label>
-                                <input class="form-control" type="text" id="title">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="c" id="u" />
+                                <label class="form-check-label " for="u">Used</label>
                             </div>
+                        </div>
 
-                            <div class="mb-2">
-                                <label class="form-label">Product Description</label>
-                                <textarea class="form-control" type="text" id="desc" rows="5"></textarea>
+                        <div class="mb-2">
+                            <label class="form-label">Cost Per Item</label>
+                            <div class="input-group mb-2 mt-2">
+                                <span class="input-group-text">Rs.</span>
+                                <input type="text" class="form-control" id="cost" />
+                                <span class="input-group-text">.00</span>
                             </div>
+                        </div>
 
-                            <div class="mb-2">
-                                <label class="form-label">Category</label>
-                                <select class="form-control" id="category">
-                                    <option value="0">Select Category</option>
-
-                                    <?php
-                                    $category_rs = Database::search("SELECT * FROM `category`");
-                                    $category_num = $category_rs->num_rows;
-
-                                    for ($x = 0; $x < $category_num; $x++) {
-                                        $category_data = $category_rs->fetch_assoc();
-
-                                    ?>
-                                        <option value="<?php echo $category_data["cat_id"]; ?>">
-                                            <?php echo $category_data["cat_name"]; ?></option>
-                                    <?php
-                                    }
-                                    ?>
-
-                                </select>
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label">Brand</label>
-                                <select class="form-control" id="brand">
-                                    <option value="0">Select brand</option>
-
-                                    <?php
-                                    $brand_rs = Database::search("SELECT * FROM `brand`");
-                                    $brand_num = $brand_rs->num_rows;
-
-                                    for ($x = 0; $x < $brand_num; $x++) {
-                                        $brand_data = $brand_rs->fetch_assoc();
-
-                                    ?>
-                                        <option value="<?php echo $brand_data["brand_id"]; ?>">
-                                            <?php echo $brand_data["brand_name"]; ?></option>
-                                    <?php
-                                    }
-                                    ?>
-
-                                </select>
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label">Model</label>
-                                <select class="form-control" id="model">
-                                    <option value="0">Select Model</option>
-
-                                    <?php
-                                    $model_rs = Database::search("SELECT * FROM `model`");
-                                    $model_num = $model_rs->num_rows;
-
-                                    for ($x = 0; $x < $model_num; $x++) {
-                                        $model_data = $model_rs->fetch_assoc();
-
-                                    ?>
-                                        <option value="<?php echo $model_data["model_id"]; ?>">
-                                            <?php echo $model_data["model_name"]; ?></option>
-                                    <?php
-                                    }
-                                    ?>
-
-                                </select>
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label">Color</label>
-                                <select class="form-control" id="clr">
-                                    <option value="0">Select Color</option>
-                                    <?php
-                                    $color_rs = Database::search("SELECT * FROM `color`");
-                                    $color_num = $color_rs->num_rows;
-
-                                    for ($x = 0; $x < $color_num; $x++) {
-                                        $color_data = $color_rs->fetch_assoc();
-
-                                    ?>
-                                        <option value="<?php echo $color_data["clr_id"]; ?>">
-                                            <?php echo $color_data["clr_name"]; ?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label">Add Product Quantity</label>
-                                <input type="number" class="form-control" value="0" min="0" id="qty" />
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label ">Select Product Condition</label>
-                                <div class="form-check form-check-inline mx-5">
-                                    <input class="form-check-input" type="radio" name="c" id="b" checked />
-                                    <label class="form-check-label " for="b">Brandnew</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="c" id="u" />
-                                    <label class="form-check-label " for="u">Used</label>
-                                </div>
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label">Cost Per Item</label>
-                                <div class="input-group mb-2 mt-2">
-                                    <span class="input-group-text">Rs.</span>
-                                    <input type="text" class="form-control" id="cost" />
-                                    <span class="input-group-text">.00</span>
-                                </div>
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="form-label">Delivery Cost</label>
-                                <div class="col-12 ">
-                                    <div class="row">
-                                        <div class="col-12 ">
-                                            <label class="form-label">Delivery cost Within Colombo</label>
-                                        </div>
-                                        <div class="col-12 ">
-                                            <div class="input-group mb-2 mt-2">
-                                                <span class="input-group-text">Rs.</span>
-                                                <input type="text" class="form-control" id="dwc" />
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-                                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Delivery Cost</label>
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <label class="form-label">Delivery cost Within Colombo</label>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-12  ">
-                                            <label class="form-label">Delivery cost out of Colombo</label>
-                                        </div>
-                                        <div class="col-12 ">
-                                            <div class="input-group mb-2 mt-2">
-                                                <span class="input-group-text">Rs.</span>
-                                                <input type="text" class="form-control" id="doc" />
-                                                <span class="input-group-text">.00</span>
-                                            </div>
+                                    <div class="col-12 ">
+                                        <div class="input-group mb-2 mt-2">
+                                            <span class="input-group-text">Rs.</span>
+                                            <input type="text" class="form-control" id="dwc" />
+                                            <span class="input-group-text">.00</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="mb-2">
-                                <label class="form-label fw-bold" style="font-size: 20px;">Notice...</label><br />
-                                <label class="form-label">
-                                    We are taking 5% of the product from price from every
-                                    product as a service charge.
-                                </label>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12  ">
+                                        <label class="form-label">Delivery cost out of Colombo</label>
+                                    </div>
+                                    <div class="col-12 ">
+                                        <div class="input-group mb-2 mt-2">
+                                            <span class="input-group-text">Rs.</span>
+                                            <input type="text" class="form-control" id="doc" />
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label fw-bold" style="font-size: 20px;">Notice...</label><br />
+                            <label class="form-label">
+                                We are taking 5% of the product from price from every
+                                product as a service charge.
+                            </label>
+                        </div>
 
 
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" onclick="addProduct();">Register Product</button>
-                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="addProduct();">Register Product</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
 
 
 
 
-            <!-- body -->
-            <div class="col-12 bg-secondary ">
-                <div class="row mt-5">
-                    <!-- filter -->
-                    <!-- <div class="col-11 col-lg-2 mx-3 my-3 border border-warning rounded">
+        <!-- body -->
+        <div class="col-12 bg-secondary ">
+            <div class="row mt-5">
+                <!-- filter -->
+                <!-- <div class="col-11 col-lg-2 mx-3 my-3 border border-warning rounded">
                             <div class="row">
                                 <div class="col-12 mt-3 fs-5">
                                     <div class="row">
@@ -435,70 +427,71 @@ if (isset($_SESSION["au"])) {
                                 </div>
                             </div>
                         </div> -->
-                    <!-- filter -->
+                <!-- filter -->
 
-                    <!-- product -->
-                    <div class="col-12 col-lg-12 mt-3 mb-3">
-                        <div class="row" id="sort">
+                <!-- product -->
+                <div class="col-12 col-lg-12 mt-3 mb-3">
+                    <div class="row" id="sort">
 
-                            <div class="offset-1 col-10 text-center">
-                                <div class="row justify-content-center">
+                        <div class="offset-1 col-10 text-center">
+                            <div class="row justify-content-center">
 
-                                    <?php
+                                <?php
 
-                                    if (isset($_GET["page"])) {
-                                        $pageno = $_GET["page"];
-                                    } else {
-                                        $pageno = 1;
-                                    }
+                                $query = "SELECT * FROM `product`";
+                                $pageno;
 
-                                    $product_rs = Database::search("SELECT * FROM `product` WHERE `user_email`='" . $email . "'");
-                                    $product_num = $product_rs->num_rows;
+                                if (isset($_GET["page"])) {
+                                    $pageno = $_GET["page"];
+                                } else {
+                                    $pageno = 1;
+                                }
 
-                                    $result_per_page = 6;
-                                    $number_of_pages = ceil($product_num / $result_per_page); // dashama sankaya thiyed kiyl balala purn sankay vt harwim 
+                                $product_rs = Database::search($query);
+                                $product_num = $product_rs->num_rows;
 
-                                    $page_results = ($pageno - 1) * $result_per_page; //inna page eka anuva kothan idan kothatad result pennane
-                                    $selected_rs = Database::search("SELECT * FROM `product` WHERE `user_email`='" . $email . "' 
-                                    LIMIT " . $result_per_page . " OFFSET " . $page_results . ""); //view karan product tika view kirim
+                                $result_per_page = 6;
+                                $number_of_pages = ceil($product_num / $result_per_page); // dashama sankaya thiyed kiyl balala purn sankay vt harwim 
 
-                                    $selected_num = $selected_rs->num_rows;
-                                    for ($x = 0; $x < $selected_num; $x++) {
-                                        $selected_data = $selected_rs->fetch_assoc();
-                                    ?>
-                                        <!-- card -->
-                                        <div class="card mb-3 mt-3 col-12 col-lg-6 bg-dark text-light">
-                                            <div class="row">
-                                                <div class="col-md-4 mt-4">
+                                $page_results = ($pageno - 1) * $result_per_page; //inna page eka anuva kothan idan kothatad result pennane
+                                $selected_rs = Database::search($query . "LIMIT " . $result_per_page . " OFFSET " . $page_results . ""); //view karan product tika view kirim
 
-                                                    <?php
-                                                    $product_img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
-                                                    $product_img_data = $product_img_rs->fetch_assoc();
-                                                    ?>
+                                $selected_num = $selected_rs->num_rows;
+                                for ($x = 0; $x < $selected_num; $x++) {
+                                    $selected_data = $selected_rs->fetch_assoc();
+                                ?>
+                                    <!-- card -->
+                                    <div class="card mb-3 mt-3 col-12 col-lg-6 bg-dark text-light">
+                                        <div class="row">
+                                            <div class="col-md-4 mt-4">
 
-                                                    <img src="<?php echo $product_img_data["img_path"]; ?>" class="img-fluid rounded-start" />
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title fw-bold"><?php echo $selected_data["title"]; ?></h5>
-                                                        <span class="card-text fs-3 fw-bold text-warning"><?php echo $selected_data["price"]; ?>.00</span><br />
-                                                        <span class="card-text fs-5 fw-bold text-success"><?php echo $selected_data["qty"]; ?> Items left</span>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" role="switch" id="toggle<?php echo $selected_data["id"]; ?>" onchange="changeStatus(<?php echo $selected_data['id']; ?>);" <?php if ($selected_data["status_status_id"] == 2) { ?> checked <?php } ?> />
-                                                            <label class="form-check-label fw-bold text-light" for="toggle<?php echo $selected_data["id"]; ?>">
-                                                                <?php if ($selected_data["status_status_id"] == 1) { ?>
-                                                                    Make Your Product Deactive
-                                                                <?php } else { ?>
-                                                                    Make Your Product Active
-                                                                <?php } ?>
-                                                            </label>
-                                                        </div>
-                                                        <div class="row mt-4">
-                                                            <div class="col-12">
-                                                                <div class="row g-1">
-                                                                    <div class="col-12 d-grid">
-                                                                        <button class="btn btn-warning fw-bold" onclick="sendid(<?php echo $selected_data['id']; ?>);">Update</button>
-                                                                    </div>
+                                                <?php
+                                                $product_img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
+                                                $product_img_data = $product_img_rs->fetch_assoc();
+                                                ?>
+
+                                                <img src="<?php echo $product_img_data["img_path"]; ?>" class="img-fluid rounded-start" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title fw-bold"><?php echo $selected_data["title"]; ?></h5>
+                                                    <span class="card-text fs-3 fw-bold text-warning"><?php echo $selected_data["price"]; ?>.00</span><br />
+                                                    <span class="card-text fs-5 fw-bold text-success"><?php echo $selected_data["qty"]; ?> Items left</span>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="toggle<?php echo $selected_data["id"]; ?>" onchange="changeStatus(<?php echo $selected_data['id']; ?>);" <?php if ($selected_data["status_status_id"] == 2) { ?> checked <?php } ?> />
+                                                        <label class="form-check-label fw-bold text-light" for="toggle<?php echo $selected_data["id"]; ?>">
+                                                            <?php if ($selected_data["status_status_id"] == 1) { ?>
+                                                                Make Your Product Deactive
+                                                            <?php } else { ?>
+                                                                Make Your Product Active
+                                                            <?php } ?>
+                                                        </label>
+                                                    </div>
+                                                    <div class="row mt-4">
+                                                        <div class="col-12">
+                                                            <div class="row g-1">
+                                                                <div class="col-12 d-grid">
+                                                                    <button class="btn btn-warning fw-bold" onclick="sendid(<?php echo $selected_data['id']; ?>);">Update</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -506,125 +499,95 @@ if (isset($_SESSION["au"])) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- card -->
-                                    <?php
-                                    }
-
-                                    ?>
-
-
-                                </div>
-                            </div>
-
-
-
-                            <div class="modal fade bg-dark" id="addProductModal" tabindex="-1" aria-hidden="true">
-                                <div class="modal-dialog bg-dark">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5">Product Deatils</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label class="form-label" for="">Category Name</label>
-                                            <input class="form-control" type="text" id="brandName">
-                                        </div>
-                                        <div class="modal-body">
-                                            <label class="form-label" for="">Brand Name</label>
-                                            <input class="form-control" type="text" id="brandName">
-                                        </div>
-                                        <div class="modal-body">
-                                            <label class="form-label" for="">Model Name</label>
-                                            <input class="form-control" type="text" id="brandName">
-                                        </div>
-                                        <div class="modal-body">
-                                            <label class="form-label" for="">Color Name</label>
-                                            <input class="form-control" type="text" id="brandName">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-warning" onclick="registerBrand();">Save changes</button>
-                                        </div>
                                     </div>
-                                </div>
+                                    <!-- card -->
+                                <?php
+                                }
+
+                                ?>
+
+
                             </div>
+                        </div>
 
 
 
 
-                            <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination pagination-md justify-content-center">
-                                        <li class="page-item">
-                                            <a class="page-link" href=" 
+
+
+
+
+                        <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination pagination-md justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href=" 
                                                 <?php if ($pageno <= 1) {
                                                     echo ("#");
                                                 } else {
                                                     echo "?page=" . ($pageno - 1);
                                                 } ?>
                                                 " aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <?php
+                                    for ($x = 1; $x <= $number_of_pages; $x++) {
+                                        if ($x == $pageno) {
+                                    ?>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x; ?></a>
+                                            </li>
                                         <?php
-                                        for ($x = 1; $x <= $number_of_pages; $x++) {
-                                            if ($x == $pageno) {
+                                        } else {
                                         ?>
-                                                <li class="page-item active">
-                                                    <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x; ?></a>
-                                                </li>
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <li class="page-item ">
-                                                    <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x; ?></a>
-                                                </li>
-                                        <?php
-                                            }
+                                            <li class="page-item ">
+                                                <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x; ?></a>
+                                            </li>
+                                    <?php
                                         }
-                                        ?>
+                                    }
+                                    ?>
 
-                                        <li class="page-item">
-                                            <a class="page-link" href="
+                                    <li class="page-item">
+                                        <a class="page-link" href="
                                                 <?php if ($pageno >= $number_of_pages) {
                                                     echo ("#");
                                                 } else {
                                                     echo "?page=" . ($pageno + 1);
                                                 } ?>
                                                 " aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
+
                     </div>
-                    <!-- product -->
-
                 </div>
-            </div>
-            <!-- body -->
+                <!-- product -->
 
-        </div>
-
-        <div class="col-12 text-center mt-5">
-            <div class="col-12 d-none d-lg-block">
-                <p style="color: white;" class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>
             </div>
         </div>
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- body -->
 
-    </body>
+    </div>
 
-    </html>
+    <div class="col-12 text-center mt-5">
+        <div class="col-12 d-none d-lg-block">
+            <p style="color: white;" class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
 
 <?php
 
-} else {
-    header("Location: admin.php");
-}
+
 
 ?>

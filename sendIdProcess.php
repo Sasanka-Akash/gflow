@@ -3,7 +3,7 @@
 session_start();
 include "connection.php";
 
-$email = $_SESSION["u"]["email"];
+$email = $_SESSION["au"]["email"];
 $pid = $_GET["id"];
 
 $product_rs = Database::search("SELECT * FROM `product` WHERE `id`='".$pid."' AND `user_email`='".$email."'");
