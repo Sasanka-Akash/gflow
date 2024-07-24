@@ -1197,3 +1197,125 @@ function filter(page) {
   req.open("POST", "filterProductProcess.php", true);
   req.send(form);
 }
+
+function loadUsers(page) {
+  var req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 200) {
+      var resp = req.responseText;
+      document.getElementById("content").innerHTML = resp;
+    }
+  };
+  req.open("GET", "load-users-process.php?page=" + page, true);
+  req.send();
+}
+
+function loadProducts(page) {
+  var req = new XMLHttpRequest();
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 200) {
+      var resp = req.responseText;
+      document.getElementById("content").innerHTML = resp;
+    }
+  };
+
+  req.open("GET", "load-products-process.php?page=" + page, true);
+  req.send();
+}
+
+function printReport() {
+  var Content = document.body.innerHTML;
+  var printArea = document.getElementById("printArea");
+
+  document.body.innerHTML = printArea.innerHTML;
+
+  window.print();
+
+  document.body.innerHTML = Content;
+}
+
+
+function registerBrand() {
+  var brand = document.getElementById("brandname");
+
+  var form = new FormData();
+  form.append("brand", brand.value);
+
+  var req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 400) {
+      var resp = req.responseText;
+      if (resp == "success") {
+        window.location.reload();
+      } else {
+        alert(resp);
+      }
+    }
+  };
+  req.open("POST", "registerBrandProcess.php", true);
+  req.send(form);
+}
+
+function registerCategory() {
+  var category = document.getElementById("categoryName");
+
+  var form = new FormData();
+  form.append("category", category.value);
+
+  var req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 400) {
+      var resp = req.responseText;
+      if (resp == "success") {
+        window.location.reload();
+      } else {
+        alert(resp);
+      }
+    }
+  };
+  req.open("POST", "registerCategoryProcess.php", true);
+  req.send(form);
+}
+
+function registerModel() {
+  var category = document.getElementById("modelname");
+
+  var form = new FormData();
+  form.append("model", category.value);
+
+  var req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 400) {
+      var resp = req.responseText;
+      if (resp == "success") {
+        window.location.reload();
+      } else {
+        alert(resp);
+      }
+    }
+  };
+  req.open("POST", "registerModelProcess.php", true);
+  req.send(form);
+}
+
+function registerColor() {
+  var color = document.getElementById("clrname");
+
+  var form = new FormData();
+  form.append("color", color.value);
+
+  var req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 400) {
+      var resp = req.responseText;
+      if (resp == "success") {
+        window.location.reload();
+      } else {
+        alert(resp);
+      }
+    }
+  };
+  req.open("POST", "registerColorProcess.php", true);
+  req.send(form);
+}

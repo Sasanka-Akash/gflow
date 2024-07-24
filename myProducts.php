@@ -1,7 +1,3 @@
-<?php
-
-include "connection.php";
-?>
 
 <!DOCTYPE html>
 
@@ -59,7 +55,7 @@ include "connection.php";
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-8 mt-4">
                     <div class="row">
                         <div class="col-12 col-lg-10 mt-2 my-lg-4">
                             <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
