@@ -3,7 +3,7 @@
 session_start();
 include "connection.php";
 
-$user = $_SESSION["u"]["email"];
+$user = $_SESSION["au"]["email"];
 
 $search = $_POST["s"];
 $time = $_POST["t"];
