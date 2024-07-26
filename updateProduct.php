@@ -27,7 +27,7 @@
             session_start();
             include "connection.php";
 
-            if (isset($_SESSION["au"]) && isset($_SESSION["p"])) {
+            if (isset($_SESSION["u"]) && isset($_SESSION["p"])) {
 
                 $product = $_SESSION["p"];
 

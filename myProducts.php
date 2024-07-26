@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$admin = $_SESSION["au"];
+
+?>
+
 
 <!DOCTYPE html>
 
