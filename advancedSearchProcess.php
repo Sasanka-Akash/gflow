@@ -2,15 +2,12 @@
 
 include "connection.php";
 
-$search_txt = $_POST["t"];
-$category = $_POST["cat"];
+$search = $_POST["s"];
+$time = $_POST["t"];
+$qty = $_POST["q"];
+$condition = $_POST["c"];
 $brand = $_POST["b"];
-$model = $_POST["m"];
-$condition = $_POST["con"];
-$color = $_POST["col"];
-$price_from = $_POST["pf"];
-$price_to = $_POST["pt"];
-$sort = $_POST["s"];
+$category = $_POST["ca"];
 
 $query = "SELECT * FROM `product`";
 $status = 0;
