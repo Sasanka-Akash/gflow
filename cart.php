@@ -24,9 +24,9 @@
         <div class="row">
             <?php include "header-page.php";
 
-            if (isset($_SESSION["u"])) {
+            if (isset($_SESSION["au"])) {
 
-                $user = $_SESSION["u"]["email"];
+                $user = $_SESSION["au"]["email"];
 
                 $total = 0;
                 $subtotal = 0;

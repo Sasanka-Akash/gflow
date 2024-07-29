@@ -27,7 +27,7 @@
             session_start();
             include "connection.php";
 
-            if (isset($_SESSION["u"]) && isset($_SESSION["p"])) {
+            if (isset($_SESSION["au"]) && isset($_SESSION["p"])) {
 
                 $product = $_SESSION["p"];
 
@@ -233,13 +233,21 @@
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <select class="form-select" disabled>
+                                                    <select class="col-12 form-select" disabled>
                                                         <?php
                                                         $color_rs = Database::search("SELECT * FROM `color` INNER JOIN `product_has_color` ON 
-                                                            color.clr_id=product_has_color.color_clr_id WHERE `product_id`='" . $product["id"] . "'");
-                                                        $color_data = $color_rs->fetch_assoc();
+                                                            color.clr_id=product_has_color.color_clr_id WHERE `product_id`='".$product["id"]."'");
+                                                        $color_num = $color_rs->num_rows;
+
+                                                        for ($x = 0; $x < $color_num; $x++) {
+                                                            $color_data = $color_rs->fetch_assoc();
+
                                                         ?>
-                                                        <option><?php echo $color_data["clr_name"]; ?></option>
+                                                            <option >
+                                                                <?php echo $color_data["clr_name"]; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                     </select>
                                                 </div>
 
