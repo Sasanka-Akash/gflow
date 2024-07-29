@@ -151,6 +151,7 @@ include "connection.php";
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-warning" onclick="basicSearch(0);">Search</button>
+                        <a href="advancedSearch.php"><button type="button" class="btn btn-warning">Advanced Search</button></a>
                     </div>
                 </div>
             </div>

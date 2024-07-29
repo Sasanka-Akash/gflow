@@ -2,12 +2,15 @@
 
 include "connection.php";
 
-$search = $_POST["s"];
-$time = $_POST["t"];
-$qty = $_POST["q"];
-$condition = $_POST["c"];
+$search_txt = $_POST["t"];
+$category = $_POST["cat"];
 $brand = $_POST["b"];
-$category = $_POST["ca"];
+$model = $_POST["m"];
+$condition = $_POST["con"];
+$color = $_POST["col"];
+$price_from = $_POST["pf"];
+$price_to = $_POST["pt"];
+$sort = $_POST["s"];
 
 $query = "SELECT * FROM `product`";
 $status = 0;
@@ -78,7 +81,7 @@ if ($sort == 0) {
         }
     }
 
-    
+
 
     if ($condition != 0 && $status == 0) {
         $query .= " WHERE `condition_condition_id`='" . $condition . "'";
@@ -131,7 +134,6 @@ if ($sort == 0) {
             $query .= " AND `price` BETWEEN '" . $price_from . "' AND '" . $price_to . "'";
         }
     }
-
 } else if ($sort == 1) {
 
     if (!empty($search_txt)) {
@@ -249,7 +251,7 @@ if ($sort == 0) {
             $query .= " AND `price` BETWEEN '" . $price_from . "' AND '" . $price_to . "' ORDER BY `price` ASC";
         }
     }
-} else if($sort == 2){
+} else if ($sort == 2) {
 
     if (!empty($search_txt)) {
         $query .= " WHERE `title` LIKE '%" . $search_txt . "%' ORDER BY `price` DESC";
@@ -366,7 +368,7 @@ if ($sort == 0) {
             $query .= " AND `price` BETWEEN '" . $price_from . "' AND '" . $price_to . "' ORDER BY `price` DESC";
         }
     }
-}else if($sort == 3){
+} else if ($sort == 3) {
 
     if (!empty($search_txt)) {
         $query .= " WHERE `title` LIKE '%" . $search_txt . "%' ORDER BY `qty` ASC";
@@ -483,7 +485,7 @@ if ($sort == 0) {
             $query .= " AND `price` BETWEEN '" . $price_from . "' AND '" . $price_to . "' ORDER BY `qty` ASC";
         }
     }
-}else if($sort == 4){
+} else if ($sort == 4) {
 
     if (!empty($search_txt)) {
         $query .= " WHERE `title` LIKE '%" . $search_txt . "%' ORDER BY `qty` DESC";
@@ -605,7 +607,7 @@ if ($sort == 0) {
 ?>
 
 <div class="row">
-    <div class="offset-lg-1 col-12 col-lg-10 text-center">
+    <div class="offset-1  col-12 col-lg-11 text-center">
         <div class="row">
 
             <?php
@@ -621,7 +623,7 @@ if ($sort == 0) {
             $product_rs = Database::search($query);
             $product_num = $product_rs->num_rows;
 
-            $results_per_page = 6;
+            $results_per_page = 8;
             $number_of_pages = ceil($product_num / $results_per_page);
 
             $page_results = ($pageno - 1) * $results_per_page;
@@ -631,51 +633,54 @@ if ($sort == 0) {
             for ($x = 0; $x < $selected_num; $x++) {
                 $selected_data = $selected_rs->fetch_assoc();
             ?>
-                <div class="offset-lg-1 col-12 col-lg-3">
+                <div class=" col-12 col-lg-3" >
                     <div class="row">
 
-                        <div class="card col-6 col-lg-2 mt-3 mb-3" style="width: 18rem;">
-
-                            <?php
-                            $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
-                            $img_data = $img_rs->fetch_assoc();
-                            ?>
-
-                            <img src="<?php echo $img_data["img_path"]; ?>" class="card-img-top img-thumbnail mt-2" style="height: 180px;" />
-                            <div class="card-body ms-0 m-0 text-center">
-                                <h5 class="card-title fw-bold fs-6"><?php echo $selected_data["title"]; ?></h5>
-                                <span class="badge rounded-pill text-bg-info">New</span><br />
-                                <span class="card-text text-primary">Rs. <?php echo $selected_data["price"]; ?> .00</span><br />
-
+                        <div class="card card-design col-6 col-lg-2 mt-2 mb-2" style="width: 18rem;">
+                            <a href='<?php echo "singleProductView.php?id=" . ($selected_data["id"]); ?>' class="link-dark text-decoration-none">
                                 <?php
-                                if ($selected_data["qty"] > 0) {
-
-                                ?>
-                                    <span class="card-text text-warning fw-bold">In Stock</span><br />
-                                    <span class="card-text text-success fw-bold"><?php echo $selected_data["qty"]; ?> Items Available</span><br /><br />
-                                    <a href='#' class="col-12 btn btn-success">Buy Now</a>
-                                    <button class="col-12 btn btn-dark mt-2">
-                                        <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                                    </button>
-                                <?php
-
-                                } else {
-                                ?>
-                                    <span class="card-text text-danger fw-bold">Out Of Stock</span><br />
-                                    <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br />
-                                    <a href='#' class="col-12 btn btn-success disabled">Buy Now</a>
-                                    <button class="col-12 btn btn-dark mt-2 disabled">
-                                        <i class="bi bi-cart-plus-fill text-white fs-5"></i>
-                                    </button>
-                                <?php
-                                }
+                                $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
+                                $img_data = $img_rs->fetch_assoc();
                                 ?>
 
-                                <button class="col-12 btn btn-outline-light mt-2 border border-primary">
-                                    <i class="bi bi-heart-fill text-danger fs-5"></i>
-                                </button>
+                                <img src="<?php echo $img_data["img_path"]; ?>" class=" card-img justify-content-center align-items-center" style="height: 250px;" />
+                                <div class="card-body ms-0 m-0 text-center">
+                                    <h5 class="card-title fw-bold fs-6 link-light text-decoration-none"><?php echo $selected_data["title"]; ?></h5>
+                                    <!-- <span class="badge rounded-pill text-bg-info">New</span><br /> -->
+                                    <span class="fs-3 fw-bold card-text text-warning">LKR <?php echo $selected_data["price"]; ?>.00</span><br />
 
-                            </div>
+                                    <?php
+
+                                    if ($selected_data["qty"] > 0) {
+                                    ?>
+                                        <div class="ms-4">
+                                            <button class="col-12 btn Btn ms-4" onclick="addToCart(<?php echo $selected_data['id'] ?>);">
+                                                <div class="sign fs-3">+ </div>
+                                                <div class="text">Add to</div>
+                                            </button>
+                                        </div>
+                                    <?php
+                                    } else {
+                                    ?>
+
+                                        <span class="card-text text-danger fw-bold">Out Stock</span><br />
+                                        <!-- <span class="card-text text-danger fw-bold">00 Items Available</span><br /><br /> -->
+                                        <!-- <a href='#' class="col-12 btn btn-warning disabled">Buy Now</a> -->
+                                        <div class="ms-4">
+                                            <button class="col-12 btn Btn bg-danger disabled ms-4">
+                                                <div class="sign fs-3">+ </div>
+                                                <div class="text">Add to</div>
+                                            </button>
+                                        </div>
+                                    <?php
+                                    }
+
+                                    ?>
+
+
+
+                                </div>
+                            </a>
                         </div>
 
                     </div>
@@ -685,9 +690,9 @@ if ($sort == 0) {
             }
             ?>
 
-            <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
+            <div class=" col-12 col-lg-12 text-center mb-3">
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination pagination-lg justify-content-center">
+                    <ul class="pagination pagination-md justify-content-center">
                         <li class="page-item">
                             <a class="page-link" <?php if ($pageno <= 1) {
                                                         echo ("#");

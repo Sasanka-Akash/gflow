@@ -538,87 +538,29 @@ function basicSearch(x) {
 
 function advancedSearch(x) {
 
-  var search = document.getElementById("s");
 
-  var time = "0";
-
-  if (document.getElementById("n").checked) {
-    time = "1";
-  } else if (document.getElementById("o").checked) {
-    time = "2";
-  }
-
-  var qty = "0";
-
-  if (document.getElementById("h").checked) {
-    qty = "1";
-  } else if (document.getElementById("l").checked) {
-    qty = "2";
-  }
-
-  var condition = "0";
-
-  if (document.getElementById("b").checked) {
-    condition = "1";
-  } else if (document.getElementById("u").checked) {
-    condition = "2";
-  }
-
-  var brand = "0";
-
-  if (document.getElementById("r").checked) {
-    brand = "1";
-  } else if (document.getElementById("m").checked) {
-    brand = "2";
-  } else if (document.getElementById("a").checked) {
-    brand = "3";
-  } else if (document.getElementById("le").checked) {
-    brand = "4";
-  }
-
-  var category = "0";
-
-  if (document.getElementById("lp").checked) {
-    category = "1";
-  } else if (document.getElementById("cb").checked) {
-    category = "2";
-  } else if (document.getElementById("cp").checked) {
-    category = "3";
-  } else if (document.getElementById("pt").checked) {
-    category = "4";
-  }
-
-  // var txt = document.getElementById("t");
-  // var category = document.getElementById("c1");
-  // var brand = document.getElementById("b1");
-  // var model = document.getElementById("m");
-  // var condition = document.getElementById("c2");
-  // var color = document.getElementById("c3");
-  // var from = document.getElementById("pf");
-  // var to = document.getElementById("pt");
-  // var sort = document.getElementById("s");
+  var txt = document.getElementById("t");
+  var category = document.getElementById("c1");
+  var brand = document.getElementById("b1");
+  var model = document.getElementById("m");
+  var condition = document.getElementById("c2");
+  var color = document.getElementById("c3");
+  var from = document.getElementById("pf");
+  var to = document.getElementById("pt");
+  var sort = document.getElementById("s");
 
   var form = new FormData();
 
-  form.append("s", search.value);
-  form.append("t", time);
-  form.append("q", qty);
-  form.append("c", condition);
-  form.append("b", brand);
-  form.append("ca", category);
-  // form.append("gpu",gpu);
+  form.append("t", txt.value);
+  form.append("cat", category.value);
+  form.append("b", brand.value);
+  form.append("m", model.value);
+  form.append("con", condition.value);
+  form.append("col", color.value);
+  form.append("pf", from.value);
+  form.append("pt", to.value);
+  form.append("s", sort.value);
   form.append("page", x);
-
-  // form.append("t", txt.value);
-  // form.append("cat", category.value);
-  // form.append("b", brand.value);
-  // form.append("m", model.value);
-  // form.append("con", condition.value);
-  // form.append("col", color.value);
-  // form.append("pf", from.value);
-  // form.append("pt", to.value);
-  // form.append("s", sort.value);
-  // form.append("page", x);
 
   var request = new XMLHttpRequest();
 
@@ -1380,3 +1322,4 @@ function registerColor() {
   req.open("POST", "registerColorProcess.php", true);
   req.send(form);
 }
+

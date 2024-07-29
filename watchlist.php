@@ -46,7 +46,7 @@
                             <div class="row">
 
                                 <div class="col-12 mt-5 text-center fs-1">
-                                    <label class="form-label fs-1 text-center fw-bolder mt-3 text-warning">Watchlist &hearts;</label>
+                                    <label class="form-label fs-1 text-center  mt-3 text-warning">Watchlist &hearts;</label>
                                 </div>
 
                                 <!-- <div class="col-12">
@@ -64,9 +64,7 @@
                                     </div>
                                 </div> -->
 
-                                <div class="col-12">
-                                    <hr />
-                                </div>
+
 
                                 <!-- <div class="col-11 col-lg-2 border-0 border-end border-1 border-dark">
                                     <nav aria-label="breadcrumb">
@@ -91,7 +89,7 @@
                                         <div class="row">
                                             <div class="col-12 emptyView"></div>
                                             <div class="col-12 text-center">
-                                                <label class="form-label fs-1 fw-bold">You have no items in your Watchlist
+                                                <label class="form-label fs-1 text-light fw-bold">You have no items in your Watchlist
                                                     yet.</label>
                                             </div>
                                             <div class="offset-lg-4 col-12 col-lg-4 d-grid mb-3">
@@ -104,7 +102,7 @@
                                 } else {
                                 ?>
                                     <!-- have products -->
-                                    <div class="col-12 col-lg-12">
+                                    <div class="col-12 col-lg-12 mb-3">
                                         <div class="row">
                                             <?php
 
@@ -148,7 +146,7 @@
                                                                 <span class="fs-5 text-light"><?php echo $watchlist_data["qty"]; ?> Items available</span>
                                                                 <br />
                                                                 <span class="fs-5 text-light-50">Seller :</span>
-                                                               
+
                                                                 <span class="fs-5 text-light">
                                                                     <?php echo $data["fname"] . " " . $data["lname"]; ?>
                                                                 </span>
@@ -158,7 +156,7 @@
                                                             <div class="card-body d-lg-grid">
                                                                 <a href="#" class="btn btn-warning mb-2 "><i class="bi bi-plus-lg"></i><i class="bi bi-cart-fill"></i></a>
                                                                 <a href="#" class="btn btn-danger" onclick='removeFromWatchlist(<?php echo $list_id; ?>);'>
-                                                                <i class="bi bi-trash3"></i>
+                                                                    <i class="bi bi-trash3"></i>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -196,13 +194,18 @@
 
 
         </div>
+        
     </div>
-    <hr>
+
+
     <?php include "footer.php"; ?>
+  
+
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
+
 
 </html>

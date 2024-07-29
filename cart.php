@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cart | eShop</title>
+    <title>Cart | Gflow</title>
 
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -39,7 +39,7 @@
                 <div class="col-12 pt-2 rounded t" style="background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
   -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px); border-radius: 10px;"">
+  backdrop-filter: blur(20px); border-radius: 10px;">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a class="text-light text-decoration-none" href="home.php">Home</a></li>
@@ -73,14 +73,14 @@
                             <!-- Empty View -->
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-12 emptyCart"></div>
-                                    <div class="col-12 text-center mb-2">
-                                        <label class="form-label fs-1 fw-bold">
+                                    <div class="col-12 emptyCart "></div>
+                                    <div class="col-12 text-center mb-2 mt-4">
+                                        <label class="form-label text-light fs-1 fw-bold">
                                             You have no items in your Cart yet.
                                         </label>
                                     </div>
                                     <div class="offset-lg-4 col-12 col-lg-4 mb-4 d-grid">
-                                        <a href="home.php" class="btn btn-outline-warning fs-3 fw-bold">
+                                        <a href="home.php" class="btn btn-warning fs-3 fw-bold">
                                             Start Shopping
                                         </a>
                                     </div>
@@ -256,7 +256,7 @@
                         </div>
 
                         <div class="col-12 mt-3 mb-3 d-grid">
-                            <button class="btn btn-warning fs-5 fw-bold">CHECKOUT</button>
+                            <button class="btn btn-warning fs-5 fw-bold" >CHECKOUT</button>
                         </div>
 
 

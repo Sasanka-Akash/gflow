@@ -5,6 +5,7 @@ include "header-page.php";
 if (isset($_GET["id"])) {
 
     $pid = $_GET["id"];
+   
     // $product = $_SESSION["p"];
 
     $product_rs = Database::search("SELECT product.id,product.price,product.qty,product.description,
@@ -39,7 +40,7 @@ if (isset($_GET["id"])) {
 
             <title><?php echo $category_data1["cat_name"]; ?> | Gflow</title>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <!-- or -->
             <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
             <link rel="stylesheet" href="style.css">
@@ -54,34 +55,15 @@ if (isset($_GET["id"])) {
 
 
                 <div class="col-12 col-lg-12">
-                    <div class="row mt-5">
+                    <div class="row mt-5" id="content">
                         <!-- filter -->
-                        <div class=" col-10 col-lg-2 mx-3 my-3 text-light" style="background-color: rgba(255, 255, 255, 0.074);
+                        <!-- <div class=" col-10 col-lg-2 mx-3 my-3 text-light" style="background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px); border-radius: 10px;">
                             <div class="col-12 col-lg-12 py-4 rounded-3 mt-5">
                                 <h2 class="text-center"><i class="bi bi-funnel-fill"></i>Filters</h2>
-                                <div class="mb-2">
-                                    <label class="form-label" for="">Category</label>
-                                    <select class="form-select" id="category">
-                                        <option value="0">Select Category</option>
-
-                                        <?php
-                                        $rs = Database::search("SELECT * FROM `category`");
-                                        $num = $rs->num_rows;
-
-                                        for ($x = 0; $x < $num; $x++) {
-                                            $d = $rs->fetch_assoc();
-                                        ?>
-                                            <option value="<?php echo ($d["cat_id"]); ?>"><?php echo ($d["cat_name"]); ?></option>
-
-                                        <?php
-                                        }
-                                        ?>
-
-                                    </select>
-                                </div>
+                                
                                 <div class="mb-2">
                                     <label class="form-label" for="">Brand</label>
                                     <select class="form-select" id="brand">
@@ -124,7 +106,7 @@ if (isset($_GET["id"])) {
 
                                 <div class="mb-2">
                                     <label class="form-label" for="">Color</label>
-                                    <select class="form-select" id="condition">
+                                    <select class="form-select" id="color">
                                         <option value="0">Select Color</option>
 
                                         <?php
@@ -157,10 +139,10 @@ if (isset($_GET["id"])) {
                                 </div>
 
                             </div>
-                        </div>
+                        </div> -->
 
 
-                        <div class="col-12 col-lg-9">
+                        <div class="col-12 col-lg-12">
 
 
 
@@ -250,52 +232,7 @@ if (isset($_GET["id"])) {
                         </div>
                     </div>
 
-                    <div class="offset-2 offset-lg-3 col-8 col-lg-6 text-center mb-3">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination pagination-md justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href=" 
-                                                <?php if ($pageno <= 1) {
-                                                    echo ("#");
-                                                } else {
-                                                    echo "?page=" . ($pageno - 1);
-                                                } ?>
-                                                " aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <?php
-                                for ($x = 1; $x <= $number_of_pages; $x++) {
-                                    if ($x == $pageno) {
-                                ?>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x; ?></a>
-                                        </li>
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <li class="page-item ">
-                                            <a class="page-link" href="<?php echo "?page=" . ($x); ?>"><?php echo $x; ?></a>
-                                        </li>
-                                <?php
-                                    }
-                                }
-                                ?>
-
-                                <li class="page-item">
-                                    <a class="page-link" href="
-                                                <?php if ($pageno >= $number_of_pages) {
-                                                    echo ("#");
-                                                } else {
-                                                    echo "?page=" . ($pageno + 1);
-                                                } ?>
-                                                " aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    
 
 
 

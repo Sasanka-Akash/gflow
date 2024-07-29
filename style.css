@@ -6,7 +6,7 @@
 }
 
 .logo {
-  background-image: url("img/Screenshot\ 2023-12-17\ 202109.png");
+  background-image: url("img/g1.png");
   height: 100px;
   background-size: contain;
   background-position: center;
@@ -245,7 +245,7 @@
   font-weight: 400;
 }
 .emptyView {
-  height: 400px;
+  height: 200px;
   background-image: url("img/addproductimg.svg");
   background-position: center;
   background-size: contain;
