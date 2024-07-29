@@ -264,57 +264,62 @@ if (isset($_GET["id"])) {
                                         <?php
                                         } else {
                                         ?>
-                                            <div class="col-12 ">
-                                                <div class="row border border-1 border-dark rounded overflow-scroll me-0" style="height: 300px;">
+                                            <div class="col-12">
+                                                <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                                                    <div class="row rounded me-0" style="height: 300px;">
 
-                                                    <?php
+                                                        <?php
 
 
 
-                                                    for ($y = 0; $y < $feedback_num; $y++) {
-                                                        $feedback_data = $feedback_rs->fetch_assoc();
+                                                        for ($y = 0; $y < $feedback_num; $y++) {
+                                                            $feedback_data = $feedback_rs->fetch_assoc();
 
-                                                    ?>
+                                                        ?>
 
-                                                        <div class="col-12 mt-1 mb-1 mx-1">
-                                                            <div class="row border border-1 border-dark rounded me-0">
+                                                            <div class="col-12 card1">
+                                                                <div class="row " style="background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); border-radius: 10px;">
 
-                                                                <div class="col-10 mt-1 mb-1 ms-0"><?php echo $feedback_data["fname"] . " " . $feedback_data["lname"]; ?></div>
-                                                                <div class="col-2 mt-1 mb-1 me-0">
+                                                                    <div class="col-10 mt-1 mb-1 ms-0 "><?php echo $feedback_data["fname"] . " " . $feedback_data["lname"]; ?></div>
+                                                                    <div class="col-2 mt-1 mb-1 me-0">
 
-                                                                    <?php
+                                                                        <?php
 
-                                                                    if ($feedback_data["type"] == 1) {
-                                                                    ?><span class="badge bg-success">Positive</span> <?php
-                                                                                                                    } else if ($feedback_data["type"] == 2) {
-                                                                                                                        ?><span class="badge bg-warning">Neutral</span> <?php
-                                                                                                                                                                    } else if ($feedback_data["type"] == 3) {
-                                                                                                                                                                        ?><span class="badge bg-danger">Negative</span> <?php
+                                                                        if ($feedback_data["type"] == 1) {
+                                                                        ?><span class="badge bg-success">Positive</span> <?php
+                                                                                                                        } else if ($feedback_data["type"] == 2) {
+                                                                                                                            ?><span class="badge bg-warning">Neutral</span> <?php
+                                                                                                                                                                        } else if ($feedback_data["type"] == 3) {
+                                                                                                                                                                            ?><span class="badge bg-danger">Negative</span> <?php
                                                                                                                                                                                                                     }
 
                                                                                                                                                                                                                         ?>
 
 
-                                                                </div>
+                                                                    </div>
 
-                                                                <div class="col-12">
-                                                                    <b>
-                                                                        <?php echo  $feedback_data["feed"]; ?>
-                                                                    </b>
-                                                                </div>
-                                                                <div class="offset-6 col-6 text-end">
-                                                                    <label class="form-label fs-6 text-black-50"><?php echo $feedback_data["date"]; ?></label>
+                                                                    <div class="col-12">
+                                                                        <b>
+                                                                            <?php echo  $feedback_data["feed"]; ?>
+                                                                        </b>
+                                                                    </div>
+                                                                    <div class="offset-6 col-6 text-end">
+                                                                        <label class="form-label fs-6 text-light"><?php echo $feedback_data["date"]; ?></label>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
 
-                                                    <?php
+                                                        <?php
 
-                                                    }
+                                                        }
 
-                                                    ?>
+                                                        ?>
 
 
+                                                    </div>
                                                 </div>
                                             </div>
                                         <?php
@@ -331,7 +336,7 @@ if (isset($_GET["id"])) {
 
                                 <div class="col-12">
 
-                                <h1 class="mb-4 text-warning">Related Items</h1>
+                                    <h1 class="mb-4 text-warning">Related Items</h1>
 
                                     <div class="row g-4 align-items-center justify-content-center" style="gap: 30px;">
                                         <?php
@@ -412,7 +417,7 @@ if (isset($_GET["id"])) {
                 </div>
             </div>
 
-            <div class="col-12 col-lg-12 text-center mt-5" >
+            <div class="col-12 col-lg-12 text-center mt-5">
                 <div class=" text-center justify-content-center">
                     <p style="color: white;" class="text-center">&copy; 2023 Gflow.lk || All Rights Reserved</p>
                 </div>
