@@ -332,9 +332,9 @@ if (isset($_SESSION["au"])) {
                 </main>
             </section>
 
-            <div>
+            <!-- <div>
                 <canvas id="myChart"></canvas>
-            </div>
+            </div> -->
 
         </div>
         <div class="col-12 text-center mt-5">

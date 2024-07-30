@@ -1003,6 +1003,21 @@ function blockUser(email) {
   request.send();
 }
 
+function blockSuppliers(email) {
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      alert(response);
+      window.location.reload();
+    }
+  };
+
+  request.open("GET", "suppliersBlockProcess.php?email=" + email, true);
+  request.send();
+}
+
 var mm;
 
 function viewMsgModal(email) {
@@ -1224,6 +1239,34 @@ function loadProducts(page) {
   };
 
   req.open("GET", "load-products-process.php?page=" + page, true);
+  req.send();
+}
+
+function loadSuppliers(page) {
+  var req = new XMLHttpRequest();
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 200) {
+      var resp = req.responseText;
+      document.getElementById("content").innerHTML = resp;
+    }
+  };
+
+  req.open("GET", "load-suppliers-process.php?page=" + page, true);
+  req.send();
+}
+
+function loadCustomer(page) {
+  var req = new XMLHttpRequest();
+
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 200) {
+      var resp = req.responseText;
+      document.getElementById("content").innerHTML = resp;
+    }
+  };
+
+  req.open("GET", "load-customer-process.php?page=" + page, true);
   req.send();
 }
 

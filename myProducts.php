@@ -114,7 +114,7 @@ $admin = $_SESSION["au"];
             </div> -->
 
 
-        <div class="modal fade bg-dark" id="registerProductModal" tabindex="-1" aria-hidden="true">
+        <!-- <div class="modal fade bg-dark" id="registerProductModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-header fs-5">
@@ -130,13 +130,7 @@ $admin = $_SESSION["au"];
                                 <img src="" id="i0" class="w-100">
                             </div>
 
-                            <!-- <div class="offset-lg-3 col-12 col-lg-6">
-                                    <div class="row">
-                                        <div class="col-4 border border-primary rounded">
-                                            <img src="img/addproductimg.svg" class="img-fluid" style="width: 250px;" id="i" />
-                                        </div>
-                                    </div>
-                                </div> -->
+                            
 
                             <input type="file" class="d-none" multiple id="imageuploader" />
                             <label for="imageuploader" class="col-12 btn btn-warning" onclick="changeProductImage();">Upload Images</label>
@@ -313,7 +307,7 @@ $admin = $_SESSION["au"];
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 

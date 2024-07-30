@@ -46,6 +46,12 @@
                                 <a class="nav-link text-warning" href="manageProducts.php">Product Managment</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-warning" href="manageSuppliers.php">Suppliers Managment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning" href="manageCustomer.php">Customer Managment</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-warning" href="myProducts.php">Add Product</a>
                             </li>
 
@@ -70,6 +76,8 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="userReport.php">User Report</a></li>
                                         <li><a class="dropdown-item" href="productReport.php">Product Report</a></li>
+                                        <li><a class="dropdown-item" href="suppliersReport.php">Suppliers Report</a></li>
+                                        <li><a class="dropdown-item" href="customerReport.php">Customer Report</a></li>
                                     </ul>
                             </li>
                             <li class="nav-item">
