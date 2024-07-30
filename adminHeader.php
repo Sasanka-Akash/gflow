@@ -64,7 +64,7 @@
                                         <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerBrandModal" href="#">Add Brand</button></li>
                                         <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerCategoryModal" href="#">Add Category</button></li>
                                         <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModelModal" href="#">Add Model</button></li>
-                                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registercolorModal" href="#">User Color</button></li>
+                                        <!-- <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registercolorModal" href="#">User Color</button></li> -->
                                     </ul>
                             </li>
 
@@ -211,7 +211,7 @@
         </div>
 
 
-        <div class="modal fade" id="registercolorModal" tabindex="-1" aria-hidden="true">
+        <!-- <div class="modal fade" id="registercolorModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -246,7 +246,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 </body>
 

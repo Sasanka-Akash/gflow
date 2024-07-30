@@ -235,7 +235,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12 col-lg-4 border-end border-success">
+                                        <!-- <div class="col-12 col-lg-4 border-end border-success">
                                             <div class="row">
 
                                                 <div class="col-12">
@@ -270,7 +270,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-12 col-lg-4">
                                             <div class="row">

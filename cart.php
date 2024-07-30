@@ -99,9 +99,7 @@
                                         $cart_data = $cart_rs->fetch_assoc();
 
                                         $product_rs = Database::search("SELECT * FROM `product` INNER JOIN `product_img` ON
-                                        product.id=product_img.product_id  INNER JOIN `product_has_color` ON 
-                                        product_has_color.product_id=product.id INNER JOIN `color` ON 
-                                        product_has_color.color_clr_id=color.clr_id  WHERE `id`='" . $cart_data["product_id"] . "'");
+                                        product.id=product_img.product_id    WHERE `id`='" . $cart_data["product_id"] . "'");
                                         $product_data = $product_rs->fetch_assoc();
 
                                         $total = $total + ($product_data["price"] * $cart_data["qty"]);
@@ -161,7 +159,7 @@
 
 
 
-                                                        <span class="fw-bold text-light fs-5">Colour : <?php echo $product_data["clr_name"]; ?></span> <br> &nbsp; |
+                                                        <!-- <span class="fw-bold text-light fs-5">Colour : <?php echo $product_data["clr_name"]; ?></span> <br> &nbsp; | -->
 
                                                         &nbsp; <span class="fw-bold text">Condition : <?php echo $product_data["condition_condition_id"]; ?></span>
                                                         <br>

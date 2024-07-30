@@ -264,7 +264,7 @@ function addProduct() {
     condition = 2;
   }
 
-  var clr = document.getElementById("clr");
+ 
   var qty = document.getElementById("qty");
   var cost = document.getElementById("cost");
   var dwc = document.getElementById("dwc");
@@ -279,7 +279,7 @@ function addProduct() {
   form.append("m", model.value);
   form.append("t", title.value);
   form.append("con", condition);
-  form.append("col", clr.value);
+ 
   form.append("q", qty.value);
   form.append("co", cost.value);
   form.append("dwc", dwc.value);
