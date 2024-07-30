@@ -29,7 +29,7 @@
         $user_rs = Database::search($query);
         $user_num = $user_rs->num_rows;
 
-        $results_per_page = 5;
+        $results_per_page = 8;
         $number_of_pages = ceil($user_num / $results_per_page);
 
         $page_results = ($pageno - 1) * $results_per_page; // 0 , 20 , 40

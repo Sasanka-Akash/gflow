@@ -264,7 +264,6 @@ function addProduct() {
     condition = 2;
   }
 
- 
   var qty = document.getElementById("qty");
   var cost = document.getElementById("cost");
   var dwc = document.getElementById("dwc");
@@ -279,7 +278,7 @@ function addProduct() {
   form.append("m", model.value);
   form.append("t", title.value);
   form.append("con", condition);
- 
+
   form.append("q", qty.value);
   form.append("co", cost.value);
   form.append("dwc", dwc.value);
@@ -299,13 +298,9 @@ function addProduct() {
       var response = request.responseText;
 
       if (response == "success") {
-        showAlert("Success", "Product Saved Successfull", "success").then(() => {
-          window.location.reload();
-        });
-        // alert("Product Saved Successfull");
-        // window.location.reload();
+        window.location = "manageProducts.php";
       } else {
-        // showAlert("Error", response, "error");
+        alert(response);
       }
     }
   };
@@ -313,27 +308,26 @@ function addProduct() {
   request.send(form);
 }
 
-function changeProductImage(){
-
+function changeProductImage() {
   var image = document.getElementById("imageuploader");
 
-  image.onchange = function(){
-      var file_count = image.files.length;
+  image.onchange = function () {
+    var file_count = image.files.length;
 
-      if(file_count <= 3){
+    if (file_count <= 3) {
+      for (var x = 0; x < file_count; x++) {
+        var file = this.files[x];
+        var url = window.URL.createObjectURL(file);
 
-          for(var x = 0; x < file_count; x++){
-              var file = this.files[x];
-              var url = window.URL.createObjectURL(file);
-
-              document.getElementById("i"+ x).src = url;
-          }
-
-      }else{
-          alert(file_count+"files. You are proceed to upload only 3 or less than 3 files.");
+        document.getElementById("i" + x).src = url;
       }
-  }
-
+    } else {
+      alert(
+        file_count +
+          "files. You are proceed to upload only 3 or less than 3 files."
+      );
+    }
+  };
 }
 
 function changeStatus(id) {
@@ -450,7 +444,6 @@ function clearSort() {
   window.location.reload();
 }
 
-
 function sendid(id) {
   var request = new XMLHttpRequest();
 
@@ -470,46 +463,43 @@ function sendid(id) {
   request.send();
 }
 
-function updateProduct(){
-
+function updateProduct() {
   var title = document.getElementById("t");
-  var qty = document.getElementById("q");    
-  var dwc = document.getElementById("dwc");    
-  var doc = document.getElementById("doc");    
-  var description = document.getElementById("d");    
-  var images = document.getElementById("imageuploader");    
+  var qty = document.getElementById("q");
+  var dwc = document.getElementById("dwc");
+  var doc = document.getElementById("doc");
+  var description = document.getElementById("d");
+  var images = document.getElementById("imageuploader");
 
   var form = new FormData();
 
-  form.append("t",title.value);
-  form.append("q",qty.value);
-  form.append("dwc",dwc.value);
-  form.append("doc",doc.value);
-  form.append("d",description.value);
-  
+  form.append("t", title.value);
+  form.append("q", qty.value);
+  form.append("dwc", dwc.value);
+  form.append("doc", doc.value);
+  form.append("d", description.value);
+
   var file_count = images.files.length;
 
-  for(var x = 0; x < file_count;x++){
-      form.append("i" + x,images.files[x]);
+  for (var x = 0; x < file_count; x++) {
+    form.append("i" + x, images.files[x]);
   }
 
   var request = new XMLHttpRequest();
 
-  request.onreadystatechange = function(){
-      if(request.status == 200 && request.readyState == 4){
-          var response = request.responseText;
-          if(response == "Product has been Updated."){
-              window.location = "myProducts.php";
-          }else{
-              alert(response);
-          }
-         
+  request.onreadystatechange = function () {
+    if (request.status == 200 && request.readyState == 4) {
+      var response = request.responseText;
+      if (response == "Product has been Updated.") {
+        window.location = "manageProducts.php";
+      } else {
+        alert(response);
       }
-  }
+    }
+  };
 
-  request.open("POST","updateProductProcess.php",true);
+  request.open("POST", "updateProductProcess.php", true);
   request.send(form);
-
 }
 
 function basicSearch(x) {
@@ -527,8 +517,6 @@ function basicSearch(x) {
     if (request.status == 200 && request.readyState == 4) {
       var response = request.responseText;
       document.getElementById("basicSearchResult").innerHTML = response;
-    
-      
     }
   };
 
@@ -537,8 +525,6 @@ function basicSearch(x) {
 }
 
 function advancedSearch(x) {
-
-
   var txt = document.getElementById("t");
   var category = document.getElementById("c1");
   var brand = document.getElementById("b1");
@@ -709,9 +695,11 @@ function deleteFromCart(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "Removed") {
-        showAlert("Success", "Product removed from Cart.", "success").then(() => {
-          window.location.reload();
-        });
+        showAlert("Success", "Product removed from Cart.", "success").then(
+          () => {
+            window.location.reload();
+          }
+        );
       } else {
         showAlert("Error", response, "error");
       }
@@ -896,7 +884,11 @@ function deleteFeedback(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "Removed") {
-        showAlert("Success", "Product Delete From Purchasing History.", "success").then(() => {
+        showAlert(
+          "Success",
+          "Product Delete From Purchasing History.",
+          "success"
+        ).then(() => {
           window.location.reload();
         });
       } else {
@@ -916,7 +908,11 @@ function deleteAllFeedback(id) {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
       if (response == "Removed") {
-        showAlert("Success", "All Product Delete From Purchasing History.", "success").then(() => {
+        showAlert(
+          "Success",
+          "All Product Delete From Purchasing History.",
+          "success"
+        ).then(() => {
           window.location.reload();
         });
         // alert("All Product Delete From Purchasing History.");
@@ -949,13 +945,17 @@ function adminVerification() {
     if (request.status == 200 && request.readyState == 4) {
       var response = request.responseText;
       if (response == "Success") {
-        showAlert("Success","Please take a look chat at your email to find the VERIFICATION CODE.","success");
+        showAlert(
+          "Success",
+          "Please take a look chat at your email to find the VERIFICATION CODE.",
+          "success"
+        );
         var adminVerificationModel =
           document.getElementById("verificationModel");
         av = new bootstrap.Modal(adminVerificationModel);
         av.show();
       } else {
-        showAlert("Error",response,"error");
+        showAlert("Error", response, "error");
       }
     }
   };
@@ -994,8 +994,11 @@ function blockUser(email) {
   request.onreadystatechange = function () {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
-      alert(response);
-      window.location.reload();
+      // alert(response);
+      // window.location.reload();
+      showAlert("Success", response, "success").then(() => {
+        window.location.reload();
+      });
     }
   };
 
@@ -1009,8 +1012,11 @@ function blockSuppliers(email) {
   request.onreadystatechange = function () {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
-      alert(response);
-      window.location.reload();
+      // alert(response);
+      // window.location.reload();
+      showAlert("Success", response, "success").then(() => {
+        window.location.reload();
+      });
     }
   };
 
@@ -1032,8 +1038,11 @@ function blockProduct(id) {
   request.onreadystatechange = function () {
     if ((request.status == 200) & (request.readyState == 4)) {
       var response = request.responseText;
-      alert(response);
-      window.location.reload();
+      // alert(response);
+      // window.location.reload();
+      showAlert("Success", response, "success").then(() => {
+        window.location.reload();
+      });
     }
   };
 
@@ -1281,7 +1290,6 @@ function printReport() {
   document.body.innerHTML = Content;
 }
 
-
 function registerBrand() {
   var brand = document.getElementById("brandname");
 
@@ -1292,10 +1300,9 @@ function registerBrand() {
   req.onreadystatechange = function () {
     if (req.readyState == 4 && req.status == 400) {
       var resp = req.responseText;
+
       if (resp == "success") {
         window.location.reload();
-      } else {
-        alert(resp);
       }
     }
   };
@@ -1365,4 +1372,3 @@ function registerColor() {
   req.open("POST", "registerColorProcess.php", true);
   req.send(form);
 }
-

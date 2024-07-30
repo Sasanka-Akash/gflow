@@ -14,7 +14,7 @@ if(empty($brand)){
     if($num > 0){
         echo("The bradn you have entered has been already registered");
     }else{
-        Database::iud("INSERT INTO `brand` (`brand_name`) VALUES ('$brand')");
+        Database::iud("INSERT INTO `brand` (`brand_name`) VALUES ('".$brand."')");
         echo("success");
     }
 

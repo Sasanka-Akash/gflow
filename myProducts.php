@@ -69,7 +69,7 @@ $admin = $_SESSION["au"];
                             <h1 class="offset-4 offset-lg-2 text-white fw-bold">Add Products</h1>
                         </div>
                         <div class="col-12 col-lg-2 mx-2  my-lg-4 mx-lg-0 d-grid">
-                            <button class="btn btn-warning fw-bold" onclick="window.location='addProduct.php'">Add Product</button>
+                            <button class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#registerProductModal" >Add Product</button>
                         </div>
                         
                     </div>
@@ -79,42 +79,8 @@ $admin = $_SESSION["au"];
         </div>
         <!-- header -->
 
-
-
-
-        <!-- Button trigger modal -->
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addproduct">
-                Launch demo modal
-            </button> -->
-
-        <!-- Modal -->
-        <!-- <div class="container admin-body">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-10 mt-5">
-                        <h2 class="text-center">Product Managment</h2>
-
-                        <div class="row mt-4">
-                            <div class="col-4 offset-4 d-flex justify-content-center mb-3">
-                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#registerProductModal">Register Product</button>
-                            </div>
-                            <div class="col-6 offset-3 d-flex justify-content-around">
-                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerBrandModal">Add Brand</button>
-                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerCategoryModal">Add Category</button>
-                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerColorModal">Add Color</button>
-                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerSizeModal">Add Size</button>
-                            </div>
-                        </div>
-
-                        <div class="mt-4 table-responsive" id="content">
-
-                        </div>
-
-                    </div>
-                </div>
-            </div> -->
-
-
-        <!-- <div class="modal fade bg-dark" id="registerProductModal" tabindex="-1" aria-hidden="true">
+    
+        <div class="modal fade bg-dark" id="registerProductModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-header fs-5">
@@ -212,25 +178,7 @@ $admin = $_SESSION["au"];
                             </select>
                         </div>
 
-                        <div class="mb-2">
-                            <label class="form-label">Color</label>
-                            <select class="form-control" id="clr">
-                                <option value="0">Select Color</option>
-                                <?php
-                                $color_rs = Database::search("SELECT * FROM `color`");
-                                $color_num = $color_rs->num_rows;
-
-                                for ($x = 0; $x < $color_num; $x++) {
-                                    $color_data = $color_rs->fetch_assoc();
-
-                                ?>
-                                    <option value="<?php echo $color_data["clr_id"]; ?>">
-                                        <?php echo $color_data["clr_name"]; ?></option>
-                                <?php
-                                }
-                                ?>
-                            </select>
-                        </div>
+                        
 
                         <div class="mb-2">
                             <label class="form-label">Add Product Quantity</label>
@@ -307,7 +255,7 @@ $admin = $_SESSION["au"];
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
 
 
@@ -315,7 +263,7 @@ $admin = $_SESSION["au"];
 
 
         <!-- body -->
-        <div class="col-12 bg-secondary ">
+        <div class="col-12  ">
             <div class="row mt-5">
                 <!-- filter -->
                 <!-- <div class="col-11 col-lg-2 mx-3 my-3 border border-warning rounded">
@@ -459,7 +407,10 @@ $admin = $_SESSION["au"];
                                     $selected_data = $selected_rs->fetch_assoc();
                                 ?>
                                     <!-- card -->
-                                    <div class="card mb-3 mt-3 col-12 col-lg-6 bg-dark text-light">
+                                    <div class="card mb-3 mt-3 col-12 col-lg-6  text-light" style="background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); border-radius: 10px;">
                                         <div class="row">
                                             <div class="col-md-4 mt-4">
 
@@ -473,7 +424,7 @@ $admin = $_SESSION["au"];
                                             <div class="col-md-8">
                                                 <div class="card-body">
                                                     <h5 class="card-title fw-bold"><?php echo $selected_data["title"]; ?></h5>
-                                                    <span class="card-text fs-3 fw-bold text-warning"><?php echo $selected_data["price"]; ?>.00</span><br />
+                                                    <span class="card-text fs-3 fw-bold text-warning">LKR <?php echo $selected_data["price"]; ?>.00</span><br />
                                                     <span class="card-text fs-5 fw-bold text-success"><?php echo $selected_data["qty"]; ?> Items left</span>
                                                     <div class="form-check form-switch">
                                                         <input class="form-check-input" type="checkbox" role="switch" id="toggle<?php echo $selected_data["id"]; ?>" onchange="changeStatus(<?php echo $selected_data['id']; ?>);" <?php if ($selected_data["status_status_id"] == 2) { ?> checked <?php } ?> />

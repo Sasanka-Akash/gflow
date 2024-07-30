@@ -30,9 +30,7 @@
             if (isset($_SESSION["u"])) {
 
                 $watchlist_rs = Database::search("SELECT * FROM `watchlist` INNER JOIN `product` ON 
-                watchlist.product_id=product.id INNER JOIN `product_has_color` ON 
-                product_has_color.product_id=product.id INNER JOIN `color` ON 
-                product_has_color.color_clr_id=color.clr_id INNER JOIN `condition` ON 
+                watchlist.product_id=product.id   INNER JOIN `condition` ON 
                 product.condition_condition_id=condition.condition_id INNER JOIN `user` ON 
                 product.user_email=user.email WHERE watchlist.user_email='" . $_SESSION["u"]["email"] . "'");
 
@@ -133,8 +131,8 @@
 
                                                                 <h5 class="card-title fs-4 fw-bold text-warning"><?php echo $watchlist_data["title"]; ?></h5>
 
-                                                                <span class="fs-5 text-light-50">Colour : <?php echo $watchlist_data["clr_name"]; ?></span>
-                                                                &nbsp;&nbsp; | &nbsp;&nbsp;
+                                                                <!-- <span class="fs-5 text-light-50">Colour : <?php echo $watchlist_data["clr_name"]; ?></span>
+                                                                &nbsp;&nbsp; | &nbsp;&nbsp; -->
 
                                                                 <span class="fs-5 text-light-50">Condition : <?php echo $watchlist_data["condition_name"]; ?></span>
                                                                 <br />

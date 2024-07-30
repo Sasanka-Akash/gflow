@@ -10,7 +10,6 @@ $brand = $_POST["b"];
 $model = $_POST["m"];
 $title = $_POST["t"];
 $condition = $_POST["con"];
-$clr = $_POST["col"];
 $qty = $_POST["q"];
 $cost = $_POST["co"];
 $dwc = $_POST["dwc"];

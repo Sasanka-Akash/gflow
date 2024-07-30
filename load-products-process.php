@@ -2,13 +2,13 @@
     <thead>
         <tr>
             <td>ID</td>
+            <td>Image</td>
             <td>Name</td>
-            <!-- <td>Category</td> -->
             <td>Brand</td>
             <td>Model</td>
             <td>Price</td>
             <td>Status</td>
-            <!-- <td>Action</td> -->
+            <td>Action</td>
         </tr>
     </thead>
 
@@ -30,9 +30,8 @@
 
         $pageno;
 
-        if (isset($_GET["page"]) ) {
+        if (isset($_GET["page"])) {
             $pageno = $_GET["page"];
-            
         } else {
             $pageno = 1;
         }
@@ -53,10 +52,18 @@
 
         ?>
 
-            <tr>
+            <tr class="text-center justify-content-center">
                 <td><?php echo ($selected_data["id"]); ?></td>
+                <td>
+                    <?php
+                    $img_rs = Database::search("SELECT * FROM `product_img` WHERE `product_id`='" . $selected_data["id"] . "'");
+                    $img_data = $img_rs->fetch_assoc();
+                    ?>
+
+                    <img src="<?php echo ($img_data["img_path"]); ?>" class="w-50">
+                </td>
                 <td><?php echo ($selected_data["title"]); ?></td>
-                <!-- <td><?php echo ($category_data1["cat_name"]); ?></td> -->
+
                 <td><?php echo ($selected_data["bname"]); ?></td>
                 <td><?php echo ($selected_data["mname"]); ?></td>
                 <td><?php echo ($selected_data["price"]); ?></td>
@@ -73,9 +80,9 @@
                     }
                     ?>
                 </td>
-                <!-- <td>
-                    <button class="btn btn-sm btn-light" onclick="loadProUpdateData('<?php echo ($selected_data['id']); ?>');">Edit</button>
-                </td> -->
+                <td>
+                    <button class="btn btn-sm btn-warning" onclick="sendid('<?php echo ($selected_data['id']); ?>');">Edit</button>
+                </td>
 
             </tr>
 

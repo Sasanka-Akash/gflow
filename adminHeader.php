@@ -52,7 +52,7 @@
                                 <a class="nav-link text-warning" href="manageCustomer.php">Customer Managment</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-warning" href="myProducts.php">Add Product</a>
+                                <a class="nav-link text-warning" href="#" data-bs-toggle="modal" data-bs-target="#registerProductModal">Add Product</a>
                             </li>
 
                             <li class="nav-item">
@@ -124,7 +124,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="registerBrand();">Save changes</button>
+                        <button type="button" class="btn btn-warning" onclick="registerBrand();">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="registerCategory();">Save changes</button>
+                        <button type="button" class="btn btn-warning" onclick="registerCategory();">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -204,49 +204,194 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="registerModel();">Save changes</button>
+                        <button type="button" class="btn btn-warning" onclick="registerModel();">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <!-- <div class="modal fade" id="registercolorModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
+        
+
+        <div class="modal fade bg-dark" id="registerProductModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog ">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header fs-5">
+                        <h2>Product Register</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <label class="form-label" for="">Color Name</label>
-                        <input class="form-control" type="text" id="clrname">
-                    </div>
 
-                    <h4 class="text-center fw-bold">Colors</h4>
+                        <div class="mb-2">
 
-                    <?php
+                            <div class="mb-2">
+                                <label class="form-label">Product Image</label>
+                                <img src="" id="i0" class="w-100">
+                            </div>
 
-                    $clr_rs = Database::search("SELECT * FROM `color`");
-                    $clr_num = $clr_rs->num_rows;
+                            
 
-                    for ($x = 0; $x < $clr_num; $x++) {
-                        $clr_data = $clr_rs->fetch_assoc();
+                            <input type="file" class="d-none" multiple id="imageuploader" />
+                            <label for="imageuploader" class="col-12 btn btn-warning" onclick="changeProductImage();">Upload Images</label>
+                        </div>
 
-                    ?>
+                        <div class="mb-2">
+                            <label class="form-label">Product Name</label>
+                            <input class="form-control" type="text" id="title">
+                        </div>
 
-                        <label class="text-center" for=""><?php echo $clr_data["clr_name"]; ?></label>
+                        <div class="mb-2">
+                            <label class="form-label">Product Description</label>
+                            <textarea class="form-control" type="text" id="desc" rows="5"></textarea>
+                        </div>
 
-                    <?php
-                    }
-                    ?>
+                        <div class="mb-2">
+                            <label class="form-label">Category</label>
+                            <select class="form-control" id="category">
+                                <option value="0">Select Category</option>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="registerColor();">Save changes</button>
+                                <?php
+                                $category_rs = Database::search("SELECT * FROM `category`");
+                                $category_num = $category_rs->num_rows;
+
+                                for ($x = 0; $x < $category_num; $x++) {
+                                    $category_data = $category_rs->fetch_assoc();
+
+                                ?>
+                                    <option value="<?php echo $category_data["cat_id"]; ?>">
+                                        <?php echo $category_data["cat_name"]; ?></option>
+                                <?php
+                                }
+                                ?>
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Brand</label>
+                            <select class="form-control" id="brand">
+                                <option value="0">Select brand</option>
+
+                                <?php
+                                $brand_rs = Database::search("SELECT * FROM `brand`");
+                                $brand_num = $brand_rs->num_rows;
+
+                                for ($x = 0; $x < $brand_num; $x++) {
+                                    $brand_data = $brand_rs->fetch_assoc();
+
+                                ?>
+                                    <option value="<?php echo $brand_data["brand_id"]; ?>">
+                                        <?php echo $brand_data["brand_name"]; ?></option>
+                                <?php
+                                }
+                                ?>
+
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Model</label>
+                            <select class="form-control" id="model">
+                                <option value="0">Select Model</option>
+
+                                <?php
+                                $model_rs = Database::search("SELECT * FROM `model`");
+                                $model_num = $model_rs->num_rows;
+
+                                for ($x = 0; $x < $model_num; $x++) {
+                                    $model_data = $model_rs->fetch_assoc();
+
+                                ?>
+                                    <option value="<?php echo $model_data["model_id"]; ?>">
+                                        <?php echo $model_data["model_name"]; ?></option>
+                                <?php
+                                }
+                                ?>
+
+                            </select>
+                        </div>
+
+                        
+
+                        <div class="mb-2">
+                            <label class="form-label">Add Product Quantity</label>
+                            <input type="number" class="form-control" value="0" min="0" id="qty" />
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label ">Select Product Condition</label>
+                            <div class="form-check form-check-inline mx-5">
+                                <input class="form-check-input" type="radio" name="c" id="b" checked />
+                                <label class="form-check-label " for="b">Brandnew</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="c" id="u" />
+                                <label class="form-check-label " for="u">Used</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Cost Per Item</label>
+                            <div class="input-group mb-2 mt-2">
+                                <span class="input-group-text">Rs.</span>
+                                <input type="text" class="form-control" id="cost" />
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Delivery Cost</label>
+                            <div class="col-12 ">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <label class="form-label">Delivery cost Within Colombo</label>
+                                    </div>
+                                    <div class="col-12 ">
+                                        <div class="input-group mb-2 mt-2">
+                                            <span class="input-group-text">Rs.</span>
+                                            <input type="text" class="form-control" id="dwc" />
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12  ">
+                                        <label class="form-label">Delivery cost out of Colombo</label>
+                                    </div>
+                                    <div class="col-12 ">
+                                        <div class="input-group mb-2 mt-2">
+                                            <span class="input-group-text">Rs.</span>
+                                            <input type="text" class="form-control" id="doc" />
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label fw-bold" style="font-size: 20px;">Notice...</label><br />
+                            <label class="form-label">
+                                We are taking 5% of the product from price from every
+                                product as a service charge.
+                            </label>
+                        </div>
+
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-warning" onclick="addProduct();">Register Product</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

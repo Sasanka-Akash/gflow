@@ -150,7 +150,7 @@
                                 <div class="col-12 col-lg-3">
                                     <div class="row">
                                         <div class="col-6 d-grid">
-                                            <button class="btn btn-secondary rounded border border-1 border-primary mt-5 fs-5" onclick="addFeedback(<?php echo $invoice_data['product_id']; ?>);">
+                                            <button class="btn btn-secondary rounded  mt-5 fs-5" onclick="addFeedback(<?php echo $invoice_data['product_id']; ?>);">
                                                 <i class="bi bi-info-circle-fill fs-5"></i> Feedback
                                             </button>
                                         </div>
