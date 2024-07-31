@@ -25,25 +25,25 @@ if (isset($_SESSION["au"])) {
         <link rel="icon" href="img/g1.png">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        < <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-            <!--css file-->
-            <link rel="stylesheet" href="styles1.css" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <!--css file-->
+        <link rel="stylesheet" href="styles1.css" />
     </head>
 
-    <body onload="startTime()" onload="loadChart();" class="bg-dark">
+    <body onload="startTime()" class="bg-dark">
 
 
 
         <?php include "adminHeader.php"; ?>
 
 
-            <section class="content">
+        <section class="content">
 
 
-                <main>
-                    <div class="container-fluid">
-                        <div class="head-title">
-                            <!-- <div class="left">
+            <main>
+                <div class="container-fluid">
+                    <div class="head-title">
+                        <!-- <div class="left">
                             <h1>Dashboard</h1>
                             <ul class="breadcrumb  mt-4">
                                 <li>
@@ -56,27 +56,27 @@ if (isset($_SESSION["au"])) {
                             </ul>
                         </div> -->
 
-                            <div class="col-12 mt-5">
-                                <div class="row mt-5">
-                                    <!-- <div class="col-12 col-lg-2 text-center my-3">
+                        <div class="col-12 mt-5">
+                            <div class="row mt-5">
+                                <!-- <div class="col-12 col-lg-2 text-center my-3">
                 <label style="color: #F1C40F; font-weight: bold; font-size: 20px; justify-content: center;" class="form-label fs-4 fw-bold ">Total Active Time</label>
               </div> -->
-                                    <div style="color: #F1C40F; font-weight: bold; font-size: 20px;" class="col-12 mt-5 col-lg-12 text-center my-3 ">
+                                <div style="color: #F1C40F; font-weight: bold; font-size: 20px;" class="col-12 mt-5 col-lg-12 text-center my-3 ">
 
-                                        <?php
-                                        $start_date = new DateTime("2023-12-15 19:00:00"); //date time object
+                                    <?php
+                                    $start_date = new DateTime("2023-12-15 19:00:00"); //date time object
 
-                                        $tdate = new DateTime();
-                                        $tz = new DateTimeZone("Asia/Colombo");
-                                        $tdate->setTimezone($tz);
-                                        $end_date = new DateTime($tdate->format("Y-m-d H:i:s"));
+                                    $tdate = new DateTime();
+                                    $tz = new DateTimeZone("Asia/Colombo");
+                                    $tdate->setTimezone($tz);
+                                    $end_date = new DateTime($tdate->format("Y-m-d H:i:s"));
 
-                                        $difference = $end_date->diff($start_date);
+                                    $difference = $end_date->diff($start_date);
 
 
-                                        ?>
+                                    ?>
 
-                                        <!-- <label class="form-label fs-4 fw-bold text-warning">
+                                    <!-- <label class="form-label fs-4 fw-bold text-warning">
                   <?php
                     echo $difference->format('%Y') . " Years " . $difference->format('%m') . " Months " .
                         $difference->format('%d') . " Days " .  $difference->format('%H') . " Hours " .
@@ -85,198 +85,141 @@ if (isset($_SESSION["au"])) {
 
                 </label> -->
 
-                                        <div id="clockdate">
-                                            <div class="clockdate-wrapper">
-                                                <label style="color: #F1C40F; font-weight: bold; font-size: 20px; justify-content: center;" class="form-label fs-4 fw-bold ">Total Active Time</label>
+                                    <div id="clockdate">
+                                        <div class="clockdate-wrapper">
+                                            <label style="color: #F1C40F; font-weight: bold; font-size: 20px; justify-content: center;" class="form-label fs-4 fw-bold ">Total Active Time</label>
 
-                                                <div id="clock"></div>
-                                                <div id="date"></div><br>
-                                                <?php
-                                                echo $difference->format('%Y') . " Years " . $difference->format('%m') . " Months " . $difference->format('%d') . " Days ";
-                                                // $difference->format('%H') . " Hours " ;
-                                                // $difference->format('%i') . " Minutes " . $difference->format('%s') . " Seconds ";
-                                                ?>
-                                            </div>
+                                            <div id="clock"></div>
+                                            <div id="date"></div><br>
+                                            <?php
+                                            echo $difference->format('%Y') . " Years " . $difference->format('%m') . " Months " . $difference->format('%d') . " Days ";
+                                            // $difference->format('%H') . " Hours " ;
+                                            // $difference->format('%i') . " Minutes " . $difference->format('%s') . " Seconds ";
+                                            ?>
                                         </div>
-
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="box-info">
-                        <li>
-                            <i class="fas fa-calendar-check"></i>
-                            <span class="text">
-                                <h3>Daily Earnings</h3>
-                                <?php
-                                $today = date("Y-m-d");
-                                $thismonth = date("m");
-                                $thisyear = date("Y");
+                <div class="box-info">
+                    <li>
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="text">
+                            <h3>Daily Earnings</h3>
+                            <?php
+                            $today = date("Y-m-d");
+                            $thismonth = date("m");
+                            $thisyear = date("Y");
 
-                                $a = "0";
-                                $b = "0";
-                                $c = "0";
-                                $d = "0";
-                                $e = "0";
-                                $f = "0";
+                            $a = "0";
+                            $b = "0";
+                            $c = "0";
+                            $d = "0";
+                            $e = "0";
+                            $f = "0";
 
-                                $invoice_rs = Database::search("SELECT * FROM `invoice`");
-                                $invoice_num = $invoice_rs->num_rows;
+                            $invoice_rs = Database::search("SELECT * FROM `invoice`");
+                            $invoice_num = $invoice_rs->num_rows;
 
-                                for ($x = 0; $x < $invoice_num; $x++) {
-                                    $invoice_data = $invoice_rs->fetch_assoc();
+                            for ($x = 0; $x < $invoice_num; $x++) {
+                                $invoice_data = $invoice_rs->fetch_assoc();
 
-                                    $f = $f + $invoice_data["qty"]; //total qty
+                                $f = $f + $invoice_data["qty"]; //total qty
 
-                                    $d = $invoice_data["date"];
-                                    $splitDate = explode(" ", $d); //index array 
-                                    $pdate = $splitDate["0"];
+                                $d = $invoice_data["date"];
+                                $splitDate = explode(" ", $d); //index array 
+                                $pdate = $splitDate["0"];
 
-                                    if ($pdate == $today) {
-                                        $a = $a + $invoice_data["total"];
-                                        $c = $c + $invoice_data["qty"];
-                                    }
-
-                                    $splitMonth = explode("-", $pdate); //separate date as year,month & day
-                                    $pyear = $splitMonth["0"]; //year
-                                    $pmonth = $splitMonth["1"]; //month
-
-                                    if ($pyear == $thisyear) {
-                                        if ($pmonth == $thismonth) {
-                                            $b = $b + $invoice_data["total"];
-                                            $e = $e + $invoice_data["qty"];
-                                        }
-                                    }
+                                if ($pdate == $today) {
+                                    $a = $a + $invoice_data["total"];
+                                    $c = $c + $invoice_data["qty"];
                                 }
 
-                                ?>
-                                <span class="fs-5">Rs. <?php echo $a; ?> .00</span>
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fas fa-people-group"></i>
-                            <span class="text">
-                                <h3>Customers</h3>
-                                <?php
-                                $user_rs = Database::search("SELECT * FROM `user`");
-                                $user_num = $user_rs->num_rows;
-                                ?>
-                                <span class="fs-5"><?php echo $user_num; ?> Members</span>
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fas fa-dollar-sign"></i>
-                            <span class="text">
-                                <h3>Today Sellings</h3>
-                                <span class="fs-5"><?php echo $c; ?> Items</span>
-                            </span>
-                        </li>
-                    </div>
+                                $splitMonth = explode("-", $pdate); //separate date as year,month & day
+                                $pyear = $splitMonth["0"]; //year
+                                $pmonth = $splitMonth["1"]; //month
 
-                    <div class="box-info">
-                        <li>
-                            <i class="fas fa-calendar-check"></i>
-                            <span class="text">
-                                <h3>Monthly Earnings</h3>
-                                <span class="fs-5">Rs. <?php echo $b; ?> .00</span>
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fas fa-people-group"></i>
-                            <span class="text">
-                                <h3>Monthly Sellings</h3>
-                                <span class="fs-5"><?php echo $e; ?> Items</span>
-                            </span>
-                        </li>
-                        <li>
-                            <i class="fas fa-dollar-sign"></i>
-                            <span class="text">
-                                <h3>Total Sellings</h3>
-                                <span class="fs-5"><?php echo $f; ?> Items</span>
-                            </span>
-                        </li>
-                    </div>
-
-                    <div class="table-data">
-                        <div class="order">
-                            <div class="head">
-                                <h3>Recent Orders</h3>
-                                <i class="fas fa-search"></i>
-                                <i class="fas fa-filter"></i>
-                            </div>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>User</th>
-                                        <th>Order Date</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <?php
-                                    $freq_rs = Database::search("SELECT `product_id`,COUNT(`product_id`) AS`value_occurence` FROM `invoice`
-                WHERE `date` LIKE '%" . $today . "%' GROUP BY `product_id` ORDER BY `value_occurence` DESC "); //ad dws thul wadiyen sell una product eka arn denv
-
-                                    $freq_num = $freq_rs->num_rows;
-
-                                    for ($x = 0; $x < $freq_num; $x++) {
-
-                                        $freq_data = $freq_rs->fetch_assoc();
-
-                                        $product_rs = Database::search("SELECT * FROM `product` INNER JOIN `product_img` ON 
-                  product.id=product_img.product_id INNER JOIN `user` ON product.user_email=user.email
-                  INNER JOIN `profile_img` ON user.email=profile_img.user_email WHERE `id`='" . $freq_data["product_id"] . "'");
-
-                                        $qty_rs = Database::search("SELECT SUM(`qty`) AS `qty_total` FROM `invoice` WHERE `product_id`='" . $freq_data["product_id"] . "'
-                  AND `date` LIKE '%" . $today . "%'");
-                                        $qty_data = $qty_rs->fetch_assoc();
-
-                                        $produc_data = $product_rs->fetch_assoc();
-                                    ?>
-                                        <tr>
-                                            <td>
-
-                                                <?php
-                                                $seller_rs = Database::search("SELECT * FROM `invoice` INNER JOIN `user` ON
-                  invoice.user_email=user.email WHERE `product_id`='" . $freq_data["product_id"] . "'");
-                                                $seller_data = $seller_rs->fetch_assoc();
-
-                                                $seller_img = Database::search("SELECT * FROM `user` INNER JOIN `profile_img` ON 
-                  user.email=profile_img.user_email WHERE `user_email`='" . $seller_data["email"] . "'");
-                                                $seller_img_data = $seller_img->fetch_assoc();
-                                                ?>
-
-                                                <img src="<?php echo $seller_img_data["path"]; ?>" alt="" />
-                                                <p><?php echo $seller_data["fname"] . " " . $seller_data["lname"]; ?></p>
-                                            </td>
-                                            <td><?php echo $seller_data["date"]; ?></td>
-                                            <td><span class="status pending"><?php echo $seller_data["email"]; ?></span></td>
-                                        </tr>
-                                    <?php
+                                if ($pyear == $thisyear) {
+                                    if ($pmonth == $thismonth) {
+                                        $b = $b + $invoice_data["total"];
+                                        $e = $e + $invoice_data["qty"];
                                     }
-                                    ?>
+                                }
+                            }
 
-                                </tbody>
-                            </table>
+                            ?>
+                            <span class="fs-5">Rs. <?php echo $a; ?> .00</span>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-people-group"></i>
+                        <span class="text">
+                            <h3>Customers</h3>
+                            <?php
+                            $user_rs = Database::search("SELECT * FROM `user`");
+                            $user_num = $user_rs->num_rows;
+                            ?>
+                            <span class="fs-5"><?php echo $user_num; ?> Members</span>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-dollar-sign"></i>
+                        <span class="text">
+                            <h3>Today Sellings</h3>
+                            <span class="fs-5"><?php echo $c; ?> Items</span>
+                        </span>
+                    </li>
+                </div>
+
+                <div class="box-info">
+                    <li>
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="text">
+                            <h3>Monthly Earnings</h3>
+                            <span class="fs-5">Rs. <?php echo $b; ?> .00</span>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-people-group"></i>
+                        <span class="text">
+                            <h3>Monthly Sellings</h3>
+                            <span class="fs-5"><?php echo $e; ?> Items</span>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-dollar-sign"></i>
+                        <span class="text">
+                            <h3>Total Sellings</h3>
+                            <span class="fs-5"><?php echo $f; ?> Items</span>
+                        </span>
+                    </li>
+                </div>
+
+                <div class="table-data">
+                    <div class="order">
+                        <div class="head">
+                            <h3>Recent Orders</h3>
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-filter"></i>
                         </div>
 
-                        <div class="todo">
-                            <div class="head">
-                                <h3>Mostly Sold Products</h3>
-                                <i class="fas fa-plus"></i>
-                                <i class="fas fa-filter"></i>
-                            </div>
-
-                            <ul class="todo-list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Order Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
                                 <?php
-
                                 $freq_rs = Database::search("SELECT `product_id`,COUNT(`product_id`) AS`value_occurence` FROM `invoice`
-              WHERE `date` LIKE '%" . $today . "%' GROUP BY `product_id` ORDER BY `value_occurence` DESC "); //ad dws thul wadiyen sell una product eka arn denv
+                WHERE `date` LIKE '%" . $today . "%' GROUP BY `product_id` ORDER BY `value_occurence` DESC "); //ad dws thul wadiyen sell una product eka arn denv
 
                                 $freq_num = $freq_rs->num_rows;
 
@@ -285,54 +228,111 @@ if (isset($_SESSION["au"])) {
                                     $freq_data = $freq_rs->fetch_assoc();
 
                                     $product_rs = Database::search("SELECT * FROM `product` INNER JOIN `product_img` ON 
-                product.id=product_img.product_id INNER JOIN `user` ON product.user_email=user.email
-                INNER JOIN `profile_img` ON user.email=profile_img.user_email WHERE `id`='" . $freq_data["product_id"] . "'");
+                  product.id=product_img.product_id INNER JOIN `user` ON product.user_email=user.email
+                  INNER JOIN `profile_img` ON user.email=profile_img.user_email WHERE `id`='" . $freq_data["product_id"] . "'");
 
                                     $qty_rs = Database::search("SELECT SUM(`qty`) AS `qty_total` FROM `invoice` WHERE `product_id`='" . $freq_data["product_id"] . "'
-                AND `date` LIKE '%" . $today . "%'");
+                  AND `date` LIKE '%" . $today . "%'");
                                     $qty_data = $qty_rs->fetch_assoc();
 
                                     $produc_data = $product_rs->fetch_assoc();
-
                                 ?>
-                                    <li class="not-completed">
-                                        <img src="<?php echo $produc_data["img_path"]; ?>" class="img-fluid rounded-top" style="height: 50px;" />
-                                        <span class="col-4"><?php echo $produc_data["title"]; ?></span><br />
-                                        <span class="col- "><?php echo $qty_data["qty_total"]; ?> items </span><br />
-                                        <span class="col- ">LKR <?php echo $qty_data["qty_total"] * $produc_data["price"]; ?> .00</span>
+                                    <tr>
+                                        <td>
 
-                                    </li>
-                                    <?php
+                                            <?php
+                                            $seller_rs = Database::search("SELECT * FROM `invoice` INNER JOIN `user` ON
+                  invoice.user_email=user.email WHERE `product_id`='" . $freq_data["product_id"] . "'");
+                                            $seller_data = $seller_rs->fetch_assoc();
 
-                                    ?>
+                                            $seller_img = Database::search("SELECT * FROM `user` INNER JOIN `profile_img` ON 
+                  user.email=profile_img.user_email WHERE `user_email`='" . $seller_data["email"] . "'");
+                                            $seller_img_data = $seller_img->fetch_assoc();
+                                            ?>
 
+                                            <img src="<?php echo $seller_img_data["path"]; ?>" alt="" />
+                                            <p><?php echo $seller_data["fname"] . " " . $seller_data["lname"]; ?></p>
+                                        </td>
+                                        <td><?php echo $seller_data["date"]; ?></td>
+                                        <td><span class="status pending"><?php echo $seller_data["email"]; ?></span></td>
+                                    </tr>
                                 <?php
-
                                 }
-                            } else {
                                 ?>
-                                <div class="col-12 text-center mt-5 mb-5">
-                                    <i class="bi bi-exclamation-triangle-fill text-danger mb-5" style="font-size: 150px;"></i>
-                                    <h2 class="text-danger fw-bold">You are not a valid user.</h2>
-                                    <!-- <span class="text-muted">No matching User wre found for the search text you have entered.</span> -->
-                                </div>
-                            <?php
-                                // echo ("You are not a valid user.");
-                            }
 
-                            ?>
+                            </tbody>
+                        </table>
+                    </div>
 
-
-                            </ul>
+                    <div class="todo">
+                        <div class="head">
+                            <h3>Mostly Sold Products</h3>
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-filter"></i>
                         </div>
 
+                        <ul class="todo-list">
+
+                            <?php
+
+                            $freq_rs = Database::search("SELECT `product_id`,COUNT(`product_id`) AS`value_occurence` FROM `invoice`
+              WHERE `date` LIKE '%" . $today . "%' GROUP BY `product_id` ORDER BY `value_occurence` DESC "); //ad dws thul wadiyen sell una product eka arn denv
+
+                            $freq_num = $freq_rs->num_rows;
+
+                            for ($x = 0; $x < $freq_num; $x++) {
+
+                                $freq_data = $freq_rs->fetch_assoc();
+
+                                $product_rs = Database::search("SELECT * FROM `product` INNER JOIN `product_img` ON 
+                product.id=product_img.product_id INNER JOIN `user` ON product.user_email=user.email
+                INNER JOIN `profile_img` ON user.email=profile_img.user_email WHERE `id`='" . $freq_data["product_id"] . "'");
+
+                                $qty_rs = Database::search("SELECT SUM(`qty`) AS `qty_total` FROM `invoice` WHERE `product_id`='" . $freq_data["product_id"] . "'
+                AND `date` LIKE '%" . $today . "%'");
+                                $qty_data = $qty_rs->fetch_assoc();
+
+                                $produc_data = $product_rs->fetch_assoc();
+
+                            ?>
+                                <li class="not-completed">
+                                    <img src="<?php echo $produc_data["img_path"]; ?>" class="img-fluid rounded-top" style="height: 50px;" />
+                                    <span class="col-4"><?php echo $produc_data["title"]; ?></span><br />
+                                    <span class="col- "><?php echo $qty_data["qty_total"]; ?> items </span><br />
+                                    <span class="col- ">LKR <?php echo $qty_data["qty_total"] * $produc_data["price"]; ?> .00</span>
+
+                                </li>
+                                <?php
+
+                                ?>
+
+                            <?php
+
+                            }
+                        } else {
+                            ?>
+                            <div class="col-12 text-center mt-5 mb-5">
+                                <i class="bi bi-exclamation-triangle-fill text-danger mb-5" style="font-size: 150px;"></i>
+                                <h2 class="text-danger fw-bold">You are not a valid user.</h2>
+                                <!-- <span class="text-muted">No matching User wre found for the search text you have entered.</span> -->
+                            </div>
+                        <?php
+                            // echo ("You are not a valid user.");
+                        }
+
+                        ?>
 
 
+                        </ul>
                     </div>
-                </main>
-            </section>
 
-            <!-- <div>
+
+
+                </div>
+            </main>
+        </section>
+
+        <!-- <div>
                 <canvas id="myChart"></canvas>
             </div> -->
 

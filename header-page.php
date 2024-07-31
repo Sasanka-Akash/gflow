@@ -74,7 +74,7 @@ include "connection.php";
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="sellingHistroyView.php">Selling History</a></li>
                                     </ul>
                                 </li>
 

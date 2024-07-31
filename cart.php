@@ -133,7 +133,7 @@
   border: 1px solid rgba(255, 255, 255, 0.222);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px); border-radius: 10px;">
-                                            <div class="row g-0" >
+                                            <div class="row g-0">
                                                 <!-- <div class="col-md-12 mt-3 mb-3">
                                                     <div class="row">
                                                         <div class="col-12">
@@ -175,7 +175,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="card-body d-grid">
-                                                        <a class="btn btn-warning mb-2">Buy Now</a>
+                                                        <a class="btn btn-warning mb-2" >Buy Now</a>
                                                         <a class="btn btn-danger mb-2" onclick="deleteFromCart(<?php echo $cart_data['cart_id']; ?>);"><i class="bi bi-trash3"></i></a>
                                                     </div>
                                                 </div>
@@ -211,7 +211,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mt-3" >
+                <div class="col-md-4 mt-3">
                     <div class=" p-3 fs-7 row text-light rounded" style="background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
   -webkit-backdrop-filter: blur(20px);
@@ -254,7 +254,7 @@
                         </div>
 
                         <div class="col-12 mt-3 mb-3 d-grid">
-                            <button class="btn btn-warning fs-5 fw-bold" >CHECKOUT</button>
+                            <button class="btn btn-warning fs-5 fw-bold" onclick="checkOut();">CHECKOUT</button>
                         </div>
 
 
@@ -281,6 +281,8 @@
     <?php include "footer.php"; ?>
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>

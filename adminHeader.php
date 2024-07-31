@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,6 +52,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-warning" href="manageCustomer.php">Customer Managment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning" href="sellingHistory.php">Selling</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-warning" href="#" data-bs-toggle="modal" data-bs-target="#registerProductModal">Add Product</a>

@@ -1372,3 +1372,127 @@ function registerColor() {
   req.open("POST", "registerColorProcess.php", true);
   req.send(form);
 }
+
+function searchInvoice() {
+  var txt = document.getElementById("searchtxt").value;
+
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      document.getElementById("viewArea").innerHTML = response;
+    }
+  };
+
+  request.open("GET", "searchInvoiceProcess.php?id=" + txt, true);
+  request.send();
+}
+
+function findsellings() {
+  var from = document.getElementById("from").value;
+  var to = document.getElementById("to").value;
+
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      document.getElementById("viewArea").innerHTML = response;
+    }
+  };
+
+  request.open("GET", "findSellingsProcess.php?f=" + from + "&t=" + to, true);
+  request.send();
+}
+
+function changeInvoiceStatus(id) {
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if ((request.status == 200) & (request.readyState == 4)) {
+      var response = request.responseText;
+      if (response == "success") {
+        window.location.reload();
+      } else {
+        alert(response);
+      }
+    }
+  };
+
+  request.open("GET", "changeInvoiceStatusProcess.php?id=" + id, true);
+  request.send();
+}
+
+// function checkOut() {
+//   var form = new FormData();
+//   form.append("cart", true);
+
+//   var req = new XMLHttpRequest();
+
+//   req.onreadystatechange = function () {
+//     if (req.readyState == 4 && req.status == 200) {
+//       var response = req.responseText;
+
+//       var obj = JSON.parse(response);
+
+//       var mail = obj["umail"];
+//       var amount = obj["amount"];
+
+//       if (response == 1) {
+//         showAlert("Error", "Please Login.", "error").then(() => {
+//           window.location = "index.php";
+//         });
+//       } else if (response == 2) {
+//         showAlert("Error", "Please update your profile.", "error").then(() => {
+//           window.location = "userProfile.php";
+//         });
+//       } else {
+//       }
+//     }
+//   };
+
+//   req.open("POST", "payment-process.php", true);
+//   req.send();
+// }
+
+// function doCheckout(payment, url) {
+//   // Payment completed. It can be a successful failure.
+//   payhere.onCompleted = function onCompleted(orderId) {
+//     showAlert("Sucess", "Payment completed. OrderID:" + orderId, "success");
+
+//     var form = new FormData();
+//     form.append("payment", JSON.stringify("payment"));
+
+//     var req = new XMLHttpRequest();
+//     req.onreadystatechange = function () {
+//       if (req.readyState == 4 && req.status == 200) {
+//         var json = req.responseText;
+//         var resp = JSON.parse(json);
+
+//         if (resp.status == "status") {
+//           showAlert("Success", "Order Success", "success").then(() => {
+//             window.location.href = "invoice.php?=" + resp.ohId;
+//           });
+//         } else {
+//           showAlert("Error", resp.error, "error");
+//         }
+//       }
+//     };
+
+//     req.open("POST", url, true);
+//     req.send(form);
+//   };
+
+//   // Payment window closed
+//   payhere.onDismissed = function onDismissed() {
+//     showAlert("Warning", "Payment dismissed", "warning");
+//   };
+
+//   // Error occurred
+//   payhere.onError = function onError(error) {
+//     showAlert("Error:" + error, "error");
+//   };
+
+//   payment.startPayment(payment);
+// }
