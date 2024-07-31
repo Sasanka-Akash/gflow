@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 if (isset($_SESSION["au"])) {
 
 ?>
@@ -15,17 +14,17 @@ if (isset($_SESSION["au"])) {
         <title>Admin Panel | Gflow</title>
 
         <!--font awesome-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         <link rel="stylesheet" href="bootstrap.css" />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="icon" href="img/g1.png">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
         <!--css file-->
         <link rel="stylesheet" href="styles1.css" />
     </head>
@@ -309,18 +308,8 @@ if (isset($_SESSION["au"])) {
                             <?php
 
                             }
-                        } else {
-                            ?>
-                            <div class="col-12 text-center mt-5 mb-5">
-                                <i class="bi bi-exclamation-triangle-fill text-danger mb-5" style="font-size: 150px;"></i>
-                                <h2 class="text-danger fw-bold">You are not a valid user.</h2>
-                                <!-- <span class="text-muted">No matching User wre found for the search text you have entered.</span> -->
-                            </div>
-                        <?php
-                            // echo ("You are not a valid user.");
-                        }
 
-                        ?>
+                            ?>
 
 
                         </ul>
@@ -343,34 +332,22 @@ if (isset($_SESSION["au"])) {
             </div>
         </div>
         <script src="app.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            const ctx = document.getElementById('myChart');
 
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        </script>
     </body>
 
     </html>
-    <?php
+<?php
+} else {
+?>
+    <div class="col-12 text-center mt-5 mb-5">
+        <i class="bi bi-exclamation-triangle-fill text-danger mb-5" style="font-size: 150px;"></i>
+        <h2 class="text-danger fw-bold">You are not a valid user.</h2>
+        <!-- <span class="text-muted">No matching User wre found for the search text you have entered.</span> -->
+    </div>
+<?php
+    // echo ("You are not a valid user.");
+}
 
 
 
-    ?>
+?>

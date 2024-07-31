@@ -102,7 +102,7 @@ include "connection.php";
                                 $invoice_rs = Database::search($query);
                                 $invoice_num = $invoice_rs->num_rows;
 
-                                $results_per_page = 20;
+                                $results_per_page = 8;
                                 $number_of_pages = ceil($invoice_num / $results_per_page);
 
                                 $page_results = ($pageno - 1) * $results_per_page; // 0 , 20 , 40
