@@ -152,7 +152,7 @@
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="card-body d-lg-grid">
-                                                                <a href="#" class="btn btn-warning mb-2 "><i class="bi bi-plus-lg"></i><i class="bi bi-cart-fill"></i></a>
+                                                                <a href="#" onclick="addToCart(<?php echo $watchlist_data['id'] ?>);" class="btn btn-warning mb-2 "><i class="bi bi-plus-lg"></i><i class="bi bi-cart-fill"></i></a>
                                                                 <a href="#" class="btn btn-danger" onclick='removeFromWatchlist(<?php echo $list_id; ?>);'>
                                                                     <i class="bi bi-trash3"></i>
                                                                 </a>

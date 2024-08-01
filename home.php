@@ -37,9 +37,9 @@
     <div class="container-fulid" id="basicSearchResult">
 
 
-        <div class="carousel" data-aos="fade-down">
+        <div class="carousel" >
 
-            <div class="carousel slide">
+            <div class="carousel slide" data-aos="fade-down">
 
                 <div class="carousel-inner">
                     <div class="carousel-item active c-item">
@@ -84,7 +84,7 @@
                         <!-- Category Name -->
                         <!-- products -->
 
-                        <div class="col-12 mb-3">
+                        <div class="col-12 mb-3" data-aos="fade-up">
                             <div class="row  ">
 
                                 <div class="col-12">

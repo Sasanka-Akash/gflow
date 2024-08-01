@@ -121,7 +121,7 @@
 
                                                     ?>
 
-                                                    <img src="<?php echo $product_data["img_path"]; ?>" class="img-thumbnail rounded-start mt-3" />
+                                                    <img src="<?php echo $product_data["img_path"]; ?>" class="w-100 mt-3" />
                                                 </div>
                                                 <div class="col-md-8 text-lg-end">
                                                     <div class="card-body">

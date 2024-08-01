@@ -654,7 +654,8 @@ function addToCart(id) {
   request.onreadystatechange = function () {
     if (request.status == 200 && request.readyState == 4) {
       var response = request.responseText;
-      alert(response);
+      // alert(response);
+      showAlert("Success", response, "success");
     }
   };
 
@@ -1424,37 +1425,88 @@ function changeInvoiceStatus(id) {
   request.send();
 }
 
-// function checkOut() {
-//   var form = new FormData();
-//   form.append("cart", true);
+function checkOut() {
 
-//   var req = new XMLHttpRequest();
+  var qty = document.getElementById("qty_num").value;
 
-//   req.onreadystatechange = function () {
-//     if (req.readyState == 4 && req.status == 200) {
-//       var response = req.responseText;
+  var request = new XMLHttpRequest();
 
-//       var obj = JSON.parse(response);
+  request.onreadystatechange = function () {
+      if (request.status == 200 & request.readyState == 4) {
+          var response = request.responseText;
+          
+          // alert(response);
+          var obj = JSON.parse(response);
 
-//       var mail = obj["umail"];
-//       var amount = obj["amount"];
+          var mail = obj["umail"];
+          var amount = obj["amount"];
 
-//       if (response == 1) {
-//         showAlert("Error", "Please Login.", "error").then(() => {
-//           window.location = "index.php";
-//         });
-//       } else if (response == 2) {
-//         showAlert("Error", "Please update your profile.", "error").then(() => {
-//           window.location = "userProfile.php";
-//         });
-//       } else {
-//       }
-//     }
-//   };
+          if (response == 2) {
+              alert("Please Login.");
+              window.location = "index.php";
+          } else {
 
-//   req.open("POST", "payment-process.php", true);
-//   req.send();
-// }
+              // Payment completed. It can be a successful failure.
+              payhere.onCompleted = function onCompleted(orderId) {
+                  console.log("Payment completed. OrderID:" + orderId);
+
+                  // alert("Payment completed. OrderID:" + orderId);
+                  // saveInvoice(orderId, mail, amount, qty);
+
+              };
+
+              // Payment window closed
+              payhere.onDismissed = function onDismissed() {
+                  // Note: Prompt user to pay again or show an error page
+                  console.log("Payment dismissed");
+              };
+
+              // Error occurred
+              payhere.onError = function onError(error) {
+                  // Note: show an error page
+                  console.log("Error:" + error);
+              };
+
+              // Put the payment variables here
+              var payment = {
+                  "sandbox": true,
+                  "merchant_id": obj["mid"],    // Replace your Merchant ID
+                  "return_url": "http://localhost/gflow/cart.php",     // Important
+                  "cancel_url": "http://localhost/gflow/cart.php",     // Important
+                  "notify_url": "http://sample.com/notify",
+                  "order_id": obj["id"],
+                  "items": obj["item"],
+                  "amount": amount + ".00",
+                  "currency": "LKR",
+                  "hash": obj["hash"], // *Replace with generated hash retrieved from backend
+                  "first_name": obj["fname"],
+                  "last_name": obj["lname"],
+                  "email": mail,
+                  "phone": obj["mobile"],
+                  "address": obj["address"],
+                  "city": obj["city"],
+                  "country": "Sri Lanka",
+                  "delivery_address": obj["address"],
+                  "delivery_city": obj["city"],
+                  "delivery_country": "Sri Lanka",
+                  "custom_1": "",
+                  "custom_2": ""
+              };
+
+              // Show the payhere.js popup, when "PayHere Pay" is clicked
+              // document.getElementById('payhere-payment').onclick = function (e) {
+              payhere.startPayment(payment);
+              // };
+
+          }
+
+      }
+  }
+
+  request.open("GET", "payment-Process.php?&qty=" + qty, true);
+  request.send();
+}
+
 
 // function doCheckout(payment, url) {
 //   // Payment completed. It can be a successful failure.

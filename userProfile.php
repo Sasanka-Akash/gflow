@@ -92,7 +92,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="container p-4" style="border: 1px solid gray; border-radius: 10px; padding: 5px;">
+                                        <div class="container p-4" style="border: 1px solid gray; border-radius: 10px; padding: 5px; background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px); border-radius: 10px;">
                                             <div class="row mt-4">
 
                                                 <div class="col-6">

@@ -91,10 +91,10 @@
                     </div>
                 </div>
 
-                <hr>
+                <hr class="text-dark">
                 <div class="row">
                     <div class="col-12 col-md-3 col-lg-2 mx-auto" style="width: 350px;">
-                        <img src="img/payment.jpg" alt="payment method" class="payment-img" data-aos="zoom-in-down">
+                        <img src="img/payment.jpg" alt="payment method" class="payment-img" data-aos="fade-up">
                         <p class="text-center">© 2023 Gflow Computers. All rights reserved.</p>
                     </div>
                 </div>
