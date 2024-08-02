@@ -654,8 +654,8 @@ function addToCart(id) {
   request.onreadystatechange = function () {
     if (request.status == 200 && request.readyState == 4) {
       var response = request.responseText;
-      // alert(response);
-      showAlert("Success", response, "success");
+      alert(response);
+      // showAlert("Success", response, "success");
     }
   };
 
