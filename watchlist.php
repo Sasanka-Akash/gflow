@@ -47,37 +47,6 @@
                                     <label class="form-label fs-1 text-center  mt-3 text-warning">Watchlist &hearts;</label>
                                 </div>
 
-                                <!-- <div class="col-12">
-                                    <hr />
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="offset-lg-2 col-12 col-lg-6 mb-3">
-                                            <input type="text" class="form-control" placeholder="Search in Watchlist..." />
-                                        </div>
-                                        <div class="col-12 col-lg-2 mb-3 d-grid">
-                                            <button class="btn btn-warning">Search</button>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-
-
-                                <!-- <div class="col-11 col-lg-2 border-0 border-end border-1 border-dark">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Watchlist</li>
-                                        </ol>
-                                    </nav>
-                                    <nav class="nav nav-pills flex-column ">
-                                        <a class="nav-link active bg-warning text-dark" aria-current="page" href="#">My Watchlist</a>
-                                        <a class="nav-link" href="cart.php">My Cart</a>
-                                        <a class="nav-link" href="#">Recents</a>
-                                    </nav>
-                                </div> -->
-
                                 <?php
 
                                 if ($watchlist_num == 0) {
