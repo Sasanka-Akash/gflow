@@ -14,12 +14,12 @@
     <link rel="icon" href="img/g1.png">
 </head>
 
-<body class="mt-2 " style="background-color: #f7f7ff;">
+<body class=" bg" style="background-color: #f7f7ff;">
 
 
 
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <?php
 
@@ -34,21 +34,19 @@
             ?>
 
 
-                <div class="col-12  mt-5 btn-toolbar justify-content-end">
-                    <button class="btn btn-dark me-2" onclick="printInvoice();"><i class="bi bi-printer-fill"></i> Print</button>
-                    <button class="btn btn-danger me-2"><i class="bi bi-filetype-pdf"></i> Export as PDF</button>
+                <div class="col-12  mt-3 btn-toolbar justify-content-end">
+                    <a href="home.php"><button class="btn btn-dark me-2"><i class="bi bi-arrow-left"></i> Back</button></a>
+                    <button class="btn btn-danger me-2" onclick="printInvoice();"><i class="bi bi-printer-fill"></i> Print</button>
                 </div>
 
-                <div class="col-12  mt-5">
-                    <hr />
-                </div>
 
-                <div class="col-12 mt-5" id="page">
+
+                <div class="col-12 mt-3 bg-light rounded" id="page">
                     <div class="row">
 
 
 
-                        <div class="col-12 text-center">
+                        <!-- <div class="col-12 text-center">
                             <div class="row">
                                 <div class="col-12 fs-1 text-end text-center ">
                                     <ul class="text">
@@ -100,7 +98,7 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="col-12">
                             <hr class="border border-1 " />
@@ -274,19 +272,19 @@
                 </div>
 
 
+            <?php
 
 
 
-        </div>
-    <?php
+
 
             }
 
-    ?>
+            ?>
 
 
-
-
+        </div>
+    </div>
     <script src="bootstrap.bundle.js"></script>
     <script src="script.js"></script>
 </body>

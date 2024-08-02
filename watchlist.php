@@ -43,7 +43,7 @@
                         <div class="col-12 ">
                             <div class="row">
 
-                                <div class="col-12 mt-5 text-center fs-1">
+                                <div class="col-12 mt-5 text-center fs-1 mb-3">
                                     <label class="form-label fs-1 text-center  mt-3 text-warning">Watchlist &hearts;</label>
                                 </div>
 
@@ -85,8 +85,8 @@
                                     <!-- empty view -->
                                     <div class="col-12 col-lg-12">
                                         <div class="row">
-                                            <div class="col-12 emptyView"></div>
-                                            <div class="col-12 text-center">
+                                            <div class="col-12 mb-3 emptyView"></div>
+                                            <div class="col-12 mt-3 text-center">
                                                 <label class="form-label fs-1 text-light fw-bold">You have no items in your Watchlist
                                                     yet.</label>
                                             </div>

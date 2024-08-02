@@ -260,7 +260,7 @@
 }
 .emptyView {
   height: 200px;
-  background-image: url("img/addproductimg.svg");
+  background-image: url("img/emptyview2.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

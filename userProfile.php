@@ -57,7 +57,7 @@
                         <div class="col-12 text-light rounded mt-4 mb-4">
                             <div class="row g-2">
 
-                                <div class="col-12 border-end">
+                                <div class="col-12 ">
                                     <div class="d-flex flex-column align-items-center text-center p-3 py-5">
 
                                         <?php
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 border-end">
+                                <div class="col-md-12">
                                     <div class="p-3 py-5">
                                         <div class="container">
                                             <div class="row mt-4">

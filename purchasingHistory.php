@@ -61,7 +61,7 @@
                 } else {
                 ?>
                     <!-- Have Product -->
-                    <div class="col-12 mt-3 card justify-content-center text-light rounded" style="background-color: rgba(255, 255, 255, 0.074);
+                    <!-- <div class="col-12 mt-3 card justify-content-center text-light rounded" style="background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px); border-radius: 10px;">
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <?php
@@ -105,7 +105,7 @@
                                 <div class="col-12 col-lg-1 text-center text-lg-start">
                                     <label class="form-label text-white fs-6 py-5"><?php echo $invoice_data["invoice_id"]; ?></label>
                                 </div>
-                                <div class="col-12 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <div class="row">
                                         <div class=" mx-0 mx-lg-3 my-3" style="max-width: 540px;">
                                             <div class="row g-0">
@@ -126,12 +126,12 @@
                                                 <div class="col-md-8 text-lg-end">
                                                     <div class="card-body">
 
-                                                        <h5 class="card-title"><?php echo $product_data["title"]; ?></h5>
+                                                        <h5 class="card-title text-warning"><?php echo $product_data["title"]; ?></h5>
                                                         <p class="card-text"><b>Seller : </b>
                                                             <?php echo $data["fname"] . " " . $data["lname"]; ?>
                                                         </p>
-                                                        <p class="card-text"><b>Price : </b>Rs. <?php echo $product_data["price"]; ?> .00</p>
-                                                        <span class="badge rounded-pill text-bg-warning">Waiting to accept</span>
+                                                        <p class="card-text "><b>Price : </b>LKR <?php echo $product_data["price"]; ?> .00</p>
+                                                        <!-- <span class="badge rounded-pill text-bg-warning">Waiting to accept</span> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,22 +139,22 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-1 text-center text-lg-end">
-                                    <label class="form-label fs-4 py-5"><?php echo $invoice_data["qty"]; ?></label>
+                                    <label class="form-label fs-4 py-5"> <?php echo $invoice_data["qty"]; ?></label>
                                 </div>
                                 <div class="col-12 col-lg-2 text-center text-lg-end ">
-                                    <label class="form-label fs-5 py-5 text-white">Rs. <?php echo $invoice_data["total"]; ?> .00</label>
+                                    <label class="form-label fs-5 py-5 text-white">LKR <?php echo $invoice_data["total"]; ?> .00</label>
                                 </div>
                                 <div class="col-12 col-lg-2 text-center text-lg-end">
                                     <label class="form-label fs-5 px-3 py-5"><?php echo $invoice_data["date"]; ?></label>
                                 </div>
-                                <div class="col-12 col-lg-3">
+                                <div class="col-12 col-lg-2">
                                     <div class="row">
-                                        <div class="col-6 d-grid">
+                                        <div class="col-6 d-lg-grid">
                                             <button class="btn btn-secondary rounded  mt-5 fs-5" onclick="addFeedback(<?php echo $invoice_data['product_id']; ?>);">
-                                                <i class="bi bi-info-circle-fill fs-5"></i> Feedback
+                                                 Feedback
                                             </button>
-                                        </div>
-                                        <div class="col-6 d-grid">
+                                      
+                                       
                                             <button class="btn btn-danger rounded mt-5 fs-5" onclick="deleteFeedback(<?php echo $invoice_data['product_id']; ?>);">
                                                 <i class="bi bi-trash3-fill fs-5"></i> Delete
                                             </button>

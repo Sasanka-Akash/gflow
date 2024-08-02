@@ -175,7 +175,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="card-body d-grid">
-                                                        <a class="btn btn-warning mb-2" >Buy Now</a>
+                                                        <!-- <a class="btn btn-warning mb-2" >Buy Now</a> -->
                                                         <a class="btn btn-danger mb-2" onclick="deleteFromCart(<?php echo $cart_data['cart_id']; ?>);"><i class="bi bi-trash3"></i></a>
                                                     </div>
                                                 </div>
