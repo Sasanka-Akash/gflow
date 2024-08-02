@@ -85,9 +85,6 @@ include "connection.php";
                         <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" id="e" value="">
                     </div>
 
-                    <!-- <div class="input-group mb-3">
-                        <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" id="p" value="">
-                    </div> -->
 
                     <div class="input-group  mb-3">
                         <button class="btn btn-lg btn-warning w-100 fs-6" onclick="adminVerification();">Send Verification Code</button>
