@@ -46,59 +46,7 @@
 
 
 
-                        <!-- <div class="col-12 text-center">
-                            <div class="row">
-                                <div class="col-12 fs-1 text-end text-center ">
-                                    <ul class="text">
-                                        <li class="text-warning fs-5 fw-bold mt-4">
-                                            <h1> G </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> f </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> l </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> o </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> w </h1>
-                                        </li>
-
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> - </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> C </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> o </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> m </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> p </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> u </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> t </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> e </h1>
-                                        </li>
-                                        <li class="fs-5 fw-bold mt-4">
-                                            <h1> r </h1>
-                                        </li>
-
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div> -->
+                        
 
                         <div class="col-12">
                             <hr class="border border-1 " />
