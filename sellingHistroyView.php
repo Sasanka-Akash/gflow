@@ -167,6 +167,7 @@ include "connection.php";
 
                             }
                             ?>
+                        </div>
                     </tbody>
                 </table>
             </div>
